@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Sparatutto {
   public static final int h = 5;
@@ -39,22 +38,19 @@ public class Sparatutto {
       str.setCharAt(positionS, s.toString().charAt(0));
     }
 
-    // stampa i nemici
-    for (Nemici n : nemici) {
-      if ((n.getX() < w) && (n.getX() >= 0) && (n.getY() < h) && (n.getY() >= 0)) {
-        str.setCharAt(posStr(n.getX(), n.getY()), n.toString().charAt(0));
+    // setta la posizione di N (e se il laser è ON, lo stampa)
+    int positionN = posStr(N.getX(), N.getY());
+    str.setCharAt(positionN, N.toString().charAt(0));
+
+    if (N.getLaser()) {
+      for (int i = positionN + 1; i < positionN + w; i++) {
+        str.setCharAt(i, N.toString_Laser().charAt(0));
       }
     }
 
-    // setta la posizione di N (e se il laser è ON, lo stampa)
-    int positionN = posStr(N.getX(), N.getY());
-    if ((N.getX() < w) && (N.getX() >= 0) && (N.getY() < h) && (N.getY() >= 0)) {
-      str.setCharAt(positionN, N.toString().charAt(0));
-      if (N.getLaser()) {
-        for (int i = positionN + 1; i < positionN + w; i++) {
-          str.setCharAt(i, N.toString_Laser().charAt(0));
-        }
-      }
+    // stampa i nemici
+    for (Nemici n : nemici) {
+      str.setCharAt(posStr(n.getX(), n.getY()), n.toString().charAt(0));
     }
 
     return str.toString();
@@ -71,31 +67,20 @@ public class Sparatutto {
   }
 
 
+
   public static void main(String[] args) {
     Navicella n = new Navicella(false);
+
     ArrayList<Nemici> nemici = new ArrayList<>();
     nemici.add(new Meteorite(3, 2));
     nemici.add(new Alieno(7, 0));
     nemici.add(new Alieno(6, 4));
+
     Sparatutto s = new Sparatutto(n, nemici);
+    System.out.println(s.toString());
 
-    Scanner sc = new Scanner(System.in);
-    while (true) {
-      System.out.println("++++++++++");
-      System.out.print(s);
-      System.out.println("++++++++++");
-
-      System.out.print("CMD: ");
-      String line = sc.nextLine();
-      if (line.length() != 1) continue;
-      char cmd = line.charAt(0);
-      switch (cmd) {
-        case ' ': n.setLaser(!n.getLaser()); break;
-        case 'w': n.su(); break;
-        case 's': n.giu(); break;
-        default: continue;
-      }
-      s.prossimoPasso();
-    }
+    n.setLaser(true);
+    s.prossimoPasso();
+    System.out.print(s.toString());
   }
 }

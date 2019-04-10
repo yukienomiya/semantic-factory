@@ -10,11 +10,11 @@ public class Navicella extends Oggetti {
   }
 
   public void su() {
-    y--;
+    y++;
   }
 
   public void giu() {
-    y++;
+    y--;
   }
 
   public void setLaser(boolean laser) {
