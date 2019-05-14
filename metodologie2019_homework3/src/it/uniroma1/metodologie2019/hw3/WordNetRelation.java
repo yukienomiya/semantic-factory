@@ -65,6 +65,7 @@ public class WordNetRelation {
   @Override
   public boolean equals(Object o) {
     if (!(o instanceof WordNetRelation)) return false;
-    return name.equals(o);
+    WordNetRelation r = (WordNetRelation)o;
+    return name.equals(r.name);
   }
 }
