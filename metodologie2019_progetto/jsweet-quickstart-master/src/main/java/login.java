@@ -82,7 +82,12 @@ public class login {
     $(divPw).append(password);
 
     HTMLDivElement divButton = document.createElement(StringTypes.div);
-    divButton.className = "form-group submit-button";
+    divButton.className = "form-group";
+    $(loginButton).css("height", "30px");
+    $(loginButton).css("width", "100px");
+    $(loginButton).css("margin-left", "135px");
+    $(loginButton).css("margin-top", "25px");
+    $(loginButton).css("background-color", "rgba(64, 38, 94, 1)");
     $(divButton).append(loginButton);
     HTMLDivElement divLink = document.createElement(StringTypes.div);
     divLink.className = "form-group";
