@@ -39,7 +39,7 @@ public class StandardDataProvider implements DataProvider<String> {
 		}else if (task == StandardTask.SENSE_VALIDATION) {
 			return "{" + 
 					"\"word\": \"bank\"," +
-					"\"example\": \"He cashed a check at the bank\"" +
+					"\"example\": \"He cashed a check at the bank\"," +
 					"\"sense\": \"09213565n\"" +
 					"}";
 		}
