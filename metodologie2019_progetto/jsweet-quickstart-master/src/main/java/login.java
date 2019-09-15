@@ -4,6 +4,7 @@ import static def.jquery.Globals.$;
 
 import def.dom.HTMLAnchorElement;
 import def.dom.HTMLDivElement;
+import def.dom.HTMLFieldSetElement;
 import def.dom.HTMLFormElement;
 import def.dom.HTMLInputElement;
 import def.dom.HTMLLabelElement;
@@ -19,97 +20,98 @@ public class login {
     HTMLFormElement form = document.createElement(StringTypes.form);
     form.action = SERVLET_URL;
     form.method = "POST";
+    form.className = "pure-form pure-form-stacked";
     console.log("Form Done");
+
+    HTMLFieldSetElement f = document.createElement(StringTypes.fieldset);
 
     console.log("creating mail label");
     HTMLLabelElement labelMail = document.createElement(StringTypes.label);
-    labelMail.className = "form-control-plaintext";
     labelMail.textContent = "Email:";
     console.log("creating pw label");
     HTMLLabelElement labelPw = document.createElement(StringTypes.label);
-    labelPw.className = "form-control-plaintext";
     labelPw.textContent = "Password:";
 
     console.log("creating email input");
     HTMLInputElement email = document.createElement(StringTypes.input);
     email.name = "email";
-    email.className =  "form-control";
     email.type = "email";
     console.log("creating password input");
     HTMLInputElement password = document.createElement(StringTypes.input);
     password.name = "password";
-    password.className =  "form-control";
     password.type = "password";
 
     HTMLInputElement loginButton = document.createElement(StringTypes.input);
     loginButton.type = "submit";
     loginButton.name = "loginButton_button";
-    loginButton.className =  "btn btn-primary";
     loginButton.value = "LOGIN";
+    loginButton.className = "pure-button pure-button-primary";
 
     console.log("creating signup anchor element");
     HTMLAnchorElement signupButton = document.createElement(StringTypes.a);
-    signupButton.className =  "btn btn-primary";
     signupButton.href = SIGNUP_URL;
+    signupButton.textContent = "SIGN UP";
+    signupButton.className = "pure-button";
     console.log("creating signupButton label");
-    HTMLLabelElement labelSignUp = document.createElement(StringTypes.label);
-    labelSignUp.textContent = "SIGN UP";
 
 
     HTMLDivElement divMail = document.createElement(StringTypes.div);
-    divMail.className = "form-group";
     $(labelMail).css("marginLeft", "5px");
-    $(labelMail).css("fontWeight", "600");
+    $(labelMail).css("fontWeight", "550");
     $(labelMail).css("fontSize", "x-large");
     $(labelMail).css("color", "rgba(64, 38, 94, 1)");
     $(email).css("width", "320px");
     $(email).css("height", "45px");
     $(email).css("marginLeft", "25px");
-    $(email).css("fontWeight", "500");
+    $(email).css("fontWeight", "550");
     $(divMail).append(labelMail);
     $(divMail).append(email);
+
     HTMLDivElement divPw = document.createElement(StringTypes.div);
-    divPw.className = "form-group";
     $(labelPw).css("marginLeft", "5px");
-    $(labelPw).css("fontWeight", "600");
+    $(labelPw).css("fontWeight", "550");
     $(labelPw).css("fontSize", "x-large");
     $(labelPw).css("color", "rgba(64, 38, 94, 1)");
     $(password).css("width", "320px");
     $(password).css("height", "45px");
     $(password).css("marginLeft", "25px");
-    $(password).css("fontWeight", "500");
+    $(password).css("fontWeight", "550");
     $(divPw).append(labelPw);
     $(divPw).append(password);
 
     HTMLDivElement divButton = document.createElement(StringTypes.div);
-    divButton.className = "form-group";
     $(loginButton).css("height", "30px");
     $(loginButton).css("width", "100px");
     $(loginButton).css("margin-left", "135px");
     $(loginButton).css("margin-top", "25px");
     $(loginButton).css("background-color", "rgba(64, 38, 94, 1)");
     $(divButton).append(loginButton);
+
     HTMLDivElement divLink = document.createElement(StringTypes.div);
-    divLink.className = "form-group";
     $(signupButton).css("backgroundColor", "rgb(255, 255, 255)");
     $(signupButton).css("sizes", "100px");
     $(signupButton).css("height", "30px");
     $(signupButton).css("width", "100px");
     $(signupButton).css("marginLeft", "135px");
-    $(labelSignUp).css("marginTop", "-4px");
-    $(labelSignUp).css("marginRight", "5px");
-    $(labelSignUp).css("color", "rgba(64, 38, 94, 1)");
-    $(signupButton).append(labelSignUp);
+    $(signupButton).css("marginTop", "5px");
     $(divLink).append(signupButton);
 
-    $(form).css("margin", "110px 500px 50px");
+    HTMLDivElement divForm = document.createElement(StringTypes.div);
+
+    $(form).css("width", "350px");
+    $(form).css("height", "270px");
 
     console.log("adding to form");
-    $(form).append(divMail);
-    $(form).append(divPw);
-    $(form).append(divButton);
-    $(form).append(divLink);
+    $(f).append(divMail);
+    $(f).append(divPw);
+    $(f).append(divButton);
+    $(f).append(divLink);
+    $(form).append(f);
+    $(divForm).append(form);
+    $(divForm).css("position", "fixed");
+    $(divForm).css("top", "25%");
+    $(divForm).css("left", "35%");
     console.log("adding to body");
-    $("body").append(form);
+    $("body").append(divForm);
   }
 }
