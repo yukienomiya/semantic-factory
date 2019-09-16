@@ -23,7 +23,6 @@ public class signup {
     form.method = "POST";
     form.className = "pure-form pure-form-aligned";
     console.log("Form Done");
-    $(form).css("margin", "100px 350px 200px");
 
     HTMLFieldSetElement f = document.createElement(StringTypes.fieldset);
 
@@ -31,9 +30,6 @@ public class signup {
     console.log("creating form title");
     HTMLLabelElement title = document.createElement(StringTypes.label);
     title.textContent = "REGISTRAZIONE";
-    $(title).css("fontWeight", "500");
-    $(title).css("fontSize", "x-large");
-    $(title).css("color", "black");
 
     // Form fields
     console.log("creating email input");
@@ -65,35 +61,25 @@ public class signup {
     // "Selezionare le proprie lingue native:"
     HTMLLabelElement labelLangNat = document.createElement(StringTypes.label);
     labelLangNat.textContent = "Selezionare le proprie lingue native: *";
-    $(labelLangNat).css("fontWeight", "500");
 
     // Checkbox IT + targhetta
     HTMLInputElement cbItalianNat = document.createElement(StringTypes.input);
     cbItalianNat.name = "cbNat";
     cbItalianNat.value = "Italiano";
     cbItalianNat.type = "checkbox";
-    $(cbItalianNat).css("height", "20");
-    $(cbItalianNat).css("width", "20");
 
     HTMLLabelElement labelITNat = document.createElement(StringTypes.label);
     labelITNat.className = "pure-checkbox";
     labelITNat.textContent = "ITALIANO";
-    $(labelITNat).css("display", "inline-block");
-    $(labelITNat).css("marginLeft", "10");
-
     // Checkbox EN + targhetta
     HTMLInputElement cbEnglishNat = document.createElement(StringTypes.input);
     cbEnglishNat.name = "cbNat";
     cbEnglishNat.value = "English";
     cbEnglishNat.type = "checkbox";
-    $(cbEnglishNat).css("height", "20");
-    $(cbEnglishNat).css("width", "20");
 
     HTMLLabelElement labelENNat = document.createElement(StringTypes.label);
     labelENNat.className = "pure-checkbox";
     labelENNat.textContent = "ENGLISH";
-    $(labelENNat).css("display", "inline-block");
-    $(labelENNat).css("marginLeft", "10");
 
 
 
@@ -103,15 +89,11 @@ public class signup {
     // "Selezionare altre lingue conosciute:"
     HTMLLabelElement labelLangOther = document.createElement(StringTypes.label);
     labelLangOther.textContent = "Selezionare altre lingue conosciute:   (Opzionale)";
-    $(labelLangOther).css("fontWeight", "500");
 
     // "Indicare anche il relativo livello CEFR di competenza."
     HTMLLabelElement labelLiv =  document.createElement(StringTypes.label);
     labelLiv.className = "pure-form-message";
     labelLiv.textContent = "Indicare anche il relativo livello CEFR di competenza.";
-    $(labelLiv).css("fontSize", "small");
-    $(labelLiv).css("fontWeight", "450");
-    $(labelLiv).css("color", "rgba(71, 66, 77, 1)");
 
     // TODO se la checkbox della lingua secondaria è selezionata, il livello diventa obbligatorio (onclick)
     // Checkbox IT + targhetta
@@ -119,28 +101,20 @@ public class signup {
     cbItalianOther.name = "cbItalianOther";
     cbItalianOther.value = "Italiano";
     cbItalianOther.type = "checkbox";
-    $(cbItalianOther).css("height", "20");
-    $(cbItalianOther).css("width", "20");
 
     HTMLLabelElement labelITOther = document.createElement(StringTypes.label);
     labelITOther.className = "pure-checkbox";
     labelITOther.textContent = "ITALIANO";
-    $(labelITOther).css("display", "inline-block");
-    $(labelITOther).css("marginLeft", "10");
 
     // Checkbox EN + targhetta
     HTMLInputElement cbEnglishOther = document.createElement(StringTypes.input);
     cbEnglishOther.name = "cbEnglishOther";
     cbEnglishOther.value = "English";
     cbEnglishOther.type = "checkbox";
-    $(cbEnglishOther).css("height", "20");
-    $(cbEnglishOther).css("width", "20");
 
     HTMLLabelElement labelENOther = document.createElement(StringTypes.label);
     labelENOther.className = "pure-checkbox";
     labelENOther.textContent = "ENGLISH";
-    $(labelENOther).css("display", "inline-block");
-    $(labelENOther).css("marginLeft", "10");
 
 
 
@@ -152,8 +126,6 @@ public class signup {
     // TODO trovare un modo per farlo in modo medo lungo e obriobrioso
     HTMLSelectElement livIT = document.createElement(StringTypes.select);
     livIT.name = "livIT";
-    $(livIT).css("display", "inline-block");
-    $(livIT).css("marginLeft", "15");
     HTMLOptionElement a1 = document.createElement(StringTypes.option);
     a1.text = "A1";
     a1.value = "A1";
@@ -190,8 +162,6 @@ public class signup {
 
     HTMLSelectElement livEN = document.createElement(StringTypes.select);
     livEN.name = "livEN";
-    $(livEN).css("display", "inline-block");
-    $(livEN).css("marginLeft", "17");
     HTMLOptionElement a12 = document.createElement(StringTypes.option);
     a12.text = "A1";
     a12.value = "A1";
@@ -246,7 +216,7 @@ public class signup {
         cbItalianNat.required = true;
         cbEnglishNat.required = true;
       }
-      if (cbItalianOther.checked) { // non funge
+      if (cbItalianOther.checked) {
         livIT.required = true;
       }
       if (cbEnglishOther.checked) {
@@ -278,15 +248,12 @@ public class signup {
     $(divFields).append(divMail);
     $(divFields).append(divPw);
     $(divFields).append(divPw2);
-    $(divFields).css("marginTop", "30px");
 
     HTMLDivElement divItNat = document.createElement(StringTypes.div);
-    $(divItNat).css("marginTop", "10");
     $(divItNat).append(cbItalianNat);
     $(divItNat).append(labelITNat);
 
     HTMLDivElement divEnNat = document.createElement(StringTypes.div);
-    $(divEnNat).css("marginTop", "10");
     $(divEnNat).append(cbEnglishNat);
     $(divEnNat).append(labelENNat);
 
@@ -294,15 +261,12 @@ public class signup {
     $(divLangNat).append(labelLangNat);
     $(divLangNat).append(divItNat);
     $(divLangNat).append(divEnNat);
-    $(divLangNat).css("marginTop", "50px");
 
     HTMLDivElement divItOther = document.createElement(StringTypes.div);
-    $(divItOther).css("marginTop", "20");
     $(divItOther).append(cbItalianOther);
     $(divItOther).append(labelITOther);
     $(divItOther).append(livIT);
     HTMLDivElement divEnOther = document.createElement(StringTypes.div);
-    $(divEnOther).css("marginTop", "10");
     $(divEnOther).append(cbEnglishOther);
     $(divEnOther).append(labelENOther);
     $(divEnOther).append(livEN);
@@ -311,24 +275,11 @@ public class signup {
     $(divLangOther).append(labelLiv);
     $(divLangOther).append(divItOther);
     $(divLangOther).append(divEnOther);
-    $(divLangOther).css("marginTop", "50px");
 
     HTMLDivElement divButton = document.createElement(StringTypes.div);
-    $(signupButton).css("height", "30px");
-    $(signupButton).css("width", "100px");
-    $(signupButton).css("marginLeft", "500px");
-    $(signupButton).css("marginTop", "25px");
-    $(signupButton).css("backgroundColor", "rgba(64, 38, 94, 1)");
-    $(signupButton).css("color", "white");
-    $(signupButton).css("marginTop", "100");
     $(divButton).append(signupButton);
 
     HTMLDivElement divLink = document.createElement(StringTypes.div);
-    $(loginButton).css("backgroundColor", "rgb(255, 255, 255)");
-    $(loginButton).css("sizes", "100px");
-    $(loginButton).css("height", "30px");
-    $(loginButton).css("width", "100px");
-    $(loginButton).css("marginLeft", "500px");
     $(divLink).append(loginButton);
 
 
