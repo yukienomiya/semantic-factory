@@ -1,9 +1,9 @@
 /* Generated from Java with JSweet 2.3.0-SNAPSHOT - http://www.jsweet.org */
-class signup {
+class Signup {
     static main(args) {
         console.log("Creating form");
         let form = document.createElement("form");
-        form.action = signup.SERVLET_URL;
+        form.action = Signup.SERVLET_URL;
         form.method = "POST";
         form.className = "pure-form pure-form-aligned";
         console.log("Form Done");
@@ -160,7 +160,7 @@ class signup {
         })(livEN, cbEnglishOther, livIT, cbItalianOther, cbItalianNat, cbEnglishNat);
         let loginButton = document.createElement("a");
         loginButton.className = "pure-button";
-        loginButton.href = signup.LOGIN_URL;
+        loginButton.href = Signup.LOGIN_URL;
         loginButton.textContent = "LOGIN";
         console.log("creating loginButton label");
         let divMail = document.createElement("div");
@@ -213,7 +213,7 @@ class signup {
         $("body").append(form);
     }
 }
-signup.SERVLET_URL = "signup.jsp";
-signup.LOGIN_URL = "login.html";
-signup["__class"] = "signup";
-signup.main(null);
+Signup.SERVLET_URL = "signup.jsp";
+Signup.LOGIN_URL = "login.html";
+Signup["__class"] = "Signup";
+Signup.main(null);

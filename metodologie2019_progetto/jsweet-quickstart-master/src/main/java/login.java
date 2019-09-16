@@ -10,7 +10,7 @@ import def.dom.HTMLInputElement;
 import def.dom.HTMLLabelElement;
 import jsweet.util.StringTypes;
 
-public class login {
+public class Login {
 
   public static final String SERVLET_URL = "login.jsp";
   public static final String SIGNUP_URL = "signup.html";

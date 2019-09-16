@@ -1,9 +1,9 @@
 /* Generated from Java with JSweet 2.3.0-SNAPSHOT - http://www.jsweet.org */
-class login {
+class Login {
     static main(args) {
         console.log("Creating form");
         let form = document.createElement("form");
-        form.action = login.SERVLET_URL;
+        form.action = Login.SERVLET_URL;
         form.method = "POST";
         form.className = "pure-form pure-form-stacked";
         console.log("Form Done");
@@ -29,7 +29,7 @@ class login {
         loginButton.className = "pure-button pure-button-primary";
         console.log("creating signup anchor element");
         let signupButton = document.createElement("a");
-        signupButton.href = login.SIGNUP_URL;
+        signupButton.href = Login.SIGNUP_URL;
         signupButton.textContent = "SIGN UP";
         signupButton.className = "pure-button";
         console.log("creating signupButton label");
@@ -55,7 +55,7 @@ class login {
         $("body").append(divForm);
     }
 }
-login.SERVLET_URL = "login.jsp";
-login.SIGNUP_URL = "signup.html";
-login["__class"] = "login";
-login.main(null);
+Login.SERVLET_URL = "login.jsp";
+Login.SIGNUP_URL = "signup.html";
+Login["__class"] = "Login";
+Login.main(null);

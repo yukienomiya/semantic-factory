@@ -12,7 +12,7 @@ import def.dom.HTMLOptionElement;
 import def.dom.HTMLSelectElement;
 import jsweet.util.StringTypes;
 
-public class signup {
+public class Signup {
   public static final String SERVLET_URL = "signup.jsp";
   public static final String LOGIN_URL = "login.html";
 
