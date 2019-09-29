@@ -1,216 +1,23 @@
 /* Generated from Java with JSweet 2.3.0-SNAPSHOT - http://www.jsweet.org */
 class Signup {
+    static page() {
+        return it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("container").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlH3.newBuilder().setContent("Registrazione")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("full-height center-align").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("row").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm.newBuilder().setClass("register-form").setMethod("POST").setAction(Signup.SERVLET_URL).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("row").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("input-field col s12").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.newBuilder().setType("email").setClass("validate").setPlaceholder("Email *")))).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("row").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("input-field col s12").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.newBuilder().setType("password").setClass("validate").setPlaceholder("Password *")))).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("row").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("input-field col s12").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.newBuilder().setType("password").setClass("validate").setPlaceholder("Confermare la password *")))).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("row").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlH6.newBuilder().setContent("Indicare le proprie lingue native: *")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("row input-field col s12").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.newBuilder().append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.newBuilder().setName("cbItNat").setType("checkbox")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.newBuilder().setContent("ITALIANO")))).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("row input-field col s12").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.newBuilder().append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.newBuilder().setName("cbEnNat").setType("checkbox")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.newBuilder().setContent("ENGLISH"))))).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("row").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlH6.newBuilder().setContent("Indicare altre lignue parlate e il relativo livello CEFR:")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("input-field col s6").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.newBuilder().append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.newBuilder().setName("cbItOther").setType("checkbox")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.newBuilder().setContent("ITALIANO")))).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("input-field col s2").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("row").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect.newBuilder().setClass("select-dropdown").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.newBuilder().setContent("Livello").setDisabled(true).setSelected(true)).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.newBuilder().setContent("A1")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.newBuilder().setContent("A2")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.newBuilder().setContent("B1")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.newBuilder().setContent("B2")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.newBuilder().setContent("C1")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.newBuilder().setContent("C2"))))).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("row input-field col s12").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.newBuilder().append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.newBuilder().setName("cbEnOther").setType("checkbox")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.newBuilder().setContent("ENGLISH")))).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("input-field col s2").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("row").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect.newBuilder().setClass("select-dropdown").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.newBuilder().setContent("Livello").setDisabled(true).setSelected(true)).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.newBuilder().setContent("A1")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.newBuilder().setContent("A2")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.newBuilder().setContent("B1")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.newBuilder().setContent("B2")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.newBuilder().setContent("C1")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.newBuilder().setContent("C2")))))).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("input-field col s12").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton.newBuilder().setType("submit").setClass("waves-effect waves-light btn-small red lighten-1").setContent("Sign Up"))).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("input-field col s12").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor.newBuilder().setContent("Login").setHref(Signup.LOGIN_URL)))))).build();
+    }
+    /**
+     * <div class="input-field col s12">
+     * <select>
+     * <option value="" disabled selected>Choose your option</option>
+     * <option value="1">Option 1</option>
+     * <option value="2">Option 2</option>
+     * <option value="3">Option 3</option>
+     * </select>
+     * <label>Materialize Select</label>
+     * </div>
+     * @param {Array} args
+     */
     static main(args) {
-        console.log("Creating form");
-        let form = document.createElement("form");
-        form.action = Signup.SERVLET_URL;
-        form.method = "POST";
-        form.className = "pure-form pure-form-aligned";
-        console.log("Form Done");
-        let f = document.createElement("fieldset");
-        console.log("creating form title");
-        let title = document.createElement("label");
-        title.textContent = "REGISTRAZIONE";
-        console.log("creating email input");
-        let email = document.createElement("input");
-        email.className = "pure-input-1";
-        email.name = "email";
-        email.required = true;
-        email.type = "email";
-        email.placeholder = "Email*";
-        console.log("creating password input");
-        let password = document.createElement("input");
-        password.className = "pure-input-1";
-        password.name = "password";
-        password.type = "password";
-        password.placeholder = "Password*";
-        password.required = true;
-        let password2 = document.createElement("input");
-        password2.className = "pure-input-1";
-        password2.name = "password2";
-        password2.type = "password";
-        password2.placeholder = "Ripeti password*";
-        password2.required = true;
-        let labelLangNat = document.createElement("label");
-        labelLangNat.textContent = "Selezionare le proprie lingue native: *";
-        let cbItalianNat = document.createElement("input");
-        cbItalianNat.name = "cbNat";
-        cbItalianNat.value = "Italiano";
-        cbItalianNat.type = "checkbox";
-        let labelITNat = document.createElement("label");
-        labelITNat.className = "pure-checkbox";
-        labelITNat.textContent = "ITALIANO";
-        let cbEnglishNat = document.createElement("input");
-        cbEnglishNat.name = "cbNat";
-        cbEnglishNat.value = "English";
-        cbEnglishNat.type = "checkbox";
-        let labelENNat = document.createElement("label");
-        labelENNat.className = "pure-checkbox";
-        labelENNat.textContent = "ENGLISH";
-        let labelLangOther = document.createElement("label");
-        labelLangOther.textContent = "Selezionare altre lingue conosciute:   (Opzionale)";
-        let labelLiv = document.createElement("label");
-        labelLiv.className = "pure-form-message";
-        labelLiv.textContent = "Indicare anche il relativo livello CEFR di competenza.";
-        let cbItalianOther = document.createElement("input");
-        cbItalianOther.name = "cbItalianOther";
-        cbItalianOther.value = "Italiano";
-        cbItalianOther.type = "checkbox";
-        let labelITOther = document.createElement("label");
-        labelITOther.className = "pure-checkbox";
-        labelITOther.textContent = "ITALIANO";
-        let cbEnglishOther = document.createElement("input");
-        cbEnglishOther.name = "cbEnglishOther";
-        cbEnglishOther.value = "English";
-        cbEnglishOther.type = "checkbox";
-        let labelENOther = document.createElement("label");
-        labelENOther.className = "pure-checkbox";
-        labelENOther.textContent = "ENGLISH";
-        let livIT = document.createElement("select");
-        livIT.name = "livIT";
-        let a1 = document.createElement("option");
-        a1.text = "A1";
-        a1.value = "A1";
-        let a2 = document.createElement("option");
-        a2.text = "A2";
-        a2.value = "A2";
-        let b1 = document.createElement("option");
-        b1.text = "B1";
-        b1.value = "B1";
-        let b2 = document.createElement("option");
-        b2.text = "B2";
-        b2.value = "B2";
-        let c1 = document.createElement("option");
-        c1.text = "C1";
-        c1.value = "C1";
-        let c2 = document.createElement("option");
-        c2.text = "C2";
-        c2.value = "C2";
-        let ph = document.createElement("option");
-        ph.text = "Livello";
-        ph.value = "";
-        ph.disabled = true;
-        ph.selected = true;
-        ph.hidden = true;
-        livIT.add(ph);
-        livIT.add(a1);
-        livIT.add(a2);
-        livIT.add(b1);
-        livIT.add(b2);
-        livIT.add(c1);
-        livIT.add(c2);
-        let livEN = document.createElement("select");
-        livEN.name = "livEN";
-        let a12 = document.createElement("option");
-        a12.text = "A1";
-        a12.value = "A1";
-        let a22 = document.createElement("option");
-        a22.text = "A2";
-        a22.value = "A2";
-        let b12 = document.createElement("option");
-        b12.text = "B1";
-        b12.value = "B1";
-        let b22 = document.createElement("option");
-        b22.text = "B2";
-        b22.value = "B2";
-        let c12 = document.createElement("option");
-        c12.text = "C1";
-        c12.value = "C1";
-        let c22 = document.createElement("option");
-        c22.text = "C2";
-        c22.value = "C2";
-        let ph2 = document.createElement("option");
-        ph2.text = "Livello";
-        ph2.value = "";
-        ph2.disabled = true;
-        ph2.selected = true;
-        ph2.hidden = true;
-        livEN.add(ph2);
-        livEN.add(a12);
-        livEN.add(a22);
-        livEN.add(b12);
-        livEN.add(b22);
-        livEN.add(c12);
-        livEN.add(c22);
-        console.log("creating signup submit element");
-        let signupButton = document.createElement("input");
-        signupButton.className = "pure-button pure-button-primary";
-        signupButton.type = "submit";
-        signupButton.name = "signupButton_button";
-        signupButton.value = "SIGN UP";
-        console.log("creating login anchor element");
-        signupButton.onclick = ((livEN, cbEnglishOther, livIT, cbItalianOther, cbItalianNat, cbEnglishNat) => {
-            return (x) => {
-                cbItalianNat.required = false;
-                cbEnglishNat.required = false;
-                livIT.required = false;
-                livEN.required = false;
-                if (!cbItalianNat.checked && !cbEnglishNat.checked) {
-                    cbItalianNat.required = true;
-                    cbEnglishNat.required = true;
-                }
-                if (cbItalianOther.checked) {
-                    livIT.required = true;
-                }
-                if (cbEnglishOther.checked) {
-                    livEN.required = true;
-                }
-                return null;
-            };
-        })(livEN, cbEnglishOther, livIT, cbItalianOther, cbItalianNat, cbEnglishNat);
-        let loginButton = document.createElement("a");
-        loginButton.className = "pure-button";
-        loginButton.href = Signup.LOGIN_URL;
-        loginButton.textContent = "LOGIN";
-        console.log("creating loginButton label");
-        let divMail = document.createElement("div");
-        divMail.className = "pure-control-group";
-        $(divMail).append(email);
-        let divPw = document.createElement("div");
-        divPw.className = "pure-control-group";
-        $(divPw).append(password);
-        let divPw2 = document.createElement("div");
-        divPw2.className = "pure-control-group";
-        $(divPw2).append(password2);
-        let divFields = document.createElement("div");
-        $(divFields).append(divMail);
-        $(divFields).append(divPw);
-        $(divFields).append(divPw2);
-        let divItNat = document.createElement("div");
-        $(divItNat).append(cbItalianNat);
-        $(divItNat).append(labelITNat);
-        let divEnNat = document.createElement("div");
-        $(divEnNat).append(cbEnglishNat);
-        $(divEnNat).append(labelENNat);
-        let divLangNat = document.createElement("div");
-        $(divLangNat).append(labelLangNat);
-        $(divLangNat).append(divItNat);
-        $(divLangNat).append(divEnNat);
-        let divItOther = document.createElement("div");
-        $(divItOther).append(cbItalianOther);
-        $(divItOther).append(labelITOther);
-        $(divItOther).append(livIT);
-        let divEnOther = document.createElement("div");
-        $(divEnOther).append(cbEnglishOther);
-        $(divEnOther).append(labelENOther);
-        $(divEnOther).append(livEN);
-        let divLangOther = document.createElement("div");
-        $(divLangOther).append(labelLangOther);
-        $(divLangOther).append(labelLiv);
-        $(divLangOther).append(divItOther);
-        $(divLangOther).append(divEnOther);
-        let divButton = document.createElement("div");
-        $(divButton).append(signupButton);
-        let divLink = document.createElement("div");
-        $(divLink).append(loginButton);
-        $(f).append(title);
-        $(f).append(divFields);
-        $(f).append(divLangNat);
-        $(f).append(divLangOther);
-        $(f).append(divButton);
-        $(f).append(divLink);
-        $(form).append(f);
-        $("body").append(form);
+        let page = Signup.page();
+        $("body").append(page);
     }
 }
 Signup.SERVLET_URL = "signup.jsp";

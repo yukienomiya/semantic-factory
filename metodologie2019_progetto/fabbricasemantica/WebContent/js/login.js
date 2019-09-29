@@ -1,58 +1,11 @@
 /* Generated from Java with JSweet 2.3.0-SNAPSHOT - http://www.jsweet.org */
 class Login {
+    static page() {
+        return it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("container").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("full-height center-align valign-wrapper").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("row").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm.newBuilder().setClass("col s12").setMethod("POST").setAction(Login.SERVLET_URL).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("row").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("col s12").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlH1.newBuilder().setContent("Login").setClass("light-weight")))).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("row").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("input-field col s12").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlI.newBuilder().setClass("material-icons prefix").setContent("email")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.newBuilder().setName("email").setType("email").setClass("validate").setPlaceholder("Email"))).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("input-field col s12").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlI.newBuilder().setClass("material-icons prefix").setContent("lock")).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.newBuilder().setName("password").setType("password").setClass("validate").setPlaceholder("Password"))).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("input-field col s12").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton.newBuilder().setType("submit").setClass("waves-effect waves-light btn-small red lighten-1").setContent("Login"))).append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.newBuilder().setClass("input-field col s12").append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor.newBuilder().setContent("Signup").setHref(Login.SIGNUP_URL))))))).build();
+    }
     static main(args) {
-        console.log("Creating form");
-        let form = document.createElement("form");
-        form.action = Login.SERVLET_URL;
-        form.method = "POST";
-        form.className = "pure-form pure-form-stacked";
-        console.log("Form Done");
-        let f = document.createElement("fieldset");
-        console.log("creating mail label");
-        let labelMail = document.createElement("label");
-        labelMail.textContent = "Email:";
-        console.log("creating pw label");
-        let labelPw = document.createElement("label");
-        labelPw.textContent = "Password:";
-        console.log("creating email input");
-        let email = document.createElement("input");
-        email.name = "email";
-        email.type = "email";
-        console.log("creating password input");
-        let password = document.createElement("input");
-        password.name = "password";
-        password.type = "password";
-        let loginButton = document.createElement("input");
-        loginButton.type = "submit";
-        loginButton.name = "loginButton_button";
-        loginButton.value = "LOGIN";
-        loginButton.className = "pure-button pure-button-primary";
-        console.log("creating signup anchor element");
-        let signupButton = document.createElement("a");
-        signupButton.href = Login.SIGNUP_URL;
-        signupButton.textContent = "SIGN UP";
-        signupButton.className = "pure-button";
-        console.log("creating signupButton label");
-        let divMail = document.createElement("div");
-        $(divMail).append(labelMail);
-        $(divMail).append(email);
-        let divPw = document.createElement("div");
-        $(divPw).append(labelPw);
-        $(divPw).append(password);
-        let divButton = document.createElement("div");
-        $(divButton).append(loginButton);
-        let divLink = document.createElement("div");
-        $(divLink).append(signupButton);
-        let divForm = document.createElement("div");
-        console.log("adding to form");
-        $(f).append(divMail);
-        $(f).append(divPw);
-        $(f).append(divButton);
-        $(f).append(divLink);
-        $(form).append(f);
-        $(divForm).append(form);
-        console.log("adding to body");
-        $("body").append(divForm);
+        let page = Login.page();
+        $("body").append(page);
     }
 }
 Login.SERVLET_URL = "login.jsp";

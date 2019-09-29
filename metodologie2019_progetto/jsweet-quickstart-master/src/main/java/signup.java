@@ -1,22 +1,368 @@
-import static def.dom.Globals.console;
-import static def.dom.Globals.document;
 import static def.jquery.Globals.$;
 
-import def.dom.HTMLAnchorElement;
-import def.dom.HTMLDivElement;
-import def.dom.HTMLFieldSetElement;
-import def.dom.HTMLFormElement;
-import def.dom.HTMLInputElement;
-import def.dom.HTMLLabelElement;
-import def.dom.HTMLOptionElement;
-import def.dom.HTMLSelectElement;
-import jsweet.util.StringTypes;
+import def.dom.HTMLElement;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlH3;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlH6;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan;
 
 public class Signup {
   public static final String SERVLET_URL = "signup.jsp";
   public static final String LOGIN_URL = "login.html";
 
+  public static HTMLElement page() {
+    return HtmlDiv.newBuilder()
+      .setClass("container")
+      .append(
+        HtmlH3.newBuilder()
+          .setContent("Registrazione")
+      )
+      .append(
+        HtmlDiv.newBuilder()
+          .setClass("full-height center-align")
+          .append(
+            HtmlDiv.newBuilder()
+              .setClass("row")
+              .append(
+                HtmlForm.newBuilder()
+                  .setClass("register-form")
+                  .setMethod("POST")
+                  .setAction(SERVLET_URL)
+                  .append(
+                    HtmlDiv.newBuilder()
+                      .setClass("row")
+                      .append(
+                        HtmlDiv.newBuilder()
+                          .setClass("input-field col s12")
+                          .append(
+                            HtmlInput.newBuilder()
+                              .setType("email")
+                              .setClass("validate")
+                              .setPlaceholder("Email *")
+                          )
+                      )
+                  )
+                  .append(
+                    HtmlDiv.newBuilder()
+                      .setClass("row")
+                      .append(
+                        HtmlDiv.newBuilder()
+                          .setClass("input-field col s12")
+                          .append(
+                            HtmlInput.newBuilder()
+                              .setType("password")
+                              .setClass("validate")
+                              .setPlaceholder("Password *")
+                          )
+                      )
+                  )
+                  .append(
+                    HtmlDiv.newBuilder()
+                      .setClass("row")
+                      .append(
+                        HtmlDiv.newBuilder()
+                          .setClass("input-field col s12")
+                          .append(
+                            HtmlInput.newBuilder()
+                              .setType("password")
+                              .setClass("validate")
+                              .setPlaceholder("Confermare la password *")
+                          )
+                      )
+                  )
+                  .append(
+                    HtmlDiv.newBuilder()
+                      .setClass("row") // ?
+                      .append(
+                        HtmlH6.newBuilder()
+                          .setContent("Indicare le proprie lingue native: *")
+                      )
+                      .append(
+                        HtmlDiv.newBuilder()
+                          .setClass("row input-field col s12")
+                          .append(
+                            HtmlLabel.newBuilder()
+                              .append(
+                                HtmlInput.newBuilder()
+                                  .setName("cbItNat")
+                                  .setType("checkbox")
+                              )
+                              .append(
+                                HtmlSpan.newBuilder()
+                                  .setContent("ITALIANO")
+                              )
+                          )
+                      )
+                      .append(
+                        HtmlDiv.newBuilder()
+                          .setClass("row input-field col s12")
+                          .append(
+                            HtmlLabel.newBuilder()
+                              .append(
+                                HtmlInput.newBuilder()
+                                  .setName("cbEnNat")
+                                  .setType("checkbox")
+                              )
+                              .append(
+                                HtmlSpan.newBuilder()
+                                  .setContent("ENGLISH")
+                              )
+                          )
+                      )
+                  )
+                  .append(
+                    HtmlDiv.newBuilder()
+                      .setClass("row") // ?
+                      .append(
+                        HtmlH6.newBuilder()
+                          .setContent("Indicare altre lignue parlate e il relativo livello CEFR:")
+                      )
+                      .append(
+                        HtmlDiv.newBuilder()
+                          .setClass("input-field col s6")
+                          .append(
+                            HtmlLabel.newBuilder()
+                              .append(
+                                HtmlInput.newBuilder()
+                                  .setName("cbItOther")
+                                  .setType("checkbox")
+                              )
+                              .append(
+                                HtmlSpan.newBuilder()
+                                  .setContent("ITALIANO")
+                              )
+                          )
+                      )
+                      .append(
+                        HtmlDiv.newBuilder()
+                          .setClass("input-field col s2")
+                          .append(
+                            HtmlDiv.newBuilder()
+                              .setClass("row")
+                              .append(
+                                HtmlSelect.newBuilder()
+                                  .setClass("select-dropdown")
+                                  .append(
+                                    HtmlOption.newBuilder()
+                                      .setContent("Livello")
+                                      .setDisabled(true)
+                                      .setSelected(true)
+                                  )
+                                  .append(
+                                    HtmlOption.newBuilder()
+                                      .setContent("A1")
+                                  )
+                                  .append(
+                                    HtmlOption.newBuilder()
+                                      .setContent("A2")
+                                  )
+                                  .append(
+                                    HtmlOption.newBuilder()
+                                      .setContent("B1")
+                                  )
+                                  .append(
+                                    HtmlOption.newBuilder()
+                                      .setContent("B2")
+                                  )
+                                  .append(
+                                    HtmlOption.newBuilder()
+                                      .setContent("C1")
+                                  )
+                                  .append(
+                                    HtmlOption.newBuilder()
+                                      .setContent("C2")
+                                  )
+                              )
+                          )
+                      )
+                      .append(
+                        HtmlDiv.newBuilder()
+                          .setClass("row input-field col s12")
+                          .append(
+                            HtmlLabel.newBuilder()
+                              .append(
+                                HtmlInput.newBuilder()
+                                  .setName("cbEnOther")
+                                  .setType("checkbox")
+                              )
+                              .append(
+                                HtmlSpan.newBuilder()
+                                  .setContent("ENGLISH")
+                              )
+                          )
+                      )
+                      .append(
+                        HtmlDiv.newBuilder()
+                          .setClass("input-field col s2")
+                          .append(
+                            HtmlDiv.newBuilder()
+                              .setClass("row")
+                              .append(
+                                HtmlSelect.newBuilder()
+                                  .setClass("select-dropdown")
+                                  .append(
+                                    HtmlOption.newBuilder()
+                                      .setContent("Livello")
+                                      .setDisabled(true)
+                                      .setSelected(true)
+                                  )
+                                  .append(
+                                    HtmlOption.newBuilder()
+                                      .setContent("A1")
+                                  )
+                                  .append(
+                                    HtmlOption.newBuilder()
+                                      .setContent("A2")
+                                  )
+                                  .append(
+                                    HtmlOption.newBuilder()
+                                      .setContent("B1")
+                                  )
+                                  .append(
+                                    HtmlOption.newBuilder()
+                                      .setContent("B2")
+                                  )
+                                  .append(
+                                    HtmlOption.newBuilder()
+                                      .setContent("C1")
+                                  )
+                                  .append(
+                                    HtmlOption.newBuilder()
+                                      .setContent("C2")
+                                  )
+                              )
+                          )
+                      )
+                  )
+                  .append(
+                    HtmlDiv.newBuilder()
+                      .setClass("input-field col s12")
+                      .append(
+                        HtmlButton.newBuilder()
+                          .setType("submit")
+                          .setClass("waves-effect waves-light btn-small red lighten-1")
+                          .setContent("Sign Up")
+                      )
+                  )
+                  .append(
+                    HtmlDiv.newBuilder()
+                      .setClass("input-field col s12")
+                      .append(
+                        HtmlAnchor.newBuilder()
+                          .setContent("Login")
+                          .setHref(LOGIN_URL)
+                      )
+                  )
+              )
+          )
+      ).build();
+  }
+
+
+
+  /**<div class="input-field col s12">
+     <select>
+       <option value="" disabled selected>Choose your option</option>
+       <option value="1">Option 1</option>
+       <option value="2">Option 2</option>
+       <option value="3">Option 3</option>
+     </select>
+     <label>Materialize Select</label>
+   </div>*/
+
+
+
+
   public static void main(String[] args) {
+    HTMLElement page = Signup.page();
+    $("body").append(page);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**  public static void main(String[] args) {
     console.log("Creating form");
     HTMLFormElement form = document.createElement(StringTypes.form);
     form.action = SERVLET_URL;
@@ -292,5 +638,5 @@ public class Signup {
 
     $(form).append(f);
     $("body").append(form);
-  }
+  }*/
 }
