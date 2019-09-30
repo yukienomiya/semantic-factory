@@ -52,6 +52,11 @@ public class HtmlInput {
       return this;
     }
 
+    public Builder setRequired(Boolean b) {
+      element.required = b;
+      return this;
+    }
+
     /**
      * TODO(yukienomiya): Add JavaDoc
      */

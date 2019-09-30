@@ -43,6 +43,10 @@ var it;
                             this.element.className = classe;
                             return this;
                         }
+                        setName(name) {
+                            this.element.name = name;
+                            return this;
+                        }
                         append$def_dom_HTMLElement(child) {
                             this.element.appendChild(child);
                             return this;

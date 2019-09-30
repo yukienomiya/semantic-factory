@@ -62,6 +62,10 @@ var it;
                             this.element.placeholder = ph;
                             return this;
                         }
+                        setRequired(b) {
+                            this.element.required = b;
+                            return this;
+                        }
                         append$def_dom_HTMLElement(child) {
                             this.element.appendChild(child);
                             return this;

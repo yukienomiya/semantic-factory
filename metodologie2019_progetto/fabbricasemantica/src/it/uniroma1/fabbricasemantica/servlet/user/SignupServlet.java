@@ -24,13 +24,23 @@ public class SignupServlet extends BaseServlet {
 
     //1. prendere i dati del form (Non trovo un modo piu' carino di farlo, magari lo faccio in seguito)
     String username = request.getParameter("email");
+    System.out.println(username);
     String psw = request.getParameter("password");
+    System.out.println(psw);
     String psw2 = request.getParameter("password2");
+    System.out.println(psw2);
     String[] cbNat = request.getParameterValues("cbNat");
+    for (String s : cbNat) {
+      System.out.println(s);
+    }
     String cbItOther = request.getParameter("cbItalianOther");
+    System.out.println("cbItOther: " + cbItOther);
     String cbEnOther = request.getParameter("cbEnglishOther");
+    System.out.println("cbEnOther: " + cbEnOther);
     String livIt = request.getParameter("livIT");
+    System.out.println("livIt: " + livIt);
     String livEn = request.getParameter("livEN");
+    System.out.println("livEn: " + livEn);
 
 
 

@@ -34,6 +34,11 @@ public class HtmlSelect {
       return this;
     }
 
+    public Builder setName(String name) {
+      element.name = name;
+      return this;
+    }
+
     /**
      * TODO(yukienomiya): Add JavaDoc
      */

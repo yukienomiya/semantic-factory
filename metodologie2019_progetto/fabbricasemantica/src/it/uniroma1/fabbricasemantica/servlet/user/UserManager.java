@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class UserManager {
@@ -22,18 +23,25 @@ public class UserManager {
   public static void signUp(User user, File usersFile) {
     JSONObject userDetails = new JSONObject();
     userDetails.put("username", user.getUsername());
+
     String secret = encode(user.getPassword());
     userDetails.put("secret", secret);
+
+    JSONArray nat = new JSONArray();
     for (Language l : user.getNatLanguages()) {
-      userDetails.put("nativeLanguage", l.toString());
+      nat.put(l.toString());
     }
+    userDetails.put("nativeLanguage", nat);
+
+    JSONArray other = new JSONArray();
     for (Pair<Language, Level> p : user.getOtherLanguages()) {
-      userDetails.put("otherLanguage", p.toString());
+      other.put(p.toString());
     }
+    userDetails.put("otherLanguage", other);
 
     try (FileWriter file = new FileWriter(usersFile)) {
       file.write(userDetails.toString());
-      file.close();
+      file.close(); // non so a cosa serva tbh
     } catch (IOException e) {
       e.printStackTrace();
     }
