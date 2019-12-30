@@ -8,7 +8,7 @@ package it.uniroma1.fabbricasemantica.data;
  * */
 public class StandardDataProvider implements DataProvider<String> {
 
-	@Override 
+	@Override
 	public String getData(Task task) {
 		if (task == StandardTask.TRANSLATION_ANNOTATION) {
 			return "{" +
@@ -18,33 +18,33 @@ public class StandardDataProvider implements DataProvider<String> {
 		}else if (task == StandardTask.WORD_ANNOTATION) {
 			return "{\"description\": \"A motor vehicle with four wheels; usually propelled by an internal combustion engine\"}";
 		}else if (task == StandardTask.DEFINITION_ANNOTATION) {
-			return "{" + 
+			return "{" +
 					"\"word\": \"car\"," +
-					"\"hypernym\": \"motor_veichle\"" +
+					"\"hypernym\": \"motor_vehicle\"" +
 					"}";
 		}else if (task == StandardTask.SENSE_ANNOTATION) {
-			return "{" + 
+			return "{" +
 					"\"word\":\"mouse\"," +
-					"\"description\":\"A swollen bruise caused by a blow to the eye\"," + 
-					"\"senses\": [\"02330245n\", \"03793489n\", \"10335563n\", \"14289387n\"]" + 
+					"\"description\":\"A swollen bruise caused by a blow to the eye... mouse\"," +
+					"\"senses\": [\"02330245n\", \"03793489n\", \"10335563n\", \"14289387n\"]" +
 					"}";
 		}else if (task == StandardTask.TRANSLATION_VALIDATION) {
 			return "{" +
 					"\"word\": \"rock\"," +
-					"\"description\": \"A lump or mass of hard consolidated mineral matter\"," + 
+					"\"description\": \"A lump or mass of hard consolidated mineral matter\"," +
 					"\"translations\": [\"Un grumo o una massa di materia minerale consolidata dura\"," +
 										"\"Materiale costituito dall'aggregato di minerali come quelli che formano la crosta terrestre\"," +
 										"\"Un'associazione non ufficiale di persone o gruppi\"]" +
 					"}";
 		}else if (task == StandardTask.SENSE_VALIDATION) {
-			return "{" + 
+			return "{" +
 					"\"word\": \"bank\"," +
 					"\"example\": \"He cashed a check at the bank\"," +
 					"\"sense\": \"09213565n\"" +
 					"}";
 		}
-		return null; 
+		return null;
 	}
-	
+
 
 }
