@@ -17,7 +17,7 @@ public class TaskTranslationValidationServlet extends BaseServlet {
 	protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//TODO Salvare i dati
 		//TODO reinderizzare a un task a caso.
-		response.sendRedirect("translationValidation.html");
+		response.sendRedirect(TaskManager.randomTask("translationValidation.html"));
 	}
 
 }

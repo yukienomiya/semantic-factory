@@ -17,7 +17,7 @@ public class TaskSenseValidationServlet extends BaseServlet {
 	protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//TODO Salvare i dati
 		//TODO reinderizzare a un task a caso.
-		response.sendRedirect("senseValidation.html");
+		response.sendRedirect(TaskManager.randomTask("senseValidation.html"));
 	}
 
 }

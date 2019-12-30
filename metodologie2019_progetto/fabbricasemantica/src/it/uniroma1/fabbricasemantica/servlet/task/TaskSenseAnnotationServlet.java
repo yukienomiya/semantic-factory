@@ -17,7 +17,7 @@ public class TaskSenseAnnotationServlet extends BaseServlet {
 	protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//TODO Salvare i dati
 		//TODO reinderizzare a un task a caso.
-		response.sendRedirect("senseAnnotation.html");
+		response.sendRedirect(TaskManager.randomTask("senseAnnotation.html"));
 	}
 
 }
