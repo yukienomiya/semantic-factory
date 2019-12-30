@@ -1,15 +1,15 @@
 package it.uniroma1.fabbricasemanticajsweet.dom;
 
 import def.dom.Globals;
-import def.dom.HTMLAnchorElement;
 import def.dom.HTMLElement;
+import def.dom.HTMLUListElement;
 import jsweet.util.StringTypes;
 
 /**
  * TODO(yukienomiya): Add JavaDoc
  */
-public class HtmlAnchor {
-  private HtmlAnchor() {}
+public class HtmlUL {
+  private HtmlUL() {}
 
   public static Builder newBuilder() {
     return new Builder();
@@ -18,12 +18,12 @@ public class HtmlAnchor {
   /**
    * TODO(yukienomiya): Add JavaDoc
    */
-  public static class Builder extends BasicBuilder<HTMLAnchorElement> {
-    HTMLAnchorElement element;
+  public static class Builder extends BasicBuilder<HTMLUListElement> {
+    HTMLUListElement element;
     Boolean built = false;
 
     private Builder() {
-      element = Globals.document.createElement(StringTypes.a);
+      element = Globals.document.createElement(StringTypes.ul);
     }
 
     /**
@@ -37,8 +37,8 @@ public class HtmlAnchor {
     /**
      * TODO(yukienomiya): Add JavaDoc
      */
-    public Builder setContent(String textContent) {
-      element.textContent = textContent;
+    public Builder setId(String id) {
+      element.id = id;
       return this;
     }
 

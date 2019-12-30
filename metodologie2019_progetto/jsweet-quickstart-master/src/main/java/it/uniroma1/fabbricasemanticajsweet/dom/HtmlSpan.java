@@ -29,6 +29,14 @@ public class HtmlSpan {
     /**
      * TODO(yukienomiya): Add JavaDoc
      */
+    public Builder setId(String id) {
+      element.id = id;
+      return this;
+    }
+
+    /**
+     * TODO(yukienomiya): Add JavaDoc
+     */
     public Builder setClass(String classe) {
       element.className = classe;
       return this;

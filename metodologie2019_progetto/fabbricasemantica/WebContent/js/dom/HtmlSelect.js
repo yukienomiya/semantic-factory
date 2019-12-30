@@ -47,6 +47,10 @@ var it;
                             this.element.name = name;
                             return this;
                         }
+                        setId(id) {
+                            this.element.id = id;
+                            return this;
+                        }
                         append$def_dom_HTMLElement(child) {
                             this.element.appendChild(child);
                             return this;

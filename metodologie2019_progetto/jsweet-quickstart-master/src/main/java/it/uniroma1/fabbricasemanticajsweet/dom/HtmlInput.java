@@ -1,8 +1,11 @@
 package it.uniroma1.fabbricasemanticajsweet.dom;
 
+import java.util.function.Function;
+
 import def.dom.Globals;
 import def.dom.HTMLElement;
 import def.dom.HTMLInputElement;
+import def.dom.MouseEvent;
 import jsweet.util.StringTypes;
 
 /**
@@ -54,6 +57,16 @@ public class HtmlInput {
 
     public Builder setRequired(Boolean b) {
       element.required = b;
+      return this;
+    }
+
+    public Builder setId(String id) {
+      element.id = id;
+      return this;
+    }
+
+    public Builder setOnClick(Function<MouseEvent, Object> f) {
+      element.onclick = f;
       return this;
     }
 

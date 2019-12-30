@@ -39,6 +39,11 @@ public class HtmlSelect {
       return this;
     }
 
+    public Builder setId(String id) {
+      element.id = id;
+      return this;
+    }
+
     /**
      * TODO(yukienomiya): Add JavaDoc
      */

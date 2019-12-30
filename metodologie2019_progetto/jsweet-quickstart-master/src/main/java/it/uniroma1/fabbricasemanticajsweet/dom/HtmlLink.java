@@ -2,14 +2,14 @@ package it.uniroma1.fabbricasemanticajsweet.dom;
 
 import def.dom.Globals;
 import def.dom.HTMLElement;
-import def.dom.HTMLLabelElement;
+import def.dom.HTMLLinkElement;
 import jsweet.util.StringTypes;
 
 /**
  * TODO(yukienomiya): Add JavaDoc
  */
-public class HtmlLabel {
-  private HtmlLabel() {}
+public class HtmlLink {
+  private HtmlLink() {}
 
   public static Builder newBuilder() {
     return new Builder();
@@ -18,12 +18,12 @@ public class HtmlLabel {
   /**
    * TODO(yukienomiya): Add JavaDoc
    */
-  public static class Builder extends BasicBuilder<HTMLLabelElement> {
-    HTMLLabelElement element;
+  public static class Builder extends BasicBuilder<HTMLLinkElement> {
+    HTMLLinkElement element;
     Boolean built = false;
 
     private Builder() {
-      element = Globals.document.createElement(StringTypes.label);
+      element = Globals.document.createElement(StringTypes.link);
     }
 
     /**
@@ -49,6 +49,14 @@ public class HtmlLabel {
       element.id = id;
       return this;
     }
+    
+    /**
+     * TODO(yukienomiya): Add JavaDoc
+     */
+    public Builder setHref(String href) {
+      element.href = href;
+      return this;
+    }
 
     /**
      * TODO(yukienomiya): Add JavaDoc
@@ -63,14 +71,6 @@ public class HtmlLabel {
      */
     final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
       element.appendChild(childBuilder.build());
-      return this;
-    }
-
-    /**
-     * TODO(yukienomiya): Add JavaDoc
-     */
-    public Builder setFor(String elementsName) {
-      element.htmlFor = elementsName;
       return this;
     }
   }

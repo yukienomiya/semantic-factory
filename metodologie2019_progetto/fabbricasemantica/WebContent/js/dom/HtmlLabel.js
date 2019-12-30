@@ -52,6 +52,15 @@ var it;
                             this.element.textContent = textContent;
                             return this;
                         }
+                        /**
+                         * TODO(yukienomiya): Add JavaDoc
+                         * @param {string} id
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder}
+                         */
+                        setId(id) {
+                            this.element.id = id;
+                            return this;
+                        }
                         append$def_dom_HTMLElement(child) {
                             this.element.appendChild(child);
                             return this;

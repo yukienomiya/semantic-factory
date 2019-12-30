@@ -1,8 +1,11 @@
 package it.uniroma1.fabbricasemanticajsweet.dom;
 
+import java.util.function.Function;
+
 import def.dom.Globals;
 import def.dom.HTMLButtonElement;
 import def.dom.HTMLElement;
+import def.dom.MouseEvent;
 import jsweet.util.StringTypes;
 
 /**
@@ -42,6 +45,11 @@ public class HtmlButton {
       return this;
     }
 
+    public Builder setOnClick(Function<MouseEvent, Object> f) {
+      element.onclick = f;
+      return this;
+    }
+    
     /**
      * TODO(yukienomiya): Add JavaDoc
      */

@@ -2,14 +2,14 @@ package it.uniroma1.fabbricasemanticajsweet.dom;
 
 import def.dom.Globals;
 import def.dom.HTMLElement;
-import def.dom.HTMLLabelElement;
+import def.dom.HTMLTextAreaElement;
 import jsweet.util.StringTypes;
 
 /**
  * TODO(yukienomiya): Add JavaDoc
  */
-public class HtmlLabel {
-  private HtmlLabel() {}
+public class HtmlTextArea {
+  private HtmlTextArea() {}
 
   public static Builder newBuilder() {
     return new Builder();
@@ -18,12 +18,12 @@ public class HtmlLabel {
   /**
    * TODO(yukienomiya): Add JavaDoc
    */
-  public static class Builder extends BasicBuilder<HTMLLabelElement> {
-    HTMLLabelElement element;
+  public static class Builder extends BasicBuilder<HTMLTextAreaElement> {
+    HTMLTextAreaElement element;
     Boolean built = false;
 
     private Builder() {
-      element = Globals.document.createElement(StringTypes.label);
+      element = Globals.document.createElement(StringTypes.textarea);
     }
 
     /**
@@ -39,6 +39,14 @@ public class HtmlLabel {
      */
     public Builder setContent(String textContent) {
       element.textContent = textContent;
+      return this;
+    }
+
+    /**
+     * TODO(yukienomiya): Add JavaDoc
+     */
+    public Builder setRequired(Boolean b) {
+      element.required = b;
       return this;
     }
 
@@ -63,14 +71,6 @@ public class HtmlLabel {
      */
     final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
       element.appendChild(childBuilder.build());
-      return this;
-    }
-
-    /**
-     * TODO(yukienomiya): Add JavaDoc
-     */
-    public Builder setFor(String elementsName) {
-      element.htmlFor = elementsName;
       return this;
     }
   }

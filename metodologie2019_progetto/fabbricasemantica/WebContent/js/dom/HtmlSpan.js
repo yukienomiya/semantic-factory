@@ -37,6 +37,15 @@ var it;
                         }
                         /**
                          * TODO(yukienomiya): Add JavaDoc
+                         * @param {string} id
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.Builder}
+                         */
+                        setId(id) {
+                            this.element.id = id;
+                            return this;
+                        }
+                        /**
+                         * TODO(yukienomiya): Add JavaDoc
                          * @param {string} classe
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.Builder}
                          */
