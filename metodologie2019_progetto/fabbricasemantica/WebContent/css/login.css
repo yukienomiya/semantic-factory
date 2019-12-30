@@ -5,3 +5,13 @@
 .light-weight {
   font-weight: 200;
 }
+
+.login-btn {
+  margin-bottom: 5px
+  margin-top: 25px
+}
+
+.signup-btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

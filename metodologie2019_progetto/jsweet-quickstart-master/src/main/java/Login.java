@@ -14,7 +14,6 @@ public class Login {
   public static final String SIGNUP_URL = "signup.html";
 
   // Metodo che costruisce la pagina, usando i builder sembra più simile ad HTML
-  // e non diventi scema. (cioè l'ho fatto perchè stavo dicentando scemo io)
   public static HTMLElement page() {
     return HtmlDiv.newBuilder()
       .setClass("container")
@@ -79,7 +78,7 @@ public class Login {
                       )
                       .append(
                         HtmlDiv.newBuilder()
-                          .setClass("input-field col s12")
+                          .setClass("input-field col s12 login-btn")
                           .append(
                             HtmlButton.newBuilder()
                               .setType("submit")
@@ -89,7 +88,7 @@ public class Login {
                       )
                       .append(
                         HtmlDiv.newBuilder()
-                          .setClass("input-field col s12")
+                          .setClass("input-field col s12 signup-btn")
                           .append(
                             HtmlAnchor.newBuilder()
                               .setContent("Signup")
