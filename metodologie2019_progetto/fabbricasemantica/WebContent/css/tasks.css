@@ -1,0 +1,51 @@
+html,
+body,
+.container {
+  height: 100%;
+}
+
+.h80 {
+  height: 75%;
+}
+
+body,
+.bg-color {
+  background-color: #FFF6F4;
+}
+
+.distR {
+  margin-right: 50px;
+}
+
+.distL {
+  margin-left: 50px;
+}
+
+.card-text {
+  text-align: center;
+}
+
+.word-color {
+  color: #6B0000;
+  font-weight: 400;
+}
+
+.sub-btn {
+  background-color: #798897;
+}
+
+.btn-marginR {
+  position: absolute;
+  right: 353px;
+  bottom: 125px;
+}
+
+.btn-marginB {
+  position: absolute;
+  right: 350px;
+  bottom: 160px;
+}
+
+.top-margin {
+  margin-top: 20px;
+}
