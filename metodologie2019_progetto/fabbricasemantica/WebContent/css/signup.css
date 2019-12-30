@@ -1,3 +1,35 @@
 .full-height {
   min-height: 100vh;
 }
+
+.top-marginL {
+  margin-top: 30px;
+}
+
+.top-marginXL {
+  margin-top: 60px;
+}
+
+.top-marginS {
+  margin-top: 15px;
+}
+
+.left-padding {
+  padding-left: 15px;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.top-pos {
+  top: 30px;
+}
+
+.left-margin {
+  margin-left: : 5px
+}
