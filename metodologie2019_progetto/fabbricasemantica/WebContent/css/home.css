@@ -1,0 +1,17 @@
+html,
+body,
+.container {
+  height: 100%;
+}
+
+.logout-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+}
+
+.startbtn-font {
+  font-family: Verdana, sans-serif;
+  font-size: x-large;
+}
