@@ -8,12 +8,13 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlP;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlTextArea;
 
 public class WordAnnotation {
   public static final String REST_URL = "nextExample.jsp";
 
-  public static HTMLElement page(String description) {
+  public static HTMLElement page(String  description) {
     return HtmlDiv.newBuilder()
       .setClass("container")
       .append(
@@ -48,53 +49,72 @@ public class WordAnnotation {
               .setClass("row")
               .append(
                 HtmlDiv.newBuilder()
-                  .setClass("valign-wrapper center-align")
+                  .setClass("center-align")
                   .append(
                     HtmlDiv.newBuilder()
-                      .setClass("col s6 card white distR")
+                      .setClass("fontW marginTop")
                       .append(
-                        HtmlDiv.newBuilder()
-                          .setClass("card-content")
-                          .append(
-                            HtmlLabel.newBuilder()
-                              .setContent(description)
-                          )
+                        HtmlP.newBuilder()
+                          .setContent("Data la seguente definizione, prova ad indovinare la parola:")
                       )
                   )
                   .append(
-                    HtmlForm.newBuilder()
-                      .setClass("col s6")
-                      .setMethod("POST")
-                      .setAction("wordAnnotation.jsp")
+                    HtmlDiv.newBuilder()
+                      .setClass("col s12")
                       .append(
                         HtmlDiv.newBuilder()
-                          .setClass("row")
+                          .setClass("card card-color marginTB")
                           .append(
                             HtmlDiv.newBuilder()
-                              .setClass("input-field col s12")
+                              .setClass("card-content center-align white-text")
                               .append(
-                                HtmlTextArea.newBuilder()
-                                  .setId("textarea1")
-                                  .setClass("materialize-textarea")
-                                  .setRequired(true)
-                              )
-                              .append(
-                                HtmlLabel.newBuilder()
-                                  .setFor("textarea1")
-                                  .setContent("Parola")
+                                HtmlP.newBuilder()
+                                  .setClass("fontP")
+                                  .setContent(description)
                               )
                           )
+                      )
+                      .append(
+                        HtmlForm.newBuilder()
+                          .setClass("col s12 marginT")
+                          .setMethod("POST")
+                          .setAction("wordAnnotation.jsp")
                           .append(
                             HtmlDiv.newBuilder()
-                              .setClass("btn-marginB")
+                              .setClass("row")
                               .append(
                                 HtmlDiv.newBuilder()
-                                  .setClass("right-align")
+                                  .setClass("input-field col s12")
+                                  .append(
+                                    HtmlTextArea.newBuilder()
+                                      .setId("textarea1")
+                                      .setClass("materialize-textarea")
+                                      .setRequired(true)
+                                  )
+                                  .append(
+                                    HtmlLabel.newBuilder()
+                                      .setFor("textarea1")
+                                      .setContent("Parola")
+                                  )
+                              )
+                              .append(
+                                HtmlDiv.newBuilder()
+                                  .setClass("col s12 marginT")
                                   .append(
                                     HtmlButton.newBuilder()
-                                      .setClass("btn sub-btn waves-effect waves-light")
+                                      .setClass("btn waves-effect waves-light sub-btn")
                                       .setType("submit")
                                       .setContent("AVANTI")
+                                  )
+                              )
+                              .append(
+                                HtmlDiv.newBuilder()
+                                  .setClass("col s12")
+                                  .append(
+                                    HtmlAnchor.newBuilder()
+                                      .setClass("waves-effect waves-light btn white text-color skipPAD")
+                                      .setContent("SALTA")
+                                      .setHref("nextTask.jsp")
                                   )
                               )
                           )
@@ -102,23 +122,8 @@ public class WordAnnotation {
                   )
               )
           )
-      )
-      .append(
-        HtmlDiv.newBuilder()
-          .setClass("btn-marginR")
-          .append(
-            HtmlDiv.newBuilder()
-              .setClass("right-align")
-              .append(
-              HtmlAnchor.newBuilder()
-                .setClass("waves-effect btn-flat")
-                .setContent("SALTA")
-                .setHref("nextTask.jsp")
-              )
-          )
       ).build();
   }
-
 
   public static void main(String[] args) {
     $.getJSON(REST_URL, "task=WORD_ANNOTATION", (Object result, String a, JQueryXHR ctx) -> {

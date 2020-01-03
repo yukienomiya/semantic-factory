@@ -51,114 +51,123 @@ public class TranslationValidation {
               .setClass("row")
               .append(
                 HtmlDiv.newBuilder()
-                  .setClass("valign-wrapper center-align")
+                  .setClass("center-align")
                   .append(
                     HtmlDiv.newBuilder()
-                      .setClass("col s6 card white distR")
+                      .setClass("fontW marginTop")
                       .append(
-                        HtmlDiv.newBuilder()
-                          .setClass("card-content")
-                          .append(
-                            HtmlLabel.newBuilder()
-                              .setClass("card-title word-color")
-                              .setContent(word.toUpperCase())
-                          )
-                          .append(
-                            HtmlLabel.newBuilder()
-                              .setContent(description)
-                          )
+                        HtmlP.newBuilder()
+                          .setContent("Data la seguente parola e la sua definizione, selezionare la traduzione corretta:")
                       )
                   )
                   .append(
-                    HtmlForm.newBuilder()
-                      .setClass("col s6")
-                      .setMethod("POST")
-                      .setAction("translationValidation.jsp")
-                      .append(
-                        HtmlP.newBuilder()
-                          .append(
-                            HtmlLabel.newBuilder()
-                              .append(
-                                HtmlInput.newBuilder()
-                                  .setType("checkbox")
-                              )
-                              .append(
-                                HtmlSpan.newBuilder()
-                                  .setContent(translations[0])
-                              )
-                          )
-                      )
-                      .append(
-                        HtmlP.newBuilder()
-                          .append(
-                            HtmlLabel.newBuilder()
-                              .append(
-                                HtmlInput.newBuilder()
-                                  .setType("checkbox")
-                              )
-                              .append(
-                                HtmlSpan.newBuilder()
-                                  .setContent(translations[1])
-                              )
-                          )
-                      )
-                      .append(
-                        HtmlP.newBuilder()
-                          .append(
-                            HtmlLabel.newBuilder()
-                              .append(
-                                HtmlInput.newBuilder()
-                                  .setType("checkbox")
-                              )
-                              .append(
-                                HtmlSpan.newBuilder()
-                                  .setContent(translations[2])
-                              )
-                          )
-                      )
-                      .append(
-                        HtmlP.newBuilder()
-                          .append(
-                            HtmlLabel.newBuilder()
-                              .append(
-                                HtmlInput.newBuilder()
-                                  .setType("checkbox")
-                              )
-                              .append(
-                                HtmlSpan.newBuilder()
-                                  .setContent("<nessuna>")
-                              )
-                          )
-                      )
+                    HtmlDiv.newBuilder()
+                      .setClass("col s12")
                       .append(
                         HtmlDiv.newBuilder()
-                          .setClass("btn-marginB")
+                          .setClass("card card-color marginTB")
                           .append(
                             HtmlDiv.newBuilder()
-                              .setClass("right-align")
+                              .setClass("card-content center-align white-text")
                               .append(
-                                HtmlButton.newBuilder()
-                                  .setClass("btn sub-btn waves-effect waves-light")
-                                  .setType("submit")
-                                  .setContent("AVANTI")
+                                HtmlSpan.newBuilder()
+                                  .setClass("card-title")
+                                  .setContent(word.toUpperCase())
+                              )
+                              .append(
+                                HtmlP.newBuilder()
+                                  .setClass("fontP")
+                                  .setContent(description)
+                              )
+                          )
+                      )
+                      .append(
+                        HtmlForm.newBuilder()
+                          .setClass("col s12 marginT left-align")
+                          .setMethod("POST")
+                          .setAction("translationValidation.jsp")
+                          .append(
+                            HtmlP.newBuilder()
+                              .append(
+                                HtmlLabel.newBuilder()
+                                  .append(
+                                    HtmlInput.newBuilder()
+                                      .setType("checkbox")
+                                  )
+                                  .append(
+                                    HtmlSpan.newBuilder()
+                                      .setContent(translations[0])
+                                  )
+                              )
+                          )
+                          .append(
+                            HtmlP.newBuilder()
+                              .append(
+                                HtmlLabel.newBuilder()
+                                  .append(
+                                    HtmlInput.newBuilder()
+                                      .setType("checkbox")
+                                  )
+                                  .append(
+                                    HtmlSpan.newBuilder()
+                                      .setContent(translations[1])
+                                  )
+                              )
+                          )
+                          .append(
+                            HtmlP.newBuilder()
+                              .append(
+                                HtmlLabel.newBuilder()
+                                  .append(
+                                    HtmlInput.newBuilder()
+                                      .setType("checkbox")
+                                  )
+                                  .append(
+                                    HtmlSpan.newBuilder()
+                                      .setContent(translations[2])
+                                  )
+                              )
+                          )
+                          .append(
+                            HtmlP.newBuilder()
+                              .append(
+                                HtmlLabel.newBuilder()
+                                  .append(
+                                    HtmlInput.newBuilder()
+                                      .setType("checkbox")
+                                  )
+                                  .append(
+                                    HtmlSpan.newBuilder()
+                                      .setContent("<nessuna>")
+                                  )
+                              )
+                          )
+                          .append(
+                            HtmlDiv.newBuilder()
+                              .setClass("center-align")
+                              .append(
+                                HtmlDiv.newBuilder()
+                                  .setClass("col s12 marginT")
+                                  .append(
+                                    HtmlButton.newBuilder()
+                                      .setClass("btn waves-effect waves-light sub-btn")
+                                      .setType("submit")
+                                      .setContent("AVANTI")
+                                  )
+                              )
+                              .append(
+                                HtmlDiv.newBuilder()
+                                  .setClass("col s12")
+                                  .append(
+                                    HtmlAnchor.newBuilder()
+                                      .setClass("waves-effect waves-light btn white text-color skipPAD")
+                                      .setContent("SALTA")
+                                      .setHref("nextTask.jsp")
+                                  )
                               )
                           )
                       )
                   )
-              )
-          )
-      )
-      .append(
-        HtmlDiv.newBuilder()
-          .setClass("btn-marginR")
-          .append(
-            HtmlDiv.newBuilder()
-              .setClass("right-align")
-              .append(
-              HtmlAnchor.newBuilder()
-                .setClass("waves-effect btn-flat")
-                .setContent("SALTA")
-                .setHref("nextTask.jsp")
               )
           )
       ).build();

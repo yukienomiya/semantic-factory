@@ -4,48 +4,57 @@ body,
   height: 100%;
 }
 
-.h80 {
-  height: 75%;
-}
-
 body,
 .bg-color {
-  background-color: #FFF6F4;
+  background-color: #FFFFFF;
 }
 
-.distR {
-  margin-right: 50px;
-}
-
-.distL {
-  margin-left: 50px;
-}
-
-.card-text {
-  text-align: center;
-}
-
-.word-color {
-  color: #6B0000;
-  font-weight: 400;
+.card-color {
+  background-color: #A7AE9C;
 }
 
 .sub-btn {
-  background-color: #798897;
+  background-color: #589A00;
 }
 
-.btn-marginR {
-  position: absolute;
-  right: 353px;
-  bottom: 125px;
+.text-color {
+  color: #926468;
+  font-weight: 600;
 }
 
-.btn-marginB {
-  position: absolute;
-  right: 350px;
-  bottom: 160px;
+.h80 {
+  height: 85%;
 }
 
-.top-margin {
-  margin-top: 20px;
+.skipPAD {
+  padding-left: 19px;
+  padding-right: 19px;
+  margin-top: 10px;
+}
+
+.marginTB {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.marginT {
+  margin-top: 25px;
+}
+
+.marginTop {
+  margin-top: 100px;
+}
+
+.fontW {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.fontP {
+  font-size: 15px;
+}
+
+.fontS {
+  font-size: 15px;
+  font-weight: 600;
 }

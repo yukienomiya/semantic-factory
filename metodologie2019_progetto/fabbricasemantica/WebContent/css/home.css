@@ -4,6 +4,10 @@ body,
   height: 100%;
 }
 
+.h80 {
+  height: 80%;
+}
+
 .logout-btn {
   position: absolute;
   bottom: 0;

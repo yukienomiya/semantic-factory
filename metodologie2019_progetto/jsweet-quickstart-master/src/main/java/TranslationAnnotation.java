@@ -9,6 +9,8 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlP;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlTextArea;
 
 public class TranslationAnnotation {
@@ -50,77 +52,82 @@ public class TranslationAnnotation {
               .setClass("row")
               .append(
                 HtmlDiv.newBuilder()
-                  .setClass("valign-wrapper center-align")
+                  .setClass("center-align")
                   .append(
                     HtmlDiv.newBuilder()
-                      .setClass("col s6 card white distR")
+                      .setClass("fontW marginTop")
                       .append(
-                        HtmlDiv.newBuilder()
-                          .setClass("card-content")
-                          .append(
-                            HtmlLabel.newBuilder()
-                              .setClass("card-title word-color")
-                              .setContent(word.toUpperCase())
-                          )
-                          .append(
-                            HtmlLabel.newBuilder()
-                              .setContent(description)
-                          )
+                        HtmlP.newBuilder()
+                          .setContent("Inserisci la traduzione della parola qui sotto, aiutandoti con la definizione proposta:")
                       )
                   )
                   .append(
-                    HtmlForm.newBuilder()
-                      .setClass("col s6")
-                      .setMethod("POST")
-                      .setAction("translationAnnotation.jsp")
+                    HtmlDiv.newBuilder()
+                      .setClass("col s12")
                       .append(
                         HtmlDiv.newBuilder()
-                          .setClass("row")
+                          .setClass("card card-color marginTB")
                           .append(
                             HtmlDiv.newBuilder()
-                              .setClass("input-field col s12")
+                              .setClass("card-content center-align white-text")
                               .append(
-                                HtmlTextArea.newBuilder()
-                                  .setId("textarea1")
-                                  .setClass("materialize-textarea")
-                                  .setRequired(true)
+                                HtmlSpan.newBuilder()
+                                  .setClass("card-title")
+                                  .setContent(word.toUpperCase())
                               )
                               .append(
-                                HtmlLabel.newBuilder()
-                                  .setFor("textarea1")
-                                  .setContent("Traduzione")
+                                HtmlP.newBuilder()
+                                  .setClass("fontP")
+                                  .setContent(description)
                               )
                           )
+                      )
+                      .append(
+                        HtmlForm.newBuilder()
+                          .setClass("col s12 marginT")
+                          .setMethod("POST")
+                          .setAction("translationAnnotation.jsp")
                           .append(
                             HtmlDiv.newBuilder()
-                              .setClass("btn-marginB")
+                              .setClass("row")
                               .append(
                                 HtmlDiv.newBuilder()
-                                  .setClass("right-align")
+                                  .setClass("input-field col s12")
+                                  .append(
+                                    HtmlTextArea.newBuilder()
+                                      .setId("textarea1")
+                                      .setClass("materialize-textarea")
+                                      .setRequired(true)
+                                  )
+                                  .append(
+                                    HtmlLabel.newBuilder()
+                                      .setFor("textarea1")
+                                      .setContent("Traduzione")
+                                  )
+                              )
+                              .append(
+                                HtmlDiv.newBuilder()
+                                  .setClass("col s12 marginT")
                                   .append(
                                     HtmlButton.newBuilder()
-                                      .setClass("btn sub-btn waves-effect waves-light")
+                                      .setClass("btn waves-effect waves-light sub-btn")
                                       .setType("submit")
                                       .setContent("AVANTI")
+                                  )
+                              )
+                              .append(
+                                HtmlDiv.newBuilder()
+                                  .setClass("col s12")
+                                  .append(
+                                    HtmlAnchor.newBuilder()
+                                      .setClass("waves-effect waves-light btn white text-color skipPAD")
+                                      .setContent("SALTA")
+                                      .setHref("nextTask.jsp")
                                   )
                               )
                           )
                       )
                   )
-              )
-          )
-      )
-      .append(
-        HtmlDiv.newBuilder()
-          .setClass("btn-marginR")
-          .append(
-            HtmlDiv.newBuilder()
-              .setClass("right-align")
-              .append(
-              HtmlAnchor.newBuilder()
-                .setClass("waves-effect btn-flat")
-                .setContent("SALTA")
-                .setHref("nextTask.jsp")
               )
           )
       ).build();
