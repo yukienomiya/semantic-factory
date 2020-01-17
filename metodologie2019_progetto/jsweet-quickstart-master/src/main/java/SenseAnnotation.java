@@ -93,6 +93,8 @@ public class SenseAnnotation {
                                   .append(
                                     HtmlInput.newBuilder()
                                       .setType("checkbox")
+                                      .setName("senses")
+                                      .setValue(senses[0])
                                   )
                                   .append(
                                     HtmlSpan.newBuilder()
@@ -107,6 +109,8 @@ public class SenseAnnotation {
                                   .append(
                                     HtmlInput.newBuilder()
                                       .setType("checkbox")
+                                      .setName("senses")
+                                      .setValue(senses[1])
                                   )
                                   .append(
                                     HtmlSpan.newBuilder()
@@ -121,6 +125,8 @@ public class SenseAnnotation {
                                   .append(
                                     HtmlInput.newBuilder()
                                       .setType("checkbox")
+                                      .setName("senses")
+                                      .setValue(senses[2])
                                   )
                                   .append(
                                     HtmlSpan.newBuilder()
@@ -135,6 +141,8 @@ public class SenseAnnotation {
                                   .append(
                                     HtmlInput.newBuilder()
                                       .setType("checkbox")
+                                      .setName("senses")
+                                      .setValue(senses[3])
                                   )
                                   .append(
                                     HtmlSpan.newBuilder()
@@ -165,6 +173,18 @@ public class SenseAnnotation {
                                       .setHref("nextTask.jsp")
                                   )
                               )
+                          )
+                          .append(
+                            HtmlInput.newBuilder()
+                              .setName("word")
+                              .setHidden(true)
+                              .setValue(word)
+                          )
+                          .append(
+                            HtmlInput.newBuilder()
+                              .setName("description")
+                              .setHidden(true)
+                              .setValue(description)
                           )
                       )
                   )

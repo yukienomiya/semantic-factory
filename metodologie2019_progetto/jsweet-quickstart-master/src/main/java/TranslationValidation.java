@@ -93,6 +93,8 @@ public class TranslationValidation {
                                   .append(
                                     HtmlInput.newBuilder()
                                       .setType("checkbox")
+                                      .setName("translations")
+                                      .setValue(translations[0])
                                   )
                                   .append(
                                     HtmlSpan.newBuilder()
@@ -107,6 +109,8 @@ public class TranslationValidation {
                                   .append(
                                     HtmlInput.newBuilder()
                                       .setType("checkbox")
+                                      .setName("translations")
+                                      .setValue(translations[1])
                                   )
                                   .append(
                                     HtmlSpan.newBuilder()
@@ -121,6 +125,8 @@ public class TranslationValidation {
                                   .append(
                                     HtmlInput.newBuilder()
                                       .setType("checkbox")
+                                      .setName("translations")
+                                      .setValue(translations[2])
                                   )
                                   .append(
                                     HtmlSpan.newBuilder()
@@ -135,6 +141,8 @@ public class TranslationValidation {
                                   .append(
                                     HtmlInput.newBuilder()
                                       .setType("checkbox")
+                                      .setName("translations")
+                                      .setValue("<nessuna>")
                                   )
                                   .append(
                                     HtmlSpan.newBuilder()
@@ -165,6 +173,18 @@ public class TranslationValidation {
                                       .setHref("nextTask.jsp")
                                   )
                               )
+                          )
+                          .append(
+                            HtmlInput.newBuilder()
+                              .setName("word")
+                              .setHidden(true)
+                              .setValue(word)
+                          )
+                          .append(
+                            HtmlInput.newBuilder()
+                              .setName("description")
+                              .setHidden(true)
+                              .setValue(description)
                           )
                       )
                   )

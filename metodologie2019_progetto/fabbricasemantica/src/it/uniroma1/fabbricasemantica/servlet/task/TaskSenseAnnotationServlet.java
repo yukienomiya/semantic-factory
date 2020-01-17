@@ -1,5 +1,6 @@
 package it.uniroma1.fabbricasemantica.servlet.task;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -15,8 +16,13 @@ public class TaskSenseAnnotationServlet extends BaseServlet {
 
 	@Override
 	protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//TODO Salvare i dati
-		//TODO reinderizzare a un task a caso.
+		String filePath = "/WEB-INF/db/tasks/";
+    String description = request.getParameter("description");
+    String word = request.getParameter("word");
+    String[] senses = request.getParameterValues("senses");
+
+    File taskFile = new File(request.getServletContext().getRealPath(filePath + "senseAnnotation.json"));
+    TaskManager.saveSenseAnnotation(taskFile, word, description, senses);
 		response.sendRedirect(TaskManager.randomTask("senseAnnotation.html"));
 	}
 

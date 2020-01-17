@@ -66,6 +66,10 @@ var it;
                             this.element.required = b;
                             return this;
                         }
+                        setHidden(b) {
+                            this.element.hidden = b;
+                            return this;
+                        }
                         setId(id) {
                             this.element.id = id;
                             return this;

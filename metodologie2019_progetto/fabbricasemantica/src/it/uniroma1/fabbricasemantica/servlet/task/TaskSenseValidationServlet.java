@@ -1,5 +1,6 @@
 package it.uniroma1.fabbricasemantica.servlet.task;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -15,8 +16,14 @@ public class TaskSenseValidationServlet extends BaseServlet {
 
 	@Override
 	protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//TODO Salvare i dati
-		//TODO reinderizzare a un task a caso.
+		String filePath = "/WEB-INF/db/tasks/";
+    String example = request.getParameter("example");
+    String word = request.getParameter("word");
+    String sense = request.getParameter("sense");
+    String[] answer = request.getParameterValues("answer");
+
+    File taskFile = new File(request.getServletContext().getRealPath(filePath + "senseValidation.json"));
+    TaskManager.saveSenseValidation(taskFile, word, example, sense, answer);
 		response.sendRedirect(TaskManager.randomTask("senseValidation.html"));
 	}
 

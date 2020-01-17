@@ -8,6 +8,7 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlP;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan;
@@ -95,6 +96,7 @@ public class DefinitionAnnotation {
                                   .setClass("input-field col s12")
                                   .append(
                                     HtmlTextArea.newBuilder()
+                                      .setName("definition")
                                       .setId("textarea1")
                                       .setClass("materialize-textarea")
                                       .setRequired(true)
@@ -124,6 +126,18 @@ public class DefinitionAnnotation {
                                       .setContent("SALTA")
                                       .setHref("nextTask.jsp")
                                   )
+                              )
+                              .append(
+                                HtmlInput.newBuilder()
+                                  .setName("word")
+                                  .setHidden(true)
+                                  .setValue(word)
+                              )
+                              .append(
+                                HtmlInput.newBuilder()
+                                  .setName("hypernym")
+                                  .setHidden(true)
+                                  .setValue(hypernym)
                               )
                           )
                       )

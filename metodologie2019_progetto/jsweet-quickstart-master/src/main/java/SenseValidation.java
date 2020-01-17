@@ -98,6 +98,8 @@ public class SenseValidation {
                                   .append(
                                     HtmlInput.newBuilder()
                                       .setType("radio")
+                                      .setName("answer")
+                                      .setValue("Si")
                                   )
                                   .append(
                                     HtmlSpan.newBuilder()
@@ -112,6 +114,8 @@ public class SenseValidation {
                                   .append(
                                     HtmlInput.newBuilder()
                                       .setType("radio")
+                                      .setName("answer")
+                                      .setValue("No")
                                   )
                                   .append(
                                     HtmlSpan.newBuilder()
@@ -142,6 +146,24 @@ public class SenseValidation {
                                       .setHref("nextTask.jsp")
                                   )
                               )
+                          )
+                          .append(
+                            HtmlInput.newBuilder()
+                              .setName("word")
+                              .setHidden(true)
+                              .setValue(word)
+                          )
+                          .append(
+                            HtmlInput.newBuilder()
+                              .setName("example")
+                              .setHidden(true)
+                              .setValue(example)
+                          )
+                          .append(
+                            HtmlInput.newBuilder()
+                              .setName("sense")
+                              .setHidden(true)
+                              .setValue(sense)
                           )
                       )
                   )

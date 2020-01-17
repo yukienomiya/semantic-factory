@@ -60,6 +60,11 @@ public class HtmlInput {
       return this;
     }
 
+    public Builder setHidden(Boolean b) {
+      element.hidden = b;
+      return this;
+    }
+
     public Builder setId(String id) {
       element.id = id;
       return this;

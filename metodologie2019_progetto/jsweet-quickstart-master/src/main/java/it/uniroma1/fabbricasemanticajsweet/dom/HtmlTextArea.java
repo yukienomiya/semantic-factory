@@ -61,6 +61,14 @@ public class HtmlTextArea {
     /**
      * TODO(yukienomiya): Add JavaDoc
      */
+    public Builder setName(String name) {
+      element.name = name;
+      return this;
+    }
+
+    /**
+     * TODO(yukienomiya): Add JavaDoc
+     */
     final public Builder append(HTMLElement child) {
       element.appendChild(child);
       return this;

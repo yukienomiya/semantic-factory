@@ -41,7 +41,7 @@ public class UserManager {
 
     try (FileWriter file = new FileWriter(usersFile)) {
       file.write(userDetails.toString());
-      file.close(); // non so a cosa serva tbh
+      file.close();
     } catch (IOException e) {
       e.printStackTrace();
     }

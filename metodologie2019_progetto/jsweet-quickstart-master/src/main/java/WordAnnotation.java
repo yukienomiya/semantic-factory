@@ -7,6 +7,7 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlP;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlTextArea;
@@ -87,6 +88,7 @@ public class WordAnnotation {
                                   .setClass("input-field col s12")
                                   .append(
                                     HtmlTextArea.newBuilder()
+                                      .setName("word")
                                       .setId("textarea1")
                                       .setClass("materialize-textarea")
                                       .setRequired(true)
@@ -117,6 +119,12 @@ public class WordAnnotation {
                                       .setHref("nextTask.jsp")
                                   )
                               )
+                          )
+                          .append(
+                            HtmlInput.newBuilder()
+                              .setName("description")
+                              .setHidden(true)
+                              .setValue(description)
                           )
                       )
                   )
