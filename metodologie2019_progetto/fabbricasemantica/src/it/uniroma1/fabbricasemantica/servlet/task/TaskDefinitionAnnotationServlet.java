@@ -12,18 +12,19 @@ import it.uniroma1.fabbricasemantica.servlet.BaseServlet;
 
 @WebServlet(name = "TaskDefinitionAnnotationServlet", urlPatterns = "/definitionAnnotation.jsp")
 public class TaskDefinitionAnnotationServlet extends BaseServlet {
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	@Override
-	protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String filePath = "/WEB-INF/db/tasks/";
-    String definition = request.getParameter("definition");
-    String word = request.getParameter("word");
-    String hypernym = request.getParameter("hypernym");
+  @Override
+  protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String filePath = "/WEB-INF/db/tasks/";
+    String[] word = {request.getParameter("word")};
+    String[] hypernym = {request.getParameter("hypernym")};
+    String[] definition = {request.getParameter("definition")};
+    String[][] data = {word, hypernym, definition};
 
     File taskFile = new File(request.getServletContext().getRealPath(filePath + "definitionAnnotation.json"));
-    TaskManager.saveDefinitionAnnotation(taskFile, word, hypernym, definition);
-		response.sendRedirect(TaskManager.randomTask("definitionAnnotation.html"));
-	}
+    TaskManager.saveTask("definitionAnnotation", taskFile, data);
+    response.sendRedirect(TaskManager.randomTask("definitionAnnotation.html"));
+  }
 
 }

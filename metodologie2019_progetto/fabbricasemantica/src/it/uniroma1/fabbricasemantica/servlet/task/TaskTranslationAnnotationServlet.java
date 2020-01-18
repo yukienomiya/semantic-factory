@@ -12,18 +12,19 @@ import it.uniroma1.fabbricasemantica.servlet.BaseServlet;
 
 @WebServlet(name = "TaskTranslationAnnotationServlet", urlPatterns = "/translationAnnotation.jsp")
 public class TaskTranslationAnnotationServlet extends BaseServlet {
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	@Override
-	protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+  @Override
+  protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     String filePath = "/WEB-INF/db/tasks/";
-    String translation = request.getParameter("translation");
-    String word = request.getParameter("word");
-    String description = request.getParameter("description");
+    String[] word = {request.getParameter("word")};
+    String[] description = {request.getParameter("description")};
+    String[] translation = {request.getParameter("translation")};
+    String[][] data = {word, description, translation};
 
     File taskFile = new File(request.getServletContext().getRealPath(filePath + "translationAnnotation.json"));
-    TaskManager.saveTranslationAnnotation(taskFile, word, description, translation);
-		response.sendRedirect(TaskManager.randomTask("translationAnnotation.html"));
-	}
+    TaskManager.saveTask("translationAnnotation", taskFile, data);
+    response.sendRedirect(TaskManager.randomTask("translationAnnotation.html"));
+  }
 
 }

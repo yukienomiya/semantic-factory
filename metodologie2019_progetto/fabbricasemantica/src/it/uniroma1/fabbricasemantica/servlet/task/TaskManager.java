@@ -35,10 +35,47 @@ public class TaskManager {
 
 
 
-  public static void saveTranslationAnnotation(File taskFile, String word, String description, String translation) throws FileNotFoundException {
+  public static void saveTask(String taskName, File taskFile, String[][] data) throws FileNotFoundException {
     InputStream is = new FileInputStream(taskFile);
     JSONTokener tokener = new JSONTokener(is);
     JSONObject taskJSON = new JSONObject(tokener);
+
+    switch (taskName) {
+    case "translationAnnotation":
+      taskJSON = translationAnnotationJSON(taskJSON, data);
+      break;
+    case "wordAnnotation":
+      taskJSON = wordAnnotationJSON(taskJSON, data);
+      break;
+    case "definitionAnnotation":
+      taskJSON = definitionAnnotationJSON(taskJSON, data);
+      break;
+    case "senseAnnotation":
+      taskJSON = senseAnnotationJSON(taskJSON, data);
+      break;
+    case "translationValidation":
+      taskJSON = translationValidationJSON(taskJSON, data);
+      break;
+    case "senseValidation":
+      taskJSON = senseValidationJSON(taskJSON, data);
+      break;
+    default:
+      break;
+    }
+    try (FileWriter file = new FileWriter(taskFile)) {
+      file.write(taskJSON.toString());
+      file.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+
+
+  public static JSONObject translationAnnotationJSON(JSONObject taskJSON, String[][] data) {
+    String word = data[0][0];
+    String description = data[1][0];
+    String translation = data[2][0];
 
     if (taskJSON.has(word)) {
       // the word is already a key of the jsonObj
@@ -47,83 +84,70 @@ public class TaskManager {
         // the description for that word is already in the jsonObj
         JSONArray transl = defs.getJSONArray(description);
         for (Object i : transl) {
-          if (translation.equals(i.toString())) {
-            // the entered translation (for that word, with that description) was already in the db
-            return;
+          if ((translation.toLowerCase()).equals(i.toString().toLowerCase())) {
+            // the entered translation (for that word, with that description) was already in
+            // the db
+            return taskJSON;
           }
         }
         // add the translation to the JsonArray of te description
         transl.put(translation);
+      } else {
+        // add an entry (key: description, value:JsonArray with the translation) to the
+        // JsonObj of the word
+        defs.put(description, new JSONArray(new String[] { translation }));
       }
-      else {
-        // add an entry (key: description, value:JsonArray with the translation) to the JsonObj of the word
-        defs.put(description, new JSONArray(new String[] {translation}));
-      }
-    }
-    else {
-      // add an entry (key: word, value: JsonObj(key: description, value: JsonArray with the translation)) to the task file
+    } else {
+      // add an entry (key: word, value: JsonObj(key: description, value: JsonArray
+      // with the translation)) to the task file
       JSONArray transl = new JSONArray();
       transl.put(translation);
       JSONObject defs = new JSONObject();
       defs.put(description, transl);
       taskJSON.put(word, defs);
     }
-
-    try (FileWriter file = new FileWriter(taskFile)) {
-      file.write(taskJSON.toString());
-      file.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    return taskJSON;
   }
 
 
 
-  public static void saveWordAnnotation(File taskFile, String description, String word) throws FileNotFoundException {
-    InputStream is = new FileInputStream(taskFile);
-    JSONTokener tokener = new JSONTokener(is);
-    JSONObject taskJSON = new JSONObject(tokener);
+  public static JSONObject wordAnnotationJSON(JSONObject taskJSON, String[][] data) {
+    String description = data[0][0];
+    String word = data[1][0];
 
     if (taskJSON.has(description)) {
       JSONArray words = taskJSON.getJSONArray(description);
       for (Object i : words) {
-        if (word.equals(i.toString())) {
-          return;
+        if ((word.toLowerCase()).equals(i.toString().toLowerCase())) {
+          return taskJSON;
         }
       }
       words.put(word);
+    } else {
+      taskJSON.put(description, new JSONArray(new String[] { word }));
     }
-    else {
-      taskJSON.put(description, new JSONArray(new String[] {word}));
-    }
-    try (FileWriter file = new FileWriter(taskFile)) {
-      file.write(taskJSON.toString());
-      file.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    return taskJSON;
   }
 
 
 
-  public static void saveDefinitionAnnotation(File taskFile, String word, String hypernym, String definition)
-      throws FileNotFoundException {
-    InputStream is = new FileInputStream(taskFile);
-    JSONTokener tokener = new JSONTokener(is);
-    JSONObject taskJSON = new JSONObject(tokener);
+  public static JSONObject definitionAnnotationJSON(JSONObject taskJSON, String[][] data) {
+    String word = data[0][0];
+    String hypernym = data[1][0];
+    String definition = data[2][0];
 
     if (taskJSON.has(word)) {
       JSONObject hyp = taskJSON.getJSONObject(word);
       if (hyp.has(hypernym)) {
-        JSONArray def = hyp.getJSONArray(definition);
+        JSONArray def = hyp.getJSONArray(hypernym);
         for (Object i : def) {
-          if (definition.equals(i.toString())) {
-            return;
+          if ((definition.toLowerCase()).equals(i.toString().toLowerCase())) {
+            return taskJSON;
           }
         }
         def.put(definition);
       } else {
-        hyp.put(hypernym, new JSONArray(new String[] {definition}));
+        hyp.put(hypernym, new JSONArray(new String[] { definition }));
       }
     } else {
       JSONArray def = new JSONArray();
@@ -132,22 +156,15 @@ public class TaskManager {
       hyp.put(hypernym, def);
       taskJSON.put(word, hyp);
     }
-
-    try (FileWriter file = new FileWriter(taskFile)) {
-      file.write(taskJSON.toString());
-      file.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    return taskJSON;
   }
 
 
 
-  public static void saveSenseAnnotation(File taskFile, String word, String description, String[] senses)
-      throws FileNotFoundException {
-    InputStream is = new FileInputStream(taskFile);
-    JSONTokener tokener = new JSONTokener(is);
-    JSONObject taskJSON = new JSONObject(tokener);
+  public static JSONObject senseAnnotationJSON(JSONObject taskJSON, String[][] data) {
+    String word = data[0][0];
+    String description = data[1][0];
+    String[] senses = data[2];
 
     if (taskJSON.has(word)) {
       JSONObject descr = taskJSON.getJSONObject(word);
@@ -168,26 +185,19 @@ public class TaskManager {
       descr.put(description, new JSONArray(Arrays.asList(senses)));
       taskJSON.put(word, descr);
     }
-
-    try (FileWriter file = new FileWriter(taskFile)) {
-      file.write(taskJSON.toString());
-      file.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    return taskJSON;
   }
 
 
 
-  public static void saveTranslationValidation(File taskFile, String word, String description, String[] translations)
-      throws FileNotFoundException {
-    InputStream is = new FileInputStream(taskFile);
-    JSONTokener tokener = new JSONTokener(is);
-    JSONObject taskJSON = new JSONObject(tokener);
-    
+  public static JSONObject translationValidationJSON(JSONObject taskJSON, String[][] data) {
+    String word = data[0][0];
+    String description = data[1][0];
+    String[] translations = data[2];
+
     Set<String> t = new HashSet<String>();
     for (String s : translations) {
-      if(!s.equals("<nessuna>")) {
+      if (!s.equals("<nessuna>")) {
         t.add(s);
       }
     }
@@ -211,22 +221,17 @@ public class TaskManager {
       descr.put(description, new JSONArray(t));
       taskJSON.put(word, descr);
     }
-
-    try (FileWriter file = new FileWriter(taskFile)) {
-      file.write(taskJSON.toString());
-      file.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    return taskJSON;
   }
 
 
 
-  public static void saveSenseValidation(File taskFile, String word, String example, String sense, String[] answer) throws FileNotFoundException {
-    InputStream is = new FileInputStream(taskFile);
-    JSONTokener tokener = new JSONTokener(is);
-    JSONObject taskJSON = new JSONObject(tokener);
-
+  public static JSONObject senseValidationJSON(JSONObject taskJSON, String[][] data) {
+    String word = data[0][0];
+    String example = data[1][0];
+    String sense = data[2][0];
+    String[] answer = data[3];
+    
     if (answer[0].equals("Si")) {
       if (taskJSON.has(word)) {
         JSONObject examples = taskJSON.getJSONObject(word);
@@ -234,7 +239,7 @@ public class TaskManager {
           JSONArray senses = examples.getJSONArray(example);
           for (Object i : senses) {
             if (sense.equals(i.toString())) {
-              return;
+              return taskJSON;
             }
           }
           senses.put(sense);
@@ -248,13 +253,7 @@ public class TaskManager {
         examples.put(example, senses);
         taskJSON.put(word, examples);
       }
-
-      try (FileWriter file = new FileWriter(taskFile)) {
-        file.write(taskJSON.toString());
-        file.close();
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
     }
+    return taskJSON;
   }
 }
