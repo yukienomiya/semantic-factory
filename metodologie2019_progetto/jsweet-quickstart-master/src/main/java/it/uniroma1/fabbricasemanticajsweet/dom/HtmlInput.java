@@ -2,9 +2,11 @@ package it.uniroma1.fabbricasemanticajsweet.dom;
 
 import java.util.function.Function;
 
+import def.dom.Event;
 import def.dom.Globals;
 import def.dom.HTMLElement;
 import def.dom.HTMLInputElement;
+import def.dom.KeyboardEvent;
 import def.dom.MouseEvent;
 import jsweet.util.StringTypes;
 
@@ -72,6 +74,16 @@ public class HtmlInput {
 
     public Builder setOnClick(Function<MouseEvent, Object> f) {
       element.onclick = f;
+      return this;
+    }
+
+    public Builder setOninput(Function<Event, Object> f) {
+      element.oninput = f;
+      return this;
+    }
+
+    public Builder setOnkeyup(Function<KeyboardEvent, Object> f) {
+      element.onkeyup = f;
       return this;
     }
 

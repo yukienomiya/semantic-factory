@@ -78,6 +78,14 @@ var it;
                             this.element.onclick = (f);
                             return this;
                         }
+                        setOninput(f) {
+                            this.element.oninput = (f);
+                            return this;
+                        }
+                        setOnkeyup(f) {
+                            this.element.onkeyup = (f);
+                            return this;
+                        }
                         append$def_dom_HTMLElement(child) {
                             this.element.appendChild(child);
                             return this;

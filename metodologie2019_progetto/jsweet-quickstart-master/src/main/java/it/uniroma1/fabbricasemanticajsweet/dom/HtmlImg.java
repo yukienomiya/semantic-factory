@@ -2,14 +2,14 @@ package it.uniroma1.fabbricasemanticajsweet.dom;
 
 import def.dom.Globals;
 import def.dom.HTMLElement;
-import def.dom.HTMLSelectElement;
+import def.dom.HTMLImageElement;
 import jsweet.util.StringTypes;
 
 /**
  * TODO(yukienomiya): Add JavaDoc
  */
-public class HtmlSelect {
-  private HtmlSelect() {}
+public class HtmlImg {
+  private HtmlImg() {}
 
   public static Builder newBuilder() {
     return new Builder();
@@ -18,34 +18,27 @@ public class HtmlSelect {
   /**
    * TODO(yukienomiya): Add JavaDoc
    */
-  public static class Builder extends BasicBuilder<HTMLSelectElement> {
-    HTMLSelectElement element;
+  public static class Builder extends BasicBuilder<HTMLImageElement> {
+    HTMLImageElement element;
     Boolean built = false;
 
     private Builder() {
-      element = Globals.document.createElement(StringTypes.select);
+      element = Globals.document.createElement(StringTypes.img);
     }
 
     /**
      * TODO(yukienomiya): Add JavaDoc
      */
     public Builder setClass(String classe) {
-      element.className = classe;
-      return this;
+        element.className = classe;
+        return this;
     }
 
-    public Builder setName(String name) {
-      element.name = name;
-      return this;
-    }
-
-    public Builder setId(String id) {
-      element.id = id;
-      return this;
-    }
-
-    public Builder setDisabled(Boolean b) {
-      element.disabled = b;
+    /**
+     * TODO(yukienomiya): Add JavaDoc
+     */
+    public Builder setSrc(String src) {
+      element.src = src;
       return this;
     }
 
