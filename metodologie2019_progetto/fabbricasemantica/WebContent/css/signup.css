@@ -2,34 +2,33 @@
   min-height: 100vh;
 }
 
-.top-marginL {
+.top-margin {
   margin-top: 30px;
 }
 
-.top-marginXL {
-  margin-top: 60px;
+.no-bottom-margin {
+  margin-bottom: 0px !important;
 }
 
-.top-marginS {
-  margin-top: 15px;
+.title {
+  text-align: right;
+  padding-right: 10px;
 }
 
-.left-padding {
-  padding-left: 15px;
+.navb {
+  height: 100px;
+  justify-content: flex-end;
 }
 
-.relative {
-  position: relative;
+.imgS {
+  height: 250px;
 }
 
-.absolute {
-  position: absolute;
+.greenie {
+  background-color: #8A9E43;
 }
 
-.top-pos {
-  top: 30px;
-}
-
-.left-margin {
-  margin-left: : 5px
+.brownie {
+  color: #574240;
+  font-weight: 500;
 }

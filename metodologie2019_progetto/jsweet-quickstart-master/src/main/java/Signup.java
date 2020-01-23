@@ -1,6 +1,9 @@
 import static def.jquery.Globals.$;
-import static def.dom.Globals.document;
 
+import static def.dom.Globals.document;
+import static def.dom.Globals.console;
+
+import def.dom.Event;
 import def.dom.HTMLElement;
 import def.dom.HTMLInputElement;
 import def.dom.HTMLSelectElement;
@@ -11,9 +14,11 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlH3;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlH6;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlImg;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlP;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan;
 
@@ -23,106 +28,286 @@ public class Signup {
 
   public static HTMLElement page() {
     return HtmlDiv.newBuilder()
-      .setClass("container")
       .append(
-        HtmlH3.newBuilder()
-          .setContent("Registrazione")
+        HtmlDiv.newBuilder()
+          .setClass("col s12 red lighten-2 navb valign-wrapper")
+          .append(
+            HtmlImg.newBuilder()
+              .setClass("imgS")
+              .setSrc("images/FS.svg")
+          )
       )
       .append(
         HtmlDiv.newBuilder()
-          .setClass("full-height row center-align")
+          .setClass("container")
           .append(
-            HtmlForm.newBuilder()
-              .setClass("register-form")
-              .setMethod("POST")
-              .setAction(SERVLET_URL)
+            HtmlH3.newBuilder()
+              .setClass("text-align: left")
+              .setContent("Iscriviti!")
+          )
+          .append(
+            HtmlDiv.newBuilder()
+              .setClass("full-height")
               .append(
-                HtmlDiv.newBuilder()
-                  .setClass("row top-margin")
+                HtmlForm.newBuilder()
+                  .setClass("register-form")
+                  .setMethod("POST")
+                  .setAction(SERVLET_URL)
                   .append(
                     HtmlDiv.newBuilder()
-                      .setClass("input-field col s12")
-                      .append(
-                        HtmlInput.newBuilder()
-                          .setType("email")
-                          .setName("email")
-                          .setRequired(true)
-                          .setClass("validate")
-                          .setPlaceholder("Email *")
-                      )
-                  )
-                  .append(
-                    HtmlDiv.newBuilder()
-                      .setClass("input-field col s12")
-                      .append(
-                        HtmlInput.newBuilder()
-                          .setType("password")
-                          .setName("password")
-                          .setRequired(true)
-                          .setClass("validate")
-                          .setPlaceholder("Password *")
-                      )
-                  )
-                  .append(
-                    HtmlDiv.newBuilder()
-                      .setClass("input-field col s12")
-                      .append(
-                        HtmlInput.newBuilder()
-                          .setType("password")
-                          .setName("password2")
-                          .setRequired(true)
-                          .setClass("validate")
-                          .setPlaceholder("Confermare la password *")
-                      )
-                  )
-              )
-              .append(
-                HtmlDiv.newBuilder()
-                  .setClass("row top-marginL")
-                  .append(
-                    HtmlDiv.newBuilder()
-                      .setClass("row relative")
-                      .append(
-                        HtmlH6.newBuilder()
-                          .setClass("left-align")
-                          .setContent("Indicare le proprie lingue native: *")
-                      )
+                      .setClass("row top-margin")
                       .append(
                         HtmlDiv.newBuilder()
-                          .setClass("row relative left-padding top-marginS")
+                          .setClass("row")
                           .append(
                             HtmlDiv.newBuilder()
-                              .setClass("absolute")
+                              .setClass("input-field col s12")
                               .append(
-                                HtmlLabel.newBuilder()
+                                HtmlInput.newBuilder()
+                                  .setType("email")
+                                  .setName("email")
+                                  .setRequired(true)
+                                  .setClass("validate")
+                                  .setPlaceholder("Email *")
+                              )
+                          )
+                      )
+                      .append(
+                        HtmlDiv.newBuilder()
+                          .setClass("row")
+                          .append(
+                            HtmlDiv.newBuilder()
+                              .setClass("input-field col s12")
+                              .append(
+                                HtmlInput.newBuilder()
+                                  .setType("password")
+                                  .setName("password")
+                                  .setId("password")
+                                  .setRequired(true)
+                                  .setPlaceholder("Password *")
+                                  .setOninput(Signup::pswValidity)
+                              )
+                          )
+                      )
+                      .append(
+                        HtmlDiv.newBuilder()
+                          .setClass("row")
+                          .append(
+                            HtmlDiv.newBuilder()
+                              .setClass("input-field col s12")
+                              .append(
+                                HtmlInput.newBuilder()
+                                  .setType("password")
+                                  .setName("password2")
+                                  .setId("password2")
+                                  .setRequired(true)
+                                  .setPlaceholder("Confermare la password *")
+                                  .setOninput(Signup::pswValidity)
+                              )
+                          )
+                      )
+                  )
+                  .append(
+                    HtmlDiv.newBuilder()
+                      .setClass("row top-margin")
+                      .append(
+                        HtmlDiv.newBuilder()
+                          .setClass("row")
+                          .append(
+                            HtmlH6.newBuilder()
+                              .setContent("Indicare le proprie lingue native: *")
+                          )
+                          .append(
+                            HtmlDiv.newBuilder()
+                              .setClass("row no-bottom-margin")
+                              .append(
+                                HtmlDiv.newBuilder()
+                                  .setClass("col s12")
                                   .append(
-                                    HtmlInput.newBuilder()
-                                      .setId("cbItalianNat")
-                                      .setName("cbNat")
-                                      .setValue("Italiano")
-                                      .setType("checkbox")
-                                  )
-                                  .append(
-                                    HtmlSpan.newBuilder()
-                                      .setContent("ITALIANO")
+                                    HtmlP.newBuilder()
+                                      .append(
+                                        HtmlLabel.newBuilder()
+                                          .append(
+                                            HtmlInput.newBuilder()
+                                              .setId("cbItalianNat")
+                                              .setName("cbNat")
+                                              .setValue("Italiano")
+                                              .setType("checkbox")
+                                          )
+                                          .append(
+                                            HtmlSpan.newBuilder()
+                                            .setContent("ITALIANO")
+                                          )
+                                      )
                                   )
                               )
                           )
                           .append(
                             HtmlDiv.newBuilder()
-                              .setClass("absolute top-pos")
+                              .setClass("row no-bottom-margin")
                               .append(
-                                HtmlLabel.newBuilder()
+                                HtmlDiv.newBuilder()
+                                  .setClass("col s12")
                                   .append(
-                                    HtmlInput.newBuilder()
-                                      .setId("cbEnglishNat")
-                                      .setName("cbNat")
-                                      .setValue("English")
-                                      .setType("checkbox")
+                                    HtmlP.newBuilder()
+                                      .append(
+                                        HtmlLabel.newBuilder()
+                                          .append(
+                                            HtmlInput.newBuilder()
+                                              .setId("cbEnglishNat")
+                                              .setName("cbNat")
+                                              .setValue("English")
+                                              .setType("checkbox")
+                                          )
+                                          .append(
+                                            HtmlSpan.newBuilder()
+                                              .setContent("ENGLISH")
+                                          )
+                                      )
                                   )
+                              )
+                          )
+                      )
+                      .append(
+                        HtmlDiv.newBuilder()
+                          .setClass("row")
+                          .append(
+                            HtmlH6.newBuilder()
+                              .setContent("Indicare altre lingue parlate e il relativo livello CEFR:")
+                          )
+                          .append(
+                            HtmlDiv.newBuilder()
+                              .setClass("row valign-wrapper no-bottom-margin")
+                              .append(
+                                HtmlDiv.newBuilder()
+                                  .setClass("col s6")
                                   .append(
-                                    HtmlSpan.newBuilder()
-                                      .setContent("ENGLISH")
+                                    HtmlP.newBuilder()
+                                      .append(
+                                        HtmlLabel.newBuilder()
+                                          .append(
+                                            HtmlInput.newBuilder()
+                                              .setId("cbItalianOther")
+                                              .setName("cbItalianOther")
+                                              .setValue("Italiano")
+                                              .setType("checkbox")
+                                              .setOnClick(Signup::activateSelectIT)
+                                          )
+                                          .append(
+                                            HtmlSpan.newBuilder()
+                                              .setContent("ITALIANO")
+                                          )
+                                      )
+                                  )
+                              )
+                              .append(
+                                HtmlDiv.newBuilder()
+                                  .setClass("input-field col s6")
+                                  .append(
+                                    HtmlSelect.newBuilder()
+                                      .setClass("browser-default")
+                                      .setId("livIT")
+                                      .setName("livIT")
+                                      .setDisabled(true)
+                                      .append(
+                                        HtmlOption.newBuilder()
+                                          .setContent("Livello")
+                                          .setValue("")
+                                          .setDisabled(true)
+                                          .setSelected(true)
+                                      )
+                                      .append(
+                                        HtmlOption.newBuilder()
+                                          .setContent("A1")
+                                      )
+                                      .append(
+                                        HtmlOption.newBuilder()
+                                          .setContent("A2")
+                                      )
+                                      .append(
+                                        HtmlOption.newBuilder()
+                                          .setContent("B1")
+                                      )
+                                      .append(
+                                        HtmlOption.newBuilder()
+                                          .setContent("B2")
+                                      )
+                                      .append(
+                                        HtmlOption.newBuilder()
+                                          .setContent("C1")
+                                      )
+                                      .append(
+                                        HtmlOption.newBuilder()
+                                          .setContent("C2")
+                                      )
+                                  )
+                              )
+                          )
+                          .append(
+                            HtmlDiv.newBuilder()
+                              .setClass("row valign-wrapper no-bottom-margin")
+                              .append(
+                                HtmlDiv.newBuilder()
+                                  .setClass("col s6")
+                                  .append(
+                                    HtmlP.newBuilder()
+                                      .append(
+                                        HtmlLabel.newBuilder()
+                                          .append(
+                                            HtmlInput.newBuilder()
+                                              .setId("cbEnglishOther")
+                                              .setName("cbEnglishOther")
+                                              .setValue("English")
+                                              .setType("checkbox")
+                                              .setOnClick(Signup::activateSelectEN)
+                                          )
+                                          .append(
+                                            HtmlSpan.newBuilder()
+                                            .setContent("ENGLISH")
+                                          )
+                                      )
+                                  )
+                              )
+                              .append(
+                                HtmlDiv.newBuilder()
+                                  .setClass("input-field col s6")
+                                  .append(
+                                    HtmlSelect.newBuilder()
+                                      .setClass("browser-default")
+                                      .setId("livEN")
+                                      .setName("livEN")
+                                      .setDisabled(true)
+                                      .append(
+                                        HtmlOption.newBuilder()
+                                          .setContent("Livello")
+                                          .setValue("")
+                                          .setDisabled(true)
+                                          .setSelected(true)
+                                      )
+                                      .append(
+                                        HtmlOption.newBuilder()
+                                        .setContent("A1")
+                                      )
+                                      .append(
+                                        HtmlOption.newBuilder()
+                                          .setContent("A2")
+                                      )
+                                      .append(
+                                        HtmlOption.newBuilder()
+                                          .setContent("B1")
+                                      )
+                                      .append(
+                                        HtmlOption.newBuilder()
+                                          .setContent("B2")
+                                      )
+                                      .append(
+                                        HtmlOption.newBuilder()
+                                          .setContent("C1")
+                                      )
+                                      .append(
+                                        HtmlOption.newBuilder()
+                                          .setContent("C2")
+                                      )
                                   )
                               )
                           )
@@ -130,154 +315,35 @@ public class Signup {
                   )
                   .append(
                     HtmlDiv.newBuilder()
-                      .setClass("row top-marginXL")
-                      .append(
-                        HtmlH6.newBuilder()
-                          .setClass("left-align")
-                          .setContent("Indicare altre lingue parlate e il relativo livello CEFR:")
-                      )
+                      .setClass("row center-align top-margin")
                       .append(
                         HtmlDiv.newBuilder()
-                          .setClass("input-field col s6 left-margin")
+                          .setClass("row no-bottom-margin")
                           .append(
-                            HtmlLabel.newBuilder()
+                            HtmlDiv.newBuilder()
+                              .setClass("input-field col s12 no-bottom-margin")
                               .append(
-                                HtmlInput.newBuilder()
-                                  .setId("cbItalianOther")
-                                  .setName("cbItalianOther")
-                                  .setValue("Italiano")
-                                  .setType("checkbox")
-                              )
-                              .append(
-                                HtmlSpan.newBuilder()
-                                  .setContent("ITALIANO")
+                                HtmlButton.newBuilder()
+                                  .setType("submit")
+                                  .setClass("waves-effect waves-light btn-small greenie")
+                                  .setContent("AVANTI")
+                                  .setOnClick(Signup::fieldsCheck)
                               )
                           )
                       )
                       .append(
                         HtmlDiv.newBuilder()
-                          .setClass("row input-field col s2")
+                          .setClass("row no-bottom-margin")
                           .append(
-                            HtmlSelect.newBuilder()
-                              .setClass("browser-default")
-                              .setId("livIT")
-                              .setName("livIT")
+                            HtmlDiv.newBuilder()
+                              .setClass("input-field col s12")
                               .append(
-                                HtmlOption.newBuilder()
-                                  .setContent("Livello")
-                                  .setDisabled(true)
-                                  .setSelected(true)
-                              )
-                              .append(
-                                HtmlOption.newBuilder()
-                                  .setContent("A1")
-                              )
-                              .append(
-                                HtmlOption.newBuilder()
-                                  .setContent("A2")
-                              )
-                              .append(
-                                HtmlOption.newBuilder()
-                                  .setContent("B1")
-                              )
-                              .append(
-                                HtmlOption.newBuilder()
-                                  .setContent("B2")
-                              )
-                              .append(
-                                HtmlOption.newBuilder()
-                                  .setContent("C1")
-                              )
-                              .append(
-                                HtmlOption.newBuilder()
-                                  .setContent("C2")
+                                HtmlAnchor.newBuilder()
+                                  .setClass("brownie")
+                                  .setContent("Login")
+                                  .setHref(LOGIN_URL)
                               )
                           )
-                      )
-                      .append(
-                        HtmlDiv.newBuilder()
-                          .setClass("input-field col s6 left-margin")
-                          .append(
-                            HtmlLabel.newBuilder()
-                              .append(
-                                HtmlInput.newBuilder()
-                                  .setId("cbEnglishOther")
-                                  .setName("cbEnglishOther")
-                                  .setValue("English")
-                                  .setType("checkbox")
-                              )
-                              .append(
-                                HtmlSpan.newBuilder()
-                                  .setContent("ENGLISH")
-                              )
-                          )
-                      )
-                      .append(
-                        HtmlDiv.newBuilder()
-                          .setClass("row input-field col s2")
-                          .append(
-                            HtmlSelect.newBuilder()
-                              .setClass("browser-default")
-                              .setId("livEN")
-                              .setName("livEN")
-                              .append(
-                                HtmlOption.newBuilder()
-                                  .setContent("Livello")
-                                  .setDisabled(true)
-                                  .setSelected(true)
-                              )
-                              .append(
-                                HtmlOption.newBuilder()
-                                  .setContent("A1")
-                              )
-                              .append(
-                                HtmlOption.newBuilder()
-                                  .setContent("A2")
-                              )
-                              .append(
-                                HtmlOption.newBuilder()
-                                  .setContent("B1")
-                              )
-                              .append(
-                                HtmlOption.newBuilder()
-                                  .setContent("B2")
-                              )
-                              .append(
-                                HtmlOption.newBuilder()
-                                  .setContent("C1")
-                              )
-                              .append(
-                                HtmlOption.newBuilder()
-                                  .setContent("C2")
-                              )
-                          )
-                      )
-                  )
-              )
-
-
-
-              .append(
-                HtmlDiv.newBuilder()
-                  .setClass("row")
-                  .append(
-                    HtmlDiv.newBuilder()
-                      .setClass("input-field col s12")
-                      .append(
-                        HtmlButton.newBuilder()
-                          .setType("submit")
-                          .setClass("waves-effect waves-light btn-small red lighten-1")
-                          .setContent("Sign Up")
-                          .setOnClick(Signup::fieldsCheck)
-                      )
-                  )
-                  .append(
-                    HtmlDiv.newBuilder()
-                      .setClass("input-field col s12")
-                      .append(
-                        HtmlAnchor.newBuilder()
-                          .setContent("Login")
-                          .setHref(LOGIN_URL)
                       )
                   )
               )
@@ -289,33 +355,71 @@ public class Signup {
   public static Object fieldsCheck(MouseEvent m) {
     HTMLInputElement cbItalianNat = (HTMLInputElement) document.getElementById("cbItalianNat");
     HTMLInputElement cbEnglishNat = (HTMLInputElement) document.getElementById("cbEnglishNat");
-    HTMLInputElement cbItalianOther = (HTMLInputElement) document.getElementById("cbItalianOther");
-    HTMLInputElement cbEnglishOther = (HTMLInputElement) document.getElementById("cbEnglishOther");
-    HTMLSelectElement livIT = (HTMLSelectElement) document.getElementById("livIT");
-    HTMLSelectElement livEN = (HTMLSelectElement) document.getElementById("livEN");
 
     cbItalianNat.required = false;
     cbEnglishNat.required = false;
-    livIT.required = false;
-    livEN.required = false;
-
-    //System.out.println(cbItalianOther.checked);
-    //System.out.println(cbEnglishOther.checked);
 
     if (!cbItalianNat.checked && !cbEnglishNat.checked) {
       cbItalianNat.required = true;
       cbEnglishNat.required = true;
     }
-    /**if (cbItalianOther.checked) { // non funge
+    return null;
+  }
+
+  public static Object activateSelectIT(MouseEvent m) {
+    HTMLInputElement cbItalianOther = (HTMLInputElement) document.getElementById("cbItalianOther");
+    HTMLSelectElement livIT = (HTMLSelectElement) document.getElementById("livIT");
+    livIT.disabled = true;
+    livIT.required = false;
+
+    if (cbItalianOther.checked) {
+      livIT.disabled = false;
       livIT.required = true;
+    } else {
+      livIT.disabled = true;
+      livIT.required = false;
     }
-    if (cbEnglishOther.checked) { // non funge
+    return null;
+  }
+
+  public static Object activateSelectEN(MouseEvent m) {
+    HTMLInputElement cbEnglishOther = (HTMLInputElement) document.getElementById("cbEnglishOther");
+    HTMLSelectElement livEN = (HTMLSelectElement) document.getElementById("livEN");
+    livEN.required = false;
+
+    if (cbEnglishOther.checked) {
+      livEN.disabled = false;
       livEN.required = true;
-    }*/
+    } else {
+      livEN.disabled = true;
+      livEN.required = false;
+    }
+    return null;
+  }
+
+  public static Object pswValidity(Event e) {
+    /* HTMLInputElement password = (HTMLInputElement) document.getElementById("password");
+    HTMLInputElement password2 = (HTMLInputElement) document.getElementById("password2"); */
+    Object pswValue = $("#password").val();
+    Object psw2Value = $("#password2").val();
+    console.log(pswValue);
+    console.log(psw2Value);
+    console.log(pswValue.equals(psw2Value));
+
+    if (!pswValue.equals(psw2Value)) {
+      $("#password2").removeClass("valid").addClass("invalid");
+      console.log("invalido");
+    } else {
+      $("#password2").removeClass("invalid").addClass("valid");
+      console.log("VALIDO");
+    }
     return null;
   }
 
   public static void main(String[] args) {
+    document.addEventListener("DOMContentLoaded", (x) -> {
+      document.dispatchEvent(new Event("PageLoaded"));
+    });
     HTMLElement page = Signup.page();
     $("body").append(page);
   }
