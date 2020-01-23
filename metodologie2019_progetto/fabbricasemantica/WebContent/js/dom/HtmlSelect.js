@@ -51,6 +51,10 @@ var it;
                             this.element.id = id;
                             return this;
                         }
+                        setDisabled(b) {
+                            this.element.disabled = b;
+                            return this;
+                        }
                         append$def_dom_HTMLElement(child) {
                             this.element.appendChild(child);
                             return this;
