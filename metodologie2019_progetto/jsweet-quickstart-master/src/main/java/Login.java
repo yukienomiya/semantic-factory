@@ -7,6 +7,7 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlH1;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlI;
+import it.uniroma1.fabbricasemanticajsweet.dom.HtmlImg;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput;
 
 public class Login {
@@ -16,83 +17,96 @@ public class Login {
   // Metodo che costruisce la pagina, usando i builder sembra più simile ad HTML
   public static HTMLElement page() {
     return HtmlDiv.newBuilder()
-      .setClass("container")
       .append(
         HtmlDiv.newBuilder()
-          .setClass("full-height center-align valign-wrapper")
+          .setClass("col s12 red lighten-2 navb valign-wrapper")
+          .append(
+            HtmlImg.newBuilder()
+              .setClass("imgS")
+              .setSrc("images/FS.svg")
+          )
+      )
+      .append(
+        HtmlDiv.newBuilder()
+          .setClass("container")
           .append(
             HtmlDiv.newBuilder()
-              .setClass("row")
+              .setClass("full-height center-align valign-wrapper")
               .append(
-                HtmlForm.newBuilder()
-                  .setClass("col s12")
-                  .setMethod("POST")
-                  .setAction(SERVLET_URL)
+                HtmlDiv.newBuilder()
+                  .setClass("row")
                   .append(
-                    HtmlDiv.newBuilder()
-                      .setClass("row")
+                    HtmlForm.newBuilder()
+                      .setClass("col s12")
+                      .setMethod("POST")
+                      .setAction(SERVLET_URL)
                       .append(
                         HtmlDiv.newBuilder()
-                          .setClass("col s12")
+                          .setClass("row")
                           .append(
-                            HtmlH1.newBuilder()
-                              .setContent("Login")
-                              .setClass("light-weight")
-                          )
-                      )
-                  )
-                  .append(
-                    HtmlDiv.newBuilder()
-                      .setClass("row")
-                      .append(
-                        HtmlDiv.newBuilder()
-                          .setClass("input-field col s12")
-                          .append(
-                            HtmlI.newBuilder()
-                              .setClass("material-icons prefix")
-                              .setContent("email")
-                          )
-                          .append(
-                            HtmlInput.newBuilder()
-                              .setName("email")
-                              .setType("email")
-                              .setClass("validate")
-                              .setPlaceholder("Email")
+                            HtmlDiv.newBuilder()
+                              .setClass("col s12")
+                              .append(
+                                HtmlH1.newBuilder()
+                                  .setContent("Login")
+                                  .setClass("light-weight")
+                              )
                           )
                       )
                       .append(
                         HtmlDiv.newBuilder()
-                          .setClass("input-field col s12")
+                          .setClass("row")
                           .append(
-                            HtmlI.newBuilder()
-                              .setClass("material-icons prefix")
-                              .setContent("lock")
+                            HtmlDiv.newBuilder()
+                              .setClass("input-field col s12")
+                              .append(
+                                HtmlI.newBuilder()
+                                  .setClass("material-icons prefix")
+                                  .setContent("email")
+                              )
+                              .append(
+                                HtmlInput.newBuilder()
+                                  .setName("email")
+                                  .setType("email")
+                                  .setClass("validate")
+                                  .setPlaceholder("Email")
+                              )
                           )
                           .append(
-                            HtmlInput.newBuilder()
-                              .setName("password")
-                              .setType("password")
-                              .setClass("validate")
-                              .setPlaceholder("Password")
+                            HtmlDiv.newBuilder()
+                              .setClass("input-field col s12")
+                              .append(
+                                HtmlI.newBuilder()
+                                  .setClass("material-icons prefix")
+                                  .setContent("lock")
+                              )
+                              .append(
+                                HtmlInput.newBuilder()
+                                  .setName("password")
+                                  .setType("password")
+                                  .setClass("validate")
+                                  .setPlaceholder("Password")
+                              )
                           )
-                      )
-                      .append(
-                        HtmlDiv.newBuilder()
-                          .setClass("input-field col s12 login-btn")
                           .append(
-                            HtmlButton.newBuilder()
-                              .setType("submit")
-                              .setClass("waves-effect waves-light btn-small red lighten-1")
-                              .setContent("Login")
+                            HtmlDiv.newBuilder()
+                              .setClass("input-field col s12 login-btn")
+                              .append(
+                                HtmlButton.newBuilder()
+                                  .setType("submit")
+                                  .setClass("waves-effect waves-light btn-small greenie")
+                                  .setContent("Login")
+                              )
                           )
-                      )
-                      .append(
-                        HtmlDiv.newBuilder()
-                          .setClass("input-field col s12 signup-btn")
                           .append(
-                            HtmlAnchor.newBuilder()
-                              .setContent("Signup")
-                              .setHref(SIGNUP_URL)
+                            HtmlDiv.newBuilder()
+                              .setClass("input-field col s12 signup-btn")
+                              .append(
+                                HtmlAnchor.newBuilder()
+                                  .setClass("brownie")
+                                  .setContent("Signup")
+                                  .setHref(SIGNUP_URL)
+                              )
                           )
                       )
                   )
@@ -101,6 +115,7 @@ public class Login {
       ).build();
   }
   public static void main(String[] args) {
+    $.ajax("/FabbricaSemantica/logout.jsp");
     HTMLElement page = Login.page();
     // TODO(yukienomiya): Use vanilla js instead of jquery.
     $("body").append(page);

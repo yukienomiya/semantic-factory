@@ -15,3 +15,20 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+.navb {
+  height: 70px;
+}
+
+.imgS {
+  height: 200px;
+}
+
+.greenie {
+  background-color: #8A9E43;
+}
+
+.brownie {
+  color: #574240;
+  font-weight: 500;
+}

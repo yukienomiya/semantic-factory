@@ -1,7 +1,6 @@
 import static def.jquery.Globals.$;
 
 import static def.dom.Globals.document;
-import static def.dom.Globals.console;
 
 import def.dom.Event;
 import def.dom.HTMLElement;
@@ -351,7 +350,6 @@ public class Signup {
       ).build();
   }
 
-  //TODO da migliorare
   public static Object fieldsCheck(MouseEvent m) {
     HTMLInputElement cbItalianNat = (HTMLInputElement) document.getElementById("cbItalianNat");
     HTMLInputElement cbEnglishNat = (HTMLInputElement) document.getElementById("cbEnglishNat");
@@ -398,25 +396,19 @@ public class Signup {
   }
 
   public static Object pswValidity(Event e) {
-    /* HTMLInputElement password = (HTMLInputElement) document.getElementById("password");
-    HTMLInputElement password2 = (HTMLInputElement) document.getElementById("password2"); */
     Object pswValue = $("#password").val();
     Object psw2Value = $("#password2").val();
-    console.log(pswValue);
-    console.log(psw2Value);
-    console.log(pswValue.equals(psw2Value));
 
     if (!pswValue.equals(psw2Value)) {
       $("#password2").removeClass("valid").addClass("invalid");
-      console.log("invalido");
     } else {
       $("#password2").removeClass("invalid").addClass("valid");
-      console.log("VALIDO");
     }
     return null;
   }
 
   public static void main(String[] args) {
+    $.ajax("/FabbricaSemantica/logout.jsp");
     document.addEventListener("DOMContentLoaded", (x) -> {
       document.dispatchEvent(new Event("PageLoaded"));
     });

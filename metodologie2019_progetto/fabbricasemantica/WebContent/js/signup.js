@@ -46,14 +46,6 @@ class Signup {
     static pswValidity(e) {
         let pswValue = $("#password").val();
         let psw2Value = $("#password2").val();
-        console.log(pswValue);
-        console.log(psw2Value);
-        console.log(/* equals */ ((o1, o2) => { if (o1 && o1.equals) {
-            return o1.equals(o2);
-        }
-        else {
-            return o1 === o2;
-        } })(pswValue, psw2Value));
         if (!((o1, o2) => { if (o1 && o1.equals) {
             return o1.equals(o2);
         }
@@ -61,15 +53,14 @@ class Signup {
             return o1 === o2;
         } })(pswValue, psw2Value)) {
             $("#password2").removeClass("valid").addClass("invalid");
-            console.log("invalido");
         }
         else {
             $("#password2").removeClass("invalid").addClass("valid");
-            console.log("VALIDO");
         }
         return null;
     }
     static main(args) {
+        $.ajax("/FabbricaSemantica/logout.jsp");
         document.addEventListener("DOMContentLoaded", (x) => {
             document.dispatchEvent(new Event("PageLoaded"));
         });
