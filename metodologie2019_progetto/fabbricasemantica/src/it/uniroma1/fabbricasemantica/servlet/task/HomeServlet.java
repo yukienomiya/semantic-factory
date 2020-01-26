@@ -19,7 +19,7 @@ public class HomeServlet extends BaseServlet {
 		HttpSession session = request.getSession();
 		boolean isLoggedIn = session.getAttribute("username") != null;
 		if (isLoggedIn) {
-			response.sendRedirect(TaskManager.randomTaskSKIP());
+			response.sendRedirect(TaskManager.randomTask());
 		}
 		else {
 			response.sendRedirect("login.html");

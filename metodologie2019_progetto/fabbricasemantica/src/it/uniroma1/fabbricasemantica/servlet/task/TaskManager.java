@@ -18,6 +18,7 @@ import org.json.JSONTokener;
 public class TaskManager {
   private static final String[] tasks = {"translationAnnotation.html", "wordAnnotation.html", "definitionAnnotation.html", "senseAnnotation.html", "translationValidation.html", "senseValidation.html", "myAnnotation.html"};
 
+  // could be removed
   public static String randomTask(String currentTask) {
     while(true) {
       Random r = new Random();
@@ -28,7 +29,7 @@ public class TaskManager {
     }
   }
 
-  public static String randomTaskSKIP() {
+  public static String randomTask() {
     Random r = new Random();
     return tasks[r.nextInt(tasks.length)];
   }

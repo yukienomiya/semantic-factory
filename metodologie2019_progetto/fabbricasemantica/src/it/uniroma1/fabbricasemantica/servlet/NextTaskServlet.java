@@ -16,6 +16,6 @@ public class NextTaskServlet extends BaseServlet {
 
 	@Override
 	protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect(TaskManager.randomTaskSKIP());
+		response.sendRedirect(TaskManager.randomTask());
 	}
 }
