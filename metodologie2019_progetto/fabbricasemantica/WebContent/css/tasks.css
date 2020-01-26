@@ -13,13 +13,25 @@ body,
   background-color: #A7AE9C;
 }
 
-.sub-btn {
-  background-color: #589A00;
+.greenie {
+  background-color: #8A9E43;
 }
 
-.text-color {
-  color: #926468;
+.brownie {
+  color: #574240;
   font-weight: 600;
+}
+
+.navMargin {
+  margin-bottom: 0px;
+}
+
+.navb {
+  height: 70px;
+}
+
+.imgS {
+  height: 200px;
 }
 
 .h80 {

@@ -1,7 +1,5 @@
-html,
-body,
-.container {
-  height: 100%;
+.full-height {
+  min-height: 100vh;
 }
 
 .h80 {
@@ -18,4 +16,21 @@ body,
 .startbtn-font {
   font-family: Verdana, sans-serif;
   font-size: x-large;
+}
+
+.navb {
+  height: 70px;
+}
+
+.imgS {
+  height: 200px;
+}
+
+.greenie {
+  background-color: #8A9E43;
+}
+
+.brownie {
+  color: #574240;
+  font-weight: 500;
 }
