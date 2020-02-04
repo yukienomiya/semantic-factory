@@ -1,5 +1,6 @@
 package it.uniroma1.fabbricasemantica.servlet.task;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -11,13 +12,17 @@ import it.uniroma1.fabbricasemantica.servlet.BaseServlet;
 
 @WebServlet(name = "TaskMyAnnotationServlet", urlPatterns = "/myAnnotation.jsp")
 public class TaskMyAnnotationServlet extends BaseServlet {
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	@Override
-	protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//TODO Salvare i dati
-		//TODO reinderizzare a un task a caso.
-		response.sendRedirect(TaskManager.randomTask("myAnnotation.html"));
-	}
+  @Override
+  protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String filePath = "/WEB-INF/db/tasks/";
+    String[] hypernym = { request.getParameter("hypernym") };
+    String[] words = request.getParameterValues("words");
+    String[][] data = { hypernym, words };
 
+    File taskFile = new File(request.getServletContext().getRealPath(filePath + "myAnnotation.json"));
+    TaskManager.saveTask("myAnnotation", taskFile, data);
+    response.sendRedirect(TaskManager.randomTask("myAnnotation.html"));
+  }
 }

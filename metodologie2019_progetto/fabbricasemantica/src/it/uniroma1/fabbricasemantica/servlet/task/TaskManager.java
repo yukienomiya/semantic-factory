@@ -60,6 +60,9 @@ public class TaskManager {
     case "senseValidation":
       taskJSON = senseValidationJSON(taskJSON, data);
       break;
+    case "myAnnotation":
+      taskJSON = myAnnotationJSON(taskJSON, data);
+      break;
     default:
       break;
     }
@@ -254,6 +257,28 @@ public class TaskManager {
         examples.put(example, senses);
         taskJSON.put(word, examples);
       }
+    }
+    return taskJSON;
+  }
+
+
+
+  public static JSONObject myAnnotationJSON(JSONObject taskJSON, String[][] data) {
+    String hypernym = data[0][0];
+    String[] words = data[1];
+
+    if (taskJSON.has(hypernym)) {
+      JSONArray w = taskJSON.getJSONArray(hypernym);
+      Set<String> wordsSet = new HashSet<String>();
+      for (Object o : w) {
+        wordsSet.add(o.toString());
+      }
+      for (String s : words) {
+        wordsSet.add(s);
+      }
+      taskJSON.put(hypernym, new JSONArray(wordsSet));
+    } else {
+      taskJSON.put(hypernym, new JSONArray(Arrays.asList(words)));
     }
     return taskJSON;
   }
