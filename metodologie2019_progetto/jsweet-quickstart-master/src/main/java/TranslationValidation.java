@@ -160,11 +160,11 @@ public class TranslationValidation {
                                           .setType("checkbox")
                                           .setName("translations")
                                           .setId("translations3")
-                                          .setValue("<nessuna>")
+                                          .setValue(translations[3])
                                       )
                                       .append(
                                         HtmlSpan.newBuilder()
-                                          .setContent("<nessuna>")
+                                          .setContent(translations[3])
                                       )
                                   )
                               )

@@ -22,7 +22,7 @@ public class MyAnnotation {
   public static final String LOGIN_CHECK = "isLoggedIn.jsp";
 
 
-  public static HTMLElement page(String hypernym, String[] words) {
+  public static HTMLElement page(String word, String example, String[] words) {
     return HtmlDiv.newBuilder()
       .append(
         HtmlDiv.newBuilder()
@@ -70,7 +70,7 @@ public class MyAnnotation {
                           .setClass("fontW marginTop")
                           .append(
                             HtmlP.newBuilder()
-                              .setContent("Data la seguente parola e la frase di esempio, selezionare il significato corretto:")
+                              .setContent("Data la seguente parola e la frase di esempio, indovina il relativo sinonimo:")
                           )
                       )
                       .append(
@@ -85,7 +85,12 @@ public class MyAnnotation {
                                   .append(
                                     HtmlSpan.newBuilder()
                                       .setClass("card-title")
-                                      .setContent(hypernym.toUpperCase())
+                                      .setContent(word.toUpperCase())
+                                  )
+                                  .append(
+                                    HtmlP.newBuilder()
+                                      .setClass("fontP")
+                                      .setContent("\"" + example + "\"")
                                   )
                               )
                           )
@@ -189,9 +194,9 @@ public class MyAnnotation {
                               )
                               .append(
                                 HtmlInput.newBuilder()
-                                  .setName("hypernym")
+                                  .setName("word")
                                   .setHidden(true)
-                                  .setValue(hypernym)
+                                  .setValue(word)
                               )
                           )
                       )
@@ -232,9 +237,10 @@ public class MyAnnotation {
     });
     $.getJSON(REST_URL, "task=MY_ANNOTATION", (Object result, String a, JQueryXHR ctx) -> {
       JSON json = (JSON) result;
-      String hypernym = json.$get("hypernym");
+      String word = json.$get("word");
+      String example = json.$get("example");
       String[] words = json.$get("words");
-      HTMLElement page = MyAnnotation.page(hypernym, words);
+      HTMLElement page = MyAnnotation.page(word, example, words);
       $("body").append(page);
       return null;
     });

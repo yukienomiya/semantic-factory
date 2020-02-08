@@ -264,11 +264,12 @@ public class TaskManager {
 
 
   public static JSONObject myAnnotationJSON(JSONObject taskJSON, String[][] data) {
-    String hypernym = data[0][0];
-    String[] words = data[1];
+    String word = data[0][0];
+    String example = data[1][0];
+    String[] words = data[2];
 
-    if (taskJSON.has(hypernym)) {
-      JSONArray w = taskJSON.getJSONArray(hypernym);
+    if (taskJSON.has(word)) {
+      JSONArray w = taskJSON.getJSONArray(word);
       Set<String> wordsSet = new HashSet<String>();
       for (Object o : w) {
         wordsSet.add(o.toString());
@@ -276,9 +277,9 @@ public class TaskManager {
       for (String s : words) {
         wordsSet.add(s);
       }
-      taskJSON.put(hypernym, new JSONArray(wordsSet));
+      taskJSON.put(word, new JSONArray(wordsSet));
     } else {
-      taskJSON.put(hypernym, new JSONArray(Arrays.asList(words)));
+      taskJSON.put(word, new JSONArray(Arrays.asList(words)));
     }
     return taskJSON;
   }

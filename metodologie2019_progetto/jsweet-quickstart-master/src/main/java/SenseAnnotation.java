@@ -90,7 +90,7 @@ public class SenseAnnotation {
                                   .append(
                                     HtmlP.newBuilder()
                                       .setClass("fontP")
-                                      .setContent(description)
+                                      .setContent("\"" + description + "\"")
                                   )
                               )
                           )

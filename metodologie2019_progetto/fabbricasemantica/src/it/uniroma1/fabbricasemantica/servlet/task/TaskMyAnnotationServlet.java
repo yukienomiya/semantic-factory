@@ -17,9 +17,10 @@ public class TaskMyAnnotationServlet extends BaseServlet {
   @Override
   protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     String filePath = "/WEB-INF/db/tasks/";
-    String[] hypernym = { request.getParameter("hypernym") };
+    String[] word = { request.getParameter("word") };
+    String[] example = { request.getParameter("example") };
     String[] words = request.getParameterValues("words");
-    String[][] data = { hypernym, words };
+    String[][] data = { word, example, words };
 
     File taskFile = new File(request.getServletContext().getRealPath(filePath + "myAnnotation.json"));
     TaskManager.saveTask("myAnnotation", taskFile, data);
