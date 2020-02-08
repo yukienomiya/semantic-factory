@@ -8,5 +8,4 @@ public enum StandardTask implements Task {
   TRANSLATION_VALIDATION,
   SENSE_VALIDATION,
   MY_ANNOTATION
-
 }

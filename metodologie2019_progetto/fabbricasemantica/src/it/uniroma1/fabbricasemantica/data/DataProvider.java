@@ -1,5 +1,7 @@
 package it.uniroma1.fabbricasemantica.data;
 
+import java.io.IOException;
+
 /**
  * Questa interfaccia rappresenta il metodo usato per ottenere i dati necessari ai vari task per funzionare.
  * Il tipo di ritorno <T> e' generico in quanto a seconda del target della nostra applicazione possiamo restituire formati diversi
@@ -12,7 +14,8 @@ public interface DataProvider<T> {
 	
 	/**
 	 * Restituisce un oggetto di tipo <T> per il Task passato in input.
+	 * @throws IOException 
 	 * */
-	T getData(Task task);
+	T getData(Task task) throws IOException;
 
 }
