@@ -26,7 +26,7 @@ public class MyAnnotation {
     return HtmlDiv.newBuilder()
       .append(
         HtmlDiv.newBuilder()
-          .setClass("row red lighten-2 navb valign-wrapper navMargin")
+          .setClass("row lightBrown navb valign-wrapper")
           .append(
             HtmlDiv.newBuilder()
               .setClass("col s6")
@@ -78,7 +78,7 @@ public class MyAnnotation {
                           .setClass("col s12")
                           .append(
                             HtmlDiv.newBuilder()
-                              .setClass("card card-color marginTB")
+                              .setClass("card pink-card marginTB")
                               .append(
                                 HtmlDiv.newBuilder()
                                   .setClass("card-content center-align white-text")
@@ -197,6 +197,12 @@ public class MyAnnotation {
                                   .setName("word")
                                   .setHidden(true)
                                   .setValue(word)
+                              )
+                              .append(
+                                HtmlInput.newBuilder()
+                                  .setName("example")
+                                  .setHidden(true)
+                                  .setValue(example)
                               )
                           )
                       )

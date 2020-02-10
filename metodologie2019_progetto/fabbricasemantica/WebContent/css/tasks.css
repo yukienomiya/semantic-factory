@@ -9,12 +9,36 @@ body,
   background-color: #FFFFFF;
 }
 
-.card-color {
-  background-color: #A7AE9C;
+.pink-card {
+  background-color: #D99294 !important;
+}
+
+.green-card {
+  background-color: #8FC1A9 !important;
+}
+
+.blue-card {
+  background-color: #9DBAD5 !important;
+}
+
+.purple-card {
+  background-color: #CAA7BD !important;
+}
+
+.grey-card {
+  background-color: #A7AE9C !important;
+}
+
+.yellow-card {
+  background-color: #C1C349 !important;
+}
+
+.orange-card {
+  background-color: #E2A955 !important;
 }
 
 .greenie {
-  background-color: #8A9E43;
+  background-color: #8A9E43 !important;
 }
 
 .brownie {
@@ -22,12 +46,14 @@ body,
   font-weight: 600;
 }
 
-.navMargin {
-  margin-bottom: 0px;
-}
-
 .navb {
   height: 70px;
+  margin-bottom: 0px;
+
+}
+
+.lightBrown {
+  background-color: #B1875F !important;
 }
 
 .imgS {

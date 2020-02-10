@@ -1,4 +1,7 @@
 import static def.jquery.Globals.$;
+
+import java.util.ArrayList;
+
 import static def.dom.Globals.window;
 import static def.dom.Globals.document;
 
@@ -26,7 +29,7 @@ public class SenseAnnotation {
     return HtmlDiv.newBuilder()
       .append(
         HtmlDiv.newBuilder()
-          .setClass("row red lighten-2 navb valign-wrapper navMargin")
+          .setClass("row lightBrown navb valign-wrapper")
           .append(
             HtmlDiv.newBuilder()
               .setClass("col s6")
@@ -78,7 +81,7 @@ public class SenseAnnotation {
                           .setClass("col s12")
                           .append(
                             HtmlDiv.newBuilder()
-                              .setClass("card card-color marginTB")
+                              .setClass("card orange-card marginTB")
                               .append(
                                 HtmlDiv.newBuilder()
                                   .setClass("card-content center-align white-text")
@@ -212,23 +215,20 @@ public class SenseAnnotation {
       ).build();
   }
 
-  // TODO da migliorare
   public static Object fieldsCheck(MouseEvent m) {
-    HTMLInputElement cbSense0 = (HTMLInputElement) document.getElementById("sense0");
-    HTMLInputElement cbSense1 = (HTMLInputElement) document.getElementById("sense1");
-    HTMLInputElement cbSense2 = (HTMLInputElement) document.getElementById("sense2");
-    HTMLInputElement cbSense3 = (HTMLInputElement) document.getElementById("sense3");
-
-    cbSense0.required = false;
-    cbSense1.required = false;
-    cbSense2.required = false;
-    cbSense3.required = false;
-
-    if (!cbSense0.checked && !cbSense1.checked && !cbSense2.checked && !cbSense3.checked) {
-      cbSense0.required = true;
-      cbSense1.required = true;
-      cbSense2.required = true;
-      cbSense3.required = true;
+    ArrayList<HTMLInputElement> cbSenses = new ArrayList<>();
+    for (int i = 0; i < 4; i ++) {
+      cbSenses.add((HTMLInputElement) document.getElementById("sense" + i));
+      cbSenses.get(i).required = true;
+    }
+    for (HTMLInputElement cbSense : cbSenses) {
+      if (!cbSense.checked) {
+        continue;
+      }
+      for (HTMLInputElement cbS : cbSenses) {
+        cbS.required = false;
+      }
+      break;
     }
     return null;
   }

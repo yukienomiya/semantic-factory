@@ -1,5 +1,5 @@
 .full-height {
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);
 }
 
 .light-weight {
@@ -18,6 +18,7 @@
 
 .navb {
   height: 70px;
+  margin-bottom: 0px;
 }
 
 .imgS {

@@ -1,9 +1,5 @@
 .full-height {
-  min-height: 100vh;
-}
-
-.h80 {
-  height: 80%;
+  min-height: calc(100vh - 70px);
 }
 
 .logout-btn {
@@ -20,6 +16,11 @@
 
 .navb {
   height: 70px;
+  margin-bottom: 0px;
+}
+
+.lightBrown {
+  background-color: #B1875F;
 }
 
 .imgS {

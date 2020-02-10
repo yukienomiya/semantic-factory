@@ -1,4 +1,7 @@
 import static def.jquery.Globals.$;
+
+import java.util.ArrayList;
+
 import static def.dom.Globals.window;
 import static def.dom.Globals.document;
 
@@ -27,7 +30,7 @@ public class TranslationValidation {
     return HtmlDiv.newBuilder()
       .append(
         HtmlDiv.newBuilder()
-          .setClass("row red lighten-2 navb valign-wrapper navMargin")
+          .setClass("row lightBrown navb valign-wrapper")
           .append(
             HtmlDiv.newBuilder()
               .setClass("col s6")
@@ -79,7 +82,7 @@ public class TranslationValidation {
                           .setClass("col s12")
                           .append(
                             HtmlDiv.newBuilder()
-                              .setClass("card card-color marginTB")
+                              .setClass("card grey-card marginTB")
                               .append(
                                 HtmlDiv.newBuilder()
                                   .setClass("card-content center-align white-text")
@@ -214,18 +217,19 @@ public class TranslationValidation {
   }
 
   public static Object fieldsCheck(MouseEvent m) {
-    HTMLInputElement cbTrans0 = (HTMLInputElement) document.getElementById("translations0");
-    HTMLInputElement cbTrans1 = (HTMLInputElement) document.getElementById("translations1");
-    HTMLInputElement cbTrans2 = (HTMLInputElement) document.getElementById("translations2");
-    HTMLInputElement cbTrans3 = (HTMLInputElement) document.getElementById("translations3");
-
-    cbTrans0.required = false;
-    cbTrans1.required = false;
-    cbTrans2.required = false;
-    cbTrans3.required = false;
-
-    if (!cbTrans0.checked && !cbTrans1.checked && !cbTrans2.checked && !cbTrans3.checked) {
-      cbTrans3.required = true;
+    ArrayList<HTMLInputElement> cbTranslations = new ArrayList<>();
+    for (int i = 0; i < 4; i++) {
+      cbTranslations.add((HTMLInputElement) document.getElementById("translations" + i));
+      cbTranslations.get(i).required = true;
+    }
+    for (HTMLInputElement cbTransl : cbTranslations) {
+      if (!cbTransl.checked) {
+        continue;
+      }
+      for (HTMLInputElement cbT : cbTranslations) {
+        cbT.required = false;
+      }
+      break;
     }
     return null;
   }

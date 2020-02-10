@@ -19,7 +19,7 @@ public class Home {
     return HtmlDiv.newBuilder()
       .append(
         HtmlDiv.newBuilder()
-          .setClass("row red lighten-2 navb valign-wrapper")
+          .setClass("row navb lightBrown valign-wrapper")
           .append(
             HtmlDiv.newBuilder()
               .setClass("col s6")

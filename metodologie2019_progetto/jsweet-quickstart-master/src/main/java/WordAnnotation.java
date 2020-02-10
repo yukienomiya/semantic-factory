@@ -22,7 +22,7 @@ public class WordAnnotation {
     return HtmlDiv.newBuilder()
       .append(
         HtmlDiv.newBuilder()
-          .setClass("row red lighten-2 navb valign-wrapper navMargin")
+          .setClass("row lightBrown navb valign-wrapper")
           .append(
             HtmlDiv.newBuilder()
               .setClass("col s6")
@@ -66,7 +66,7 @@ public class WordAnnotation {
                           .setClass("fontW marginTop")
                           .append(
                             HtmlP.newBuilder()
-                              .setContent("Data la seguente definizione, prova ad indovinare la parola:")
+                              .setContent("Data la seguente definizione, prova ad indovinare la parola descritta in italiano:")
                           )
                       )
                       .append(
@@ -74,7 +74,7 @@ public class WordAnnotation {
                           .setClass("col s12")
                           .append(
                             HtmlDiv.newBuilder()
-                              .setClass("card card-color marginTB")
+                              .setClass("card green-card marginTB")
                               .append(
                                 HtmlDiv.newBuilder()
                                   .setClass("card-content center-align white-text")

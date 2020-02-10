@@ -23,7 +23,7 @@ public class SenseValidation {
     return HtmlDiv.newBuilder()
       .append(
         HtmlDiv.newBuilder()
-          .setClass("row red lighten-2 navb valign-wrapper navMargin")
+          .setClass("row lightBrown navb valign-wrapper")
           .append(
             HtmlDiv.newBuilder()
               .setClass("col s6")
@@ -75,7 +75,7 @@ public class SenseValidation {
                           .setClass("col s12")
                           .append(
                             HtmlDiv.newBuilder()
-                              .setClass("card card-color marginTB")
+                              .setClass("card purple-card marginTB")
                               .append(
                                 HtmlDiv.newBuilder()
                                   .setClass("card-content center-align white-text")

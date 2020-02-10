@@ -23,7 +23,7 @@ public class Login {
           .append(
             HtmlImg.newBuilder()
               .setClass("imgS")
-              .setSrc("images/FS.svg")
+              .setSrc("images/FSp.svg")
           )
       )
       .append(
