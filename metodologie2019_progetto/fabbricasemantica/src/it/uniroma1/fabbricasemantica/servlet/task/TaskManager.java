@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
@@ -15,14 +16,16 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-public class TaskManager {
-  private static final String[] tasks = {"translationAnnotation.html", "wordAnnotation.html", "definitionAnnotation.html", "senseAnnotation.html", "translationValidation.html", "senseValidation.html", "myAnnotation.html"};
+import it.uniroma1.fabbricasemantica.data.StandardTask;
 
-  // could be removed
+public class TaskManager {
+
+  private static final ArrayList<StandardTask> tasks = new ArrayList<>(Arrays.asList(StandardTask.values()));
+
   public static String randomTask(String currentTask) {
     while(true) {
       Random r = new Random();
-      String randomTask = tasks[r.nextInt(tasks.length)];
+      String randomTask = tasks.get(r.nextInt(tasks.size())).getName() + ".html";
       if (!randomTask.equals(currentTask)) {
         return randomTask;
       }
@@ -31,7 +34,7 @@ public class TaskManager {
 
   public static String randomTask() {
     Random r = new Random();
-    return tasks[r.nextInt(tasks.length)];
+    return tasks.get(r.nextInt(tasks.size())).getName() + ".html";
   }
 
 
@@ -41,30 +44,30 @@ public class TaskManager {
     JSONTokener tokener = new JSONTokener(is);
     JSONObject taskJSON = new JSONObject(tokener);
 
-    switch (taskName) {
-    case "translationAnnotation":
-      taskJSON = translationAnnotationJSON(taskJSON, data);
-      break;
-    case "wordAnnotation":
-      taskJSON = wordAnnotationJSON(taskJSON, data);
-      break;
-    case "definitionAnnotation":
-      taskJSON = definitionAnnotationJSON(taskJSON, data);
-      break;
-    case "senseAnnotation":
-      taskJSON = senseAnnotationJSON(taskJSON, data);
-      break;
-    case "translationValidation":
-      taskJSON = translationValidationJSON(taskJSON, data);
-      break;
-    case "senseValidation":
-      taskJSON = senseValidationJSON(taskJSON, data);
-      break;
-    case "myAnnotation":
-      taskJSON = myAnnotationJSON(taskJSON, data);
-      break;
-    default:
-      break;
+    switch (StandardTask.valueOf(taskName)) {
+      case TRANSLATION_ANNOTATION:
+        taskJSON = translationAnnotationJSON(taskJSON, data);
+        break;
+      case WORD_ANNOTATION:
+        taskJSON = wordAnnotationJSON(taskJSON, data);
+        break;
+      case DEFINITION_ANNOTATION:
+        taskJSON = definitionAnnotationJSON(taskJSON, data);
+        break;
+      case SENSE_ANNOTATION:
+        taskJSON = senseAnnotationJSON(taskJSON, data);
+        break;
+      case TRANSLATION_VALIDATION:
+        taskJSON = translationValidationJSON(taskJSON, data);
+        break;
+      case SENSE_VALIDATION:
+        taskJSON = senseValidationJSON(taskJSON, data);
+        break;
+      case MY_ANNOTATION:
+        taskJSON = myAnnotationJSON(taskJSON, data);
+        break;
+      default:
+        break;
     }
     try (FileWriter file = new FileWriter(taskFile)) {
       file.write(taskJSON.toString());
@@ -265,7 +268,6 @@ public class TaskManager {
 
   public static JSONObject myAnnotationJSON(JSONObject taskJSON, String[][] data) {
     String word = data[0][0];
-    String example = data[1][0];
     String[] words = data[2];
 
     if (taskJSON.has(word)) {

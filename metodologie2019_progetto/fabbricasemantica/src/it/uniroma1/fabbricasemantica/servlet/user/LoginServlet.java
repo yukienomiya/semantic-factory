@@ -18,6 +18,9 @@ import it.uniroma1.fabbricasemantica.servlet.BaseServlet;
 @WebServlet(name="LoginServlet", urlPatterns="/login.jsp")
 public class LoginServlet extends BaseServlet {
   private static final long serialVersionUID = 8484501789787L;
+  private static final String filePath = "/WEB-INF/db/users/";
+  private static final String homeUrl = "home.html";
+  private static final String loginUrl = "login.html";
 
   @Override
   protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,20 +29,19 @@ public class LoginServlet extends BaseServlet {
 
     ServletContext context = getServletContext();
     try {
-      InputStream is = context.getResourceAsStream("/WEB-INF/db/users/" + username + ".json");
+      InputStream is = context.getResourceAsStream(filePath + username + ".json");
       String obj = IOUtils.toString(is);
       JSONObject jsonProps = new JSONObject(obj);
 
       if (UserManager.verify(jsonProps, password)) {
-        // queste tre righe potrebbero essere anche un metodo unico
         HttpSession session = request.getSession();
         session.setAttribute("username", username);
-        response.sendRedirect("home.html");
+        response.sendRedirect(homeUrl);
       } else {
-        response.sendRedirect("login.html");
+        response.sendRedirect(loginUrl);
       }
     } catch (NullPointerException e) {
-      response.sendRedirect("login.html");
+      response.sendRedirect(loginUrl);
     }
   }
 }

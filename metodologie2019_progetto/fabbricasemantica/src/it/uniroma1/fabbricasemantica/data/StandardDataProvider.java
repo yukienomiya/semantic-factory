@@ -8,50 +8,49 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
 
-/**
- * Questa classe restituisce i dati necessari per il task ricevuto in input.
- * Il metodo {@link #getData(Task)} restituira' una stringa in formato JSON
- * che le pagine in JSweet andranno a formattare.
- * N.B. Il proprio {@link DataProvider} dovrebbe evitare di avere stringhe codificate, questo e' solo un esempio.
- * */
 public class StandardDataProvider implements DataProvider<String> {
+  private static String dbFile = "./wordsDB.txt";
 
   @Override
   public String getData(Task task) throws IOException {
     String[] synset = randomSynset();
+    String word = synset[1];
+    String synonym = synset[2];
+    String hyperonym = synset[3];
+    String description = synset[4];
+    String example = synset[5];
+    String translation = synset[6];
     if (task == StandardTask.TRANSLATION_ANNOTATION) {
       return "{" +
-        "\"word\": \"" + synset[1] + "\"," +
-        "\"description\": \"" + synset[4] + "\"" +
+        "\"word\": \"" + word + "\"," +
+        "\"description\": \"" + description + "\"" +
         "}";
     }else if (task == StandardTask.WORD_ANNOTATION) {
-      return "{\"description\": \"" + synset[4] + "\"}";
+      return "{\"description\": \"" + description + "\"}";
     }else if (task == StandardTask.DEFINITION_ANNOTATION) {
       return "{" +
-        "\"word\": \"" + synset[1] + "\"," +
-        "\"hypernym\": \"" + synset[3] + "\"" +
+        "\"word\": \"" + word + "\"," +
+        "\"hypernym\": \"" + hyperonym + "\"" +
         "}";
     }else if (task == StandardTask.SENSE_ANNOTATION) {
-      // decidere dove mettere la parola giusta --> set?
       String[] syn2 = randomSynset();
       String[] syn3 = randomSynset();
       String[] syn4 = randomSynset();
       return "{" +
-        "\"word\": \"" + synset[1] + "\"," +
-        "\"description\": \"" + synset[5] + "\"," +
-        "\"senses\":" + createJSONArray(synset[4], syn2[4], syn3[4], syn4[4]) +
+        "\"word\": \"" + word + "\"," +
+        "\"description\": \"" + example + "\"," +
+        "\"senses\":" + createJSONArray(description, syn2[4], syn3[4], syn4[4]) +
         "}";
     }else if (task == StandardTask.TRANSLATION_VALIDATION) {
       String[] syn2 = randomSynset();
       String[] syn3 = randomSynset();
-      String[] syn4 = randomSynset();
       return "{" +
-        "\"word\": \"" + synset[1] + "\"," +
-        "\"description\": \"" + synset[4] + "\"," +
-        "\"translations\":" + createJSONArray(synset[6], syn2[6], syn3[6], "<nessuna>") +
+        "\"word\": \"" + word + "\"," +
+        "\"description\": \"" + description + "\"," +
+        "\"translations\":" + createJSONArray(translation, syn2[6], syn3[6], "<nessuna>") +
         "}";
     }else if (task == StandardTask.SENSE_VALIDATION) {
-      String def = synset[4];
+      String def = description;
       Random r = new Random();
       boolean value = r.nextBoolean();
       if (!value) {
@@ -59,8 +58,8 @@ public class StandardDataProvider implements DataProvider<String> {
         def = syn2[4];
       }
       return "{" +
-        "\"word\": \"" + synset[1] + "\"," +
-        "\"example\": \"" + synset[5] + "\"," +
+        "\"word\": \"" + word + "\"," +
+        "\"example\": \"" + example + "\"," +
         "\"sense\": \"" + def + "\"" +
         "}";
     } else if (task == StandardTask.MY_ANNOTATION) {
@@ -68,8 +67,8 @@ public class StandardDataProvider implements DataProvider<String> {
       String[] syn3 = randomSynset();
       String[] syn4 = randomSynset();
       return "{\"word\":\"" + synset[1] + "\"," +
-        "\"example\": \"" + synset[5] + "\"," +
-        "\"words\":" + createJSONArray(synset[2], syn2[1], syn3[1], syn4[1]) + 
+        "\"example\": \"" + example + "\"," +
+        "\"words\":" + createJSONArray(synonym, syn2[1], syn3[1], syn4[1]) + 
         "}";
     }
     return null;
@@ -77,21 +76,40 @@ public class StandardDataProvider implements DataProvider<String> {
 
   public String[] randomSynset() throws IOException {
     ClassLoader cl = getClass().getClassLoader();
-    File file = new File(cl.getResource("./wordsDB.txt").getFile());
-    int r = new Random().nextInt(1910);
-    Scanner sc = new Scanner(file); 
+    File file = new File(cl.getResource(dbFile).getFile());
+    // conta le righe del file
+    Scanner sc = new Scanner(file);
+    int count = 0;
+    while (sc.hasNextLine()) {
+      count++;
+      sc.nextLine();
+    }
+    sc.close();
+    // prende una riga a caso
+    int rand = new Random().nextInt(count);
     String synset = "";
-    for (int idx = 0; idx < r; idx++) {
-      synset = sc.nextLine();
+    Scanner sc2 = new Scanner(file);
+    for (int idx = 0; idx < rand; idx++) {
+      synset = sc2.nextLine();
     } 
-    String[] s2 = synset.split("#");
-    String[] s1 = s2[0].split(" ");
-    String[] s = {s1[0], s1[1], s1[2], s1[3], s2[1], s2[2], s2[3]};
+    sc2.close();
+    
+    String[] synsetData2 = synset.split("#");
+    String[] synsetData1 = synsetData2[0].split(" ");
+    String offset = synsetData1[0];
+    String word = synsetData1[1];
+    String synonym = synsetData1[2];
+    String hyperonym = synsetData1[3];
+    String description = synsetData2[1];
+    String example = synsetData2[2];
+    String translation = synsetData2[3];
+
+    String[] s = {offset, word, synonym, hyperonym, description, example, translation};
     return s;
   }
 
   public String createJSONArray(String s1, String s2, String s3, String s4) {
-    String[] arr = { s1, s2, s3, s4}; 
+    String[] arr = {s1, s2, s3, s4}; 
     Set<String> set = new HashSet<>(Arrays.asList(arr)); 
     String result = "";
     for (String s : set) {

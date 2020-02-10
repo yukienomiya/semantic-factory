@@ -12,17 +12,18 @@ import it.uniroma1.fabbricasemantica.servlet.BaseServlet;
 
 @WebServlet(name = "HomeServlet", urlPatterns = "/home.jsp")
 public class HomeServlet extends BaseServlet {
-	private static final long serialVersionUID = 1L;
+private static final long serialVersionUID = 1L;
+private static final String loginUrl = "login.html";
 
-	@Override
-	protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		boolean isLoggedIn = session.getAttribute("username") != null;
-		if (isLoggedIn) {
-			response.sendRedirect(TaskManager.randomTask());
-		}
-		else {
-			response.sendRedirect("login.html");
-		}
-	}
+  @Override
+  protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    HttpSession session = request.getSession();
+    boolean isLoggedIn = session.getAttribute("username") != null;
+    if (isLoggedIn) {
+      response.sendRedirect(TaskManager.randomTask());
+    }
+    else {
+      response.sendRedirect(loginUrl);
+    }
+  }
 }
