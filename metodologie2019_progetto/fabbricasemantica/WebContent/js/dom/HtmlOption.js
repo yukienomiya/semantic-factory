@@ -36,7 +36,7 @@ var it;
                             this.element = document.createElement("option");
                         }
                         /**
-                         * Set the class of the Option element.
+                         * Sets the class of the Option element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder} [the Builder object]
                          * @param {string} classe
                          */
@@ -45,7 +45,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the text content of the Option element.
+                         * Sets the text content of the Option element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder} [the Builder object]
                          * @param {string} textContent
                          */
@@ -54,7 +54,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the selected attribute of the Option element.
+                         * Sets the selected attribute of the Option element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder} [the Builder object]
                          * @param {boolean} sel
                          */
@@ -63,7 +63,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the disabled attribute of the Option element.
+                         * Sets the disabled attribute of the Option element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder} [the Builder object]
                          * @param {boolean} dis
                          */
@@ -72,7 +72,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the value of the Option element.
+                         * Sets the value of the Option element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder} [the Builder object]
                          * @param {string} value
                          */

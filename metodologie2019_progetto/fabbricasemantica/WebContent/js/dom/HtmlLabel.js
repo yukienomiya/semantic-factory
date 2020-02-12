@@ -36,7 +36,7 @@ var it;
                             this.element = document.createElement("label");
                         }
                         /**
-                         * Set the class of the Label element.
+                         * Sets the class of the Label element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder} [the Builder object]
                          * @param {string} classe
                          */
@@ -45,7 +45,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the text content of the Label element.
+                         * Sets the text content of the Label element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder} [the Builder object]
                          * @param {string} textContent
                          */
@@ -54,7 +54,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the id of the Label element.
+                         * Sets the id of the Label element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder} [the Builder object]
                          * @param {string} id
                          */
@@ -63,7 +63,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the htmlFor of the Label element.
+                         * Sets the htmlFor of the Label element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder} [the Builder object]
                          * @param {string} elementsName
                          */

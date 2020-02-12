@@ -31,7 +31,7 @@ public class HtmlOption {
     }
 
     /**
-     * Set the class of the Option element.
+     * Sets the class of the Option element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -40,7 +40,7 @@ public class HtmlOption {
     }
 
     /**
-     * Set the text content of the Option element.
+     * Sets the text content of the Option element.
      * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
@@ -49,7 +49,7 @@ public class HtmlOption {
     }
 
     /**
-     * Set the selected attribute of the Option element.
+     * Sets the selected attribute of the Option element.
      * @return [the Builder object]
      */
     public Builder setSelected(Boolean sel) {
@@ -58,7 +58,7 @@ public class HtmlOption {
     }
 
     /**
-     * Set the disabled attribute of the Option element.
+     * Sets the disabled attribute of the Option element.
      * @return [the Builder object]
      */
     public Builder setDisabled(Boolean dis) {
@@ -67,7 +67,7 @@ public class HtmlOption {
     }
 
     /**
-     * Set the value of the Option element.
+     * Sets the value of the Option element.
      * @return [the Builder object]
      */
     public Builder setValue(String value) {

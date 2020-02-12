@@ -31,7 +31,7 @@ public class HtmlButton {
     }
 
     /**
-     * Set the class of the Button element.
+     * Sets the class of the Button element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -40,7 +40,7 @@ public class HtmlButton {
     }
 
     /**
-     * Set the text content of the Button element.
+     * Sets the text content of the Button element.
      * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
@@ -49,7 +49,7 @@ public class HtmlButton {
     }
 
     /**
-     * Set the onclick of the Button element.
+     * Sets the onclick of the Button element.
      * @return [the Builder object]
      */
     public Builder setOnClick(Function<MouseEvent, Object> f) {
@@ -58,7 +58,7 @@ public class HtmlButton {
     }
 
     /**
-     * Set the type of the Button element.
+     * Sets the type of the Button element.
      * @return [the Builder object]
      */
     public Builder setType(String type) {

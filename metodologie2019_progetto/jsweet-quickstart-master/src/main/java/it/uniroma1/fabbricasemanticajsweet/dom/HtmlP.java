@@ -31,7 +31,7 @@ public class HtmlP {
     }
 
     /**
-     * Set the class of the P element.
+     * Sets the class of the P element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -40,7 +40,7 @@ public class HtmlP {
     }
 
     /**
-     * Set the id of the P element.
+     * Sets the id of the P element.
      * @return [the Builder object]
      */
     public Builder setId(String id) {
@@ -49,7 +49,7 @@ public class HtmlP {
     }
 
     /**
-     * Set the text content of the P element.
+     * Sets the text content of the P element.
      * @return [the Builder object]
      */
     public Builder setContent(String textContent) {

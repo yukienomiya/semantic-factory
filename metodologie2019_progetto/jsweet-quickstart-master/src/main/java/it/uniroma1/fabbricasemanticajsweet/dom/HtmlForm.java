@@ -31,7 +31,7 @@ public class HtmlForm {
     }
 
     /**
-     * Set the class of the Form element.
+     * Sets the class of the Form element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -40,7 +40,7 @@ public class HtmlForm {
     }
 
     /**
-     * Set the text content of the Form element.
+     * Sets the text content of the Form element.
      * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
@@ -49,7 +49,7 @@ public class HtmlForm {
     }
 
     /**
-     * Set the method of the Form element.
+     * Sets the method of the Form element.
      * @return [the Builder object]
      */
     public Builder setMethod(String method) {
@@ -58,7 +58,7 @@ public class HtmlForm {
     }
 
     /**
-     * Set the action of the Form element.
+     * Sets the action of the Form element.
      * @return [the Builder object]
      */
     public Builder setAction(String action) {

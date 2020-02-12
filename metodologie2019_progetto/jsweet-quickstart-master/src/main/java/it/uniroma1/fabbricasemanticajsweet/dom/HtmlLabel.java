@@ -31,7 +31,7 @@ public class HtmlLabel {
     }
 
     /**
-     * Set the class of the Label element.
+     * Sets the class of the Label element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -40,7 +40,7 @@ public class HtmlLabel {
     }
 
     /**
-     * Set the text content of the Label element.
+     * Sets the text content of the Label element.
      * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
@@ -49,7 +49,7 @@ public class HtmlLabel {
     }
 
     /**
-     * Set the id of the Label element.
+     * Sets the id of the Label element.
      * @return [the Builder object]
      */
     public Builder setId(String id) {
@@ -58,7 +58,7 @@ public class HtmlLabel {
     }
 
     /**
-     * Set the htmlFor of the Label element.
+     * Sets the htmlFor of the Label element.
      * @return [the Builder object]
      */
     public Builder setFor(String elementsName) {

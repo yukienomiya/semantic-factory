@@ -36,7 +36,7 @@ var it;
                             this.element = document.createElement("textarea");
                         }
                         /**
-                         * Set the class of the Text Area element.
+                         * Sets the class of the Text Area element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlTextArea.Builder} [the Builder object]
                          * @param {string} classe
                          */
@@ -45,7 +45,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the text content of the Text Area element.
+                         * Sets the text content of the Text Area element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlTextArea.Builder} [the Builder object]
                          * @param {string} textContent
                          */
@@ -54,7 +54,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the required attribute of the Text Area element.
+                         * Sets the required attribute of the Text Area element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlTextArea.Builder} [the Builder object]
                          * @param {boolean} b
                          */
@@ -63,7 +63,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the id of the Text Area element.
+                         * Sets the id of the Text Area element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlTextArea.Builder} [the Builder object]
                          * @param {string} id
                          */
@@ -72,7 +72,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the name of the Text Area element.
+                         * Sets the name of the Text Area element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlTextArea.Builder} [the Builder object]
                          * @param {string} name
                          */

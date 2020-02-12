@@ -31,7 +31,7 @@ public class HtmlSpan {
     }
 
     /**
-     * Set the id of the Span element.
+     * Sets the id of the Span element.
      * @return [the Builder object]
      */
     public Builder setId(String id) {
@@ -40,7 +40,7 @@ public class HtmlSpan {
     }
 
     /**
-     * Set the class of the Span element.
+     * Sets the class of the Span element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -49,7 +49,7 @@ public class HtmlSpan {
     }
 
     /**
-     * Set the text content of the Span element.
+     * Sets the text content of the Span element.
      * @return [the Builder object]
      */
     public Builder setContent(String textContent) {

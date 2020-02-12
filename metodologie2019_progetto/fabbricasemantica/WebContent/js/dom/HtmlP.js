@@ -36,7 +36,7 @@ var it;
                             this.element = document.createElement("p");
                         }
                         /**
-                         * Set the class of the P element.
+                         * Sets the class of the P element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlP.Builder} [the Builder object]
                          * @param {string} classe
                          */
@@ -45,7 +45,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the id of the P element.
+                         * Sets the id of the P element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlP.Builder} [the Builder object]
                          * @param {string} id
                          */
@@ -54,7 +54,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the text content of the P element.
+                         * Sets the text content of the P element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlP.Builder} [the Builder object]
                          * @param {string} textContent
                          */

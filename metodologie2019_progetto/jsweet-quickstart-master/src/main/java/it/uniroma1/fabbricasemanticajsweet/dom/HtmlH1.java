@@ -31,7 +31,7 @@ public class HtmlH1 {
     }
 
     /**
-     * Set the class of the H1 element.
+     * Sets the class of the H1 element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -40,7 +40,7 @@ public class HtmlH1 {
     }
 
     /**
-     * Set the text content of the H1 element.
+     * Sets the text content of the H1 element.
      * @return [the Builder object]
      */
     public Builder setContent(String textContent) {

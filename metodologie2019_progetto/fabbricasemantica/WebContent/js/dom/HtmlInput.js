@@ -36,7 +36,7 @@ var it;
                             this.element = document.createElement("input");
                         }
                         /**
-                         * Set the class of the Input element.
+                         * Sets the class of the Input element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {string} classe
                          */
@@ -45,7 +45,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the value of the Input element.
+                         * Sets the value of the Input element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {string} value
                          */
@@ -54,7 +54,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the text content of the Input element.
+                         * Sets the text content of the Input element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {string} textContent
                          */
@@ -63,7 +63,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the placeholder of the Input element.
+                         * Sets the placeholder of the Input element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {string} ph
                          */
@@ -72,7 +72,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the required attribute of the Input element.
+                         * Sets the required attribute of the Input element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {boolean} b
                          */
@@ -81,7 +81,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the hidden attribute of the Input element.
+                         * Sets the hidden attribute of the Input element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {boolean} b
                          */
@@ -90,7 +90,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the id of the Input element.
+                         * Sets the id of the Input element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {string} id
                          */
@@ -99,7 +99,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the onclick of the Input element.
+                         * Sets the onclick of the Input element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {*} f
                          */
@@ -108,7 +108,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the oninput of the Input element.
+                         * Sets the oninput of the Input element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {*} f
                          */
@@ -117,7 +117,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the onkeyup of the Input element.
+                         * Sets the onkeyup of the Input element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {*} f
                          */
@@ -126,7 +126,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the name of the Input element.
+                         * Sets the name of the Input element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {string} name
                          */
@@ -135,7 +135,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the type of the Input element.
+                         * Sets the type of the Input element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {string} type
                          */

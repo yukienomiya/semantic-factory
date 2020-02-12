@@ -36,7 +36,7 @@ var it;
                             this.element = document.createElement("button");
                         }
                         /**
-                         * Set the class of the Button element.
+                         * Sets the class of the Button element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton.Builder} [the Builder object]
                          * @param {string} classe
                          */
@@ -45,7 +45,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the text content of the Button element.
+                         * Sets the text content of the Button element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton.Builder} [the Builder object]
                          * @param {string} textContent
                          */
@@ -54,7 +54,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the onclick of the Button element.
+                         * Sets the onclick of the Button element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton.Builder} [the Builder object]
                          * @param {*} f
                          */
@@ -63,7 +63,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the type of the Button element.
+                         * Sets the type of the Button element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton.Builder} [the Builder object]
                          * @param {string} type
                          */

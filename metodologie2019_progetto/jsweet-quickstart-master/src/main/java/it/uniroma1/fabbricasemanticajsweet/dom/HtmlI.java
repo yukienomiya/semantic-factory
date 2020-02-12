@@ -30,7 +30,7 @@ public class HtmlI {
     }
 
     /**
-     * Set the class of the I element.
+     * Sets the class of the I element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -39,7 +39,7 @@ public class HtmlI {
     }
 
     /**
-     * Set the text content of the I element.
+     * Sets the text content of the I element.
      * @return [the Builder object]
      */
     public Builder setContent(String textContent) {

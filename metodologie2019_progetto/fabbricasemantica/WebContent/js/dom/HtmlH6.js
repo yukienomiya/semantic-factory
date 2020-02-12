@@ -36,7 +36,7 @@ var it;
                             this.element = document.createElement("h6");
                         }
                         /**
-                         * Set the class of the H6 element.
+                         * Sets the class of the H6 element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlH6.Builder} [the Builder object]
                          * @param {string} classe
                          */
@@ -45,7 +45,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the text content of the H6 element.
+                         * Sets the text content of the H6 element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlH6.Builder} [the Builder object]
                          * @param {string} textContent
                          */

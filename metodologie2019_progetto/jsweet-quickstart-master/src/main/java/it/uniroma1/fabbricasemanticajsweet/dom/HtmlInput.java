@@ -36,7 +36,7 @@ public class HtmlInput {
     }
 
     /**
-     * Set the class of the Input element.
+     * Sets the class of the Input element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -45,7 +45,7 @@ public class HtmlInput {
     }
 
     /**
-     * Set the value of the Input element.
+     * Sets the value of the Input element.
      * @return [the Builder object]
      */
     public Builder setValue(String value) {
@@ -54,7 +54,7 @@ public class HtmlInput {
     }
 
     /**
-     * Set the text content of the Input element.
+     * Sets the text content of the Input element.
      * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
@@ -63,7 +63,7 @@ public class HtmlInput {
     }
 
     /**
-     * Set the placeholder of the Input element.
+     * Sets the placeholder of the Input element.
      * @return [the Builder object]
      */
     public Builder setPlaceholder(String ph) {
@@ -72,7 +72,7 @@ public class HtmlInput {
     }
 
     /**
-     * Set the required attribute of the Input element.
+     * Sets the required attribute of the Input element.
      * @return [the Builder object]
      */
     public Builder setRequired(Boolean b) {
@@ -81,7 +81,7 @@ public class HtmlInput {
     }
 
     /**
-     * Set the hidden attribute of the Input element.
+     * Sets the hidden attribute of the Input element.
      * @return [the Builder object]
      */
     public Builder setHidden(Boolean b) {
@@ -90,7 +90,7 @@ public class HtmlInput {
     }
 
     /**
-     * Set the id of the Input element.
+     * Sets the id of the Input element.
      * @return [the Builder object]
      */
     public Builder setId(String id) {
@@ -99,7 +99,7 @@ public class HtmlInput {
     }
 
     /**
-     * Set the onclick of the Input element.
+     * Sets the onclick of the Input element.
      * @return [the Builder object]
      */
     public Builder setOnClick(Function<MouseEvent, Object> f) {
@@ -108,7 +108,7 @@ public class HtmlInput {
     }
 
     /**
-     * Set the oninput of the Input element.
+     * Sets the oninput of the Input element.
      * @return [the Builder object]
      */
     public Builder setOninput(Function<Event, Object> f) {
@@ -117,7 +117,7 @@ public class HtmlInput {
     }
 
     /**
-     * Set the onkeyup of the Input element.
+     * Sets the onkeyup of the Input element.
      * @return [the Builder object]
      */
     public Builder setOnkeyup(Function<KeyboardEvent, Object> f) {
@@ -126,7 +126,7 @@ public class HtmlInput {
     }
 
     /**
-     * Set the name of the Input element.
+     * Sets the name of the Input element.
      * @return [the Builder object]
      */
     public Builder setName(String name) {
@@ -135,7 +135,7 @@ public class HtmlInput {
     }
 
     /**
-     * Set the type of the Input element.
+     * Sets the type of the Input element.
      * @return [the Builder object]
      */
     public Builder setType(String type) {

@@ -36,7 +36,7 @@ var it;
                             this.element = document.createElement("i");
                         }
                         /**
-                         * Set the class of the I element.
+                         * Sets the class of the I element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlI.Builder} [the Builder object]
                          * @param {string} classe
                          */
@@ -45,7 +45,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the text content of the I element.
+                         * Sets the text content of the I element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlI.Builder} [the Builder object]
                          * @param {string} textContent
                          */

@@ -31,7 +31,7 @@ public class HtmlDiv {
     }
 
     /**
-     * Set the class of the Div element.
+     * Sets the class of the Div element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -40,7 +40,7 @@ public class HtmlDiv {
     }
 
     /**
-     * Set the text content of the Div element. 
+     * Sets the text content of the Div element. 
      * @return [the Builder object]
      */
     public Builder setContent(String textContent) {

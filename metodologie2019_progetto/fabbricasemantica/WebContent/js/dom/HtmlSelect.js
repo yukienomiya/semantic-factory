@@ -36,7 +36,7 @@ var it;
                             this.element = document.createElement("select");
                         }
                         /**
-                         * Set the class of the Select element.
+                         * Sets the class of the Select element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect.Builder} [the Builder object]
                          * @param {string} classe
                          */
@@ -45,7 +45,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the name of the Select element.
+                         * Sets the name of the Select element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect.Builder} [the Builder object]
                          * @param {string} name
                          */
@@ -54,7 +54,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the id of the Select element.
+                         * Sets the id of the Select element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect.Builder} [the Builder object]
                          * @param {string} id
                          */
@@ -63,7 +63,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the disabled attribute of the Select element.
+                         * Sets the disabled attribute of the Select element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect.Builder} [the Builder object]
                          * @param {boolean} b
                          */

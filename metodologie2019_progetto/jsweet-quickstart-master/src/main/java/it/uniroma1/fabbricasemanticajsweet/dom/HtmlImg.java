@@ -31,7 +31,7 @@ public class HtmlImg {
     }
 
     /**
-     * Set the class of the Image element.
+     * Sets the class of the Image element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -40,7 +40,7 @@ public class HtmlImg {
     }
 
     /**
-     * Set the src of the Image element.
+     * Sets the src of the Image element.
      * @return [the Builder object]
      */
     public Builder setSrc(String src) {

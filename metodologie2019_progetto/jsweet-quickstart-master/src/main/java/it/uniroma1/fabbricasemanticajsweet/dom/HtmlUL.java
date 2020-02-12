@@ -31,7 +31,7 @@ public class HtmlUL {
     }
 
     /**
-     * Set the class of the UL element.
+     * Sets the class of the UL element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -40,7 +40,7 @@ public class HtmlUL {
     }
 
     /**
-     * Set the id of the UL element.
+     * Sets the id of the UL element.
      * @return [the Builder object]
      */
     public Builder setId(String id) {

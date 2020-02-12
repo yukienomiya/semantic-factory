@@ -31,7 +31,7 @@ public class HtmlLink {
     }
 
     /**
-     * Set the class of the Link element.
+     * Sets the class of the Link element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -40,7 +40,7 @@ public class HtmlLink {
     }
 
     /**
-     * Set the text content of the Link element.
+     * Sets the text content of the Link element.
      * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
@@ -49,7 +49,7 @@ public class HtmlLink {
     }
 
     /**
-     * Set the id of the Link element.
+     * Sets the id of the Link element.
      * @return [the Builder object]
      */
     public Builder setId(String id) {
@@ -58,7 +58,7 @@ public class HtmlLink {
     }
     
     /**
-     * Set the href of the Link element.
+     * Sets the href of the Link element.
      * @return [the Builder object]
      */
     public Builder setHref(String href) {

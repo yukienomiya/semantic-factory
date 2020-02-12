@@ -31,7 +31,7 @@ public class HtmlTextArea {
     }
 
     /**
-     * Set the class of the Text Area element.
+     * Sets the class of the Text Area element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -40,7 +40,7 @@ public class HtmlTextArea {
     }
 
     /**
-     * Set the text content of the Text Area element.
+     * Sets the text content of the Text Area element.
      * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
@@ -49,7 +49,7 @@ public class HtmlTextArea {
     }
 
     /**
-     * Set the required attribute of the Text Area element.
+     * Sets the required attribute of the Text Area element.
      * @return [the Builder object]
      */
     public Builder setRequired(Boolean b) {
@@ -58,7 +58,7 @@ public class HtmlTextArea {
     }
 
     /**
-     * Set the id of the Text Area element.
+     * Sets the id of the Text Area element.
      * @return [the Builder object]
      */
     public Builder setId(String id) {
@@ -67,7 +67,7 @@ public class HtmlTextArea {
     }
 
     /**
-     * Set the name of the Text Area element.
+     * Sets the name of the Text Area element.
      * @return [the Builder object]
      */
     public Builder setName(String name) {

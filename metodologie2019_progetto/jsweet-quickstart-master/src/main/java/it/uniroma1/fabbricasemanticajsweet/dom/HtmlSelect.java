@@ -31,7 +31,7 @@ public class HtmlSelect {
     }
 
     /**
-     * Set the class of the Select element.
+     * Sets the class of the Select element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -40,7 +40,7 @@ public class HtmlSelect {
     }
 
     /**
-     * Set the name of the Select element.
+     * Sets the name of the Select element.
      * @return [the Builder object]
      */
     public Builder setName(String name) {
@@ -49,7 +49,7 @@ public class HtmlSelect {
     }
 
     /**
-     * Set the id of the Select element.
+     * Sets the id of the Select element.
      * @return [the Builder object]
      */
     public Builder setId(String id) {
@@ -58,7 +58,7 @@ public class HtmlSelect {
     }
 
     /**
-     * Set the disabled attribute of the Select element.
+     * Sets the disabled attribute of the Select element.
      * @return [the Builder object]
      */
     public Builder setDisabled(Boolean b) {

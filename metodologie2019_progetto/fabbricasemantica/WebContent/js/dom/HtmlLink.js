@@ -36,7 +36,7 @@ var it;
                             this.element = document.createElement("link");
                         }
                         /**
-                         * Set the class of the Link element.
+                         * Sets the class of the Link element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink.Builder} [the Builder object]
                          * @param {string} classe
                          */
@@ -45,7 +45,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the text content of the Link element.
+                         * Sets the text content of the Link element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink.Builder} [the Builder object]
                          * @param {string} textContent
                          */
@@ -54,7 +54,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the id of the Link element.
+                         * Sets the id of the Link element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink.Builder} [the Builder object]
                          * @param {string} id
                          */
@@ -63,7 +63,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the href of the Link element.
+                         * Sets the href of the Link element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink.Builder} [the Builder object]
                          * @param {string} href
                          */

@@ -36,7 +36,7 @@ var it;
                             this.element = document.createElement("div");
                         }
                         /**
-                         * Set the class of the Div element.
+                         * Sets the class of the Div element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.Builder} [the Builder object]
                          * @param {string} classe
                          */
@@ -45,7 +45,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the text content of the Div element.
+                         * Sets the text content of the Div element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.Builder} [the Builder object]
                          * @param {string} textContent
                          */

@@ -36,7 +36,7 @@ var it;
                             this.element = document.createElement("img");
                         }
                         /**
-                         * Set the class of the Image element.
+                         * Sets the class of the Image element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlImg.Builder} [the Builder object]
                          * @param {string} classe
                          */
@@ -45,7 +45,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the src of the Image element.
+                         * Sets the src of the Image element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlImg.Builder} [the Builder object]
                          * @param {string} src
                          */

@@ -30,7 +30,7 @@ public class HtmlH3 {
     }
 
     /**
-     * Set the class of the H3 element.
+     * Sets the class of the H3 element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -39,7 +39,7 @@ public class HtmlH3 {
     }
 
     /**
-     * Set the text content of the H3 element.
+     * Sets the text content of the H3 element.
      * @return [the Builder object]
      */
     public Builder setContent(String textContent) {

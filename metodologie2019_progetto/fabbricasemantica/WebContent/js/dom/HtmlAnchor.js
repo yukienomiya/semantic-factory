@@ -36,7 +36,7 @@ var it;
                             this.element = document.createElement("a");
                         }
                         /**
-                         * Set the class of the Anchor element.
+                         * Sets the class of the Anchor element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor.Builder} [the Builder object]
                          * @param {string} classe
                          */
@@ -45,7 +45,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the text content of the Anchor element.
+                         * Sets the text content of the Anchor element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor.Builder} [the Builder object]
                          * @param {string} textContent
                          */
@@ -54,7 +54,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the href of the Anchor element.
+                         * Sets the href of the Anchor element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor.Builder} [the Builder object]
                          * @param {string} href
                          */

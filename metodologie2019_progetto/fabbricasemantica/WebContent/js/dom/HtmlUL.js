@@ -36,7 +36,7 @@ var it;
                             this.element = document.createElement("ul");
                         }
                         /**
-                         * Set the class of the UL element.
+                         * Sets the class of the UL element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlUL.Builder} [the Builder object]
                          * @param {string} classe
                          */
@@ -45,7 +45,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the id of the UL element.
+                         * Sets the id of the UL element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlUL.Builder} [the Builder object]
                          * @param {string} id
                          */

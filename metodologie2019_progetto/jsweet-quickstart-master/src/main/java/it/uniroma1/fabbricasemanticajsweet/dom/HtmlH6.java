@@ -30,7 +30,7 @@ public class HtmlH6 {
     }
 
     /**
-     * Set the class of the H6 element.
+     * Sets the class of the H6 element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -39,7 +39,7 @@ public class HtmlH6 {
     }
 
     /**
-     * Set the text content of the H6 element.
+     * Sets the text content of the H6 element.
      * @return [the Builder object]
      */
     public Builder setContent(String textContent) {

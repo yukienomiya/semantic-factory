@@ -31,7 +31,7 @@ public class HtmlAnchor {
     }
 
     /**
-     * Set the class of the Anchor element.
+     * Sets the class of the Anchor element.
      * @return [the Builder object]
      */
     public Builder setClass(String classe) {
@@ -40,7 +40,7 @@ public class HtmlAnchor {
     }
 
     /**
-     * Set the text content of the Anchor element.
+     * Sets the text content of the Anchor element.
      * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
@@ -49,7 +49,7 @@ public class HtmlAnchor {
     }
 
     /**
-     * Set the href of the Anchor element.
+     * Sets the href of the Anchor element.
      * @return [the Builder object]
      */
     public Builder setHref(String href) {

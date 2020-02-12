@@ -36,7 +36,7 @@ var it;
                             this.element = document.createElement("span");
                         }
                         /**
-                         * Set the id of the Span element.
+                         * Sets the id of the Span element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.Builder} [the Builder object]
                          * @param {string} id
                          */
@@ -45,7 +45,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the class of the Span element.
+                         * Sets the class of the Span element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.Builder} [the Builder object]
                          * @param {string} classe
                          */
@@ -54,7 +54,7 @@ var it;
                             return this;
                         }
                         /**
-                         * Set the text content of the Span element.
+                         * Sets the text content of the Span element.
                          * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.Builder} [the Builder object]
                          * @param {string} textContent
                          */
