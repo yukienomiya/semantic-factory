@@ -39,6 +39,11 @@ public class Signup {
   public static final String LOGIN_URL = "login.html";
 
   /**
+   * Represents the number of languages between which the user can choose when selecting his native/other language.
+   */
+  public static final int N_OF_LANGUAGES = 2;
+
+  /**
    * Constructs the HTML page.
    */
   public static HTMLElement page() {
@@ -202,11 +207,11 @@ public class Signup {
                                         HtmlLabel.newBuilder()
                                           .append(
                                             HtmlInput.newBuilder()
-                                              .setId("cbItalianOther")
+                                              .setId("cbOther0")
                                               .setName("cbItalianOther")
                                               .setValue("Italiano")
                                               .setType("checkbox")
-                                              .setOnClick(Signup::activateSelectIT)
+                                              .setOnClick(Signup::activateSelect)
                                           )
                                           .append(
                                             HtmlSpan.newBuilder()
@@ -221,7 +226,7 @@ public class Signup {
                                   .append(
                                     HtmlSelect.newBuilder()
                                       .setClass("browser-default")
-                                      .setId("livIT")
+                                      .setId("livOther0")
                                       .setName("livIT")
                                       .setDisabled(true)
                                       .append(
@@ -270,11 +275,11 @@ public class Signup {
                                         HtmlLabel.newBuilder()
                                           .append(
                                             HtmlInput.newBuilder()
-                                              .setId("cbEnglishOther")
+                                              .setId("cbOther1")
                                               .setName("cbEnglishOther")
                                               .setValue("English")
                                               .setType("checkbox")
-                                              .setOnClick(Signup::activateSelectEN)
+                                              .setOnClick(Signup::activateSelect)
                                           )
                                           .append(
                                             HtmlSpan.newBuilder()
@@ -289,7 +294,7 @@ public class Signup {
                                   .append(
                                     HtmlSelect.newBuilder()
                                       .setClass("browser-default")
-                                      .setId("livEN")
+                                      .setId("livOther1")
                                       .setName("livEN")
                                       .setDisabled(true)
                                       .append(
@@ -372,7 +377,7 @@ public class Signup {
    */
   public static Object fieldsCheck(MouseEvent m) {
     ArrayList<HTMLInputElement> cbNativeLang = new ArrayList<>();
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < N_OF_LANGUAGES; i++) {
       cbNativeLang.add((HTMLInputElement) document.getElementById("cbNat" + i));
       cbNativeLang.get(i).required = true;
     }
@@ -392,37 +397,24 @@ public class Signup {
    * Activates the Select element (and sets it to required) if the relative checkbox is checked.
    * @param m [Represents the MouseEvent that triggers the function]
    */
-  public static Object activateSelectIT(MouseEvent m) {
-    HTMLInputElement cbItalianOther = (HTMLInputElement) document.getElementById("cbItalianOther");
-    HTMLSelectElement livIT = (HTMLSelectElement) document.getElementById("livIT");
-    livIT.disabled = true;
-    livIT.required = false;
-
-    if (cbItalianOther.checked) {
-      livIT.disabled = false;
-      livIT.required = true;
-    } else {
-      livIT.disabled = true;
-      livIT.required = false;
+  public static Object activateSelect(MouseEvent m) {
+    ArrayList<HTMLInputElement> cbOtherLang = new ArrayList<>();
+    ArrayList<HTMLSelectElement> livOtherLang = new ArrayList<>();
+    for (int i = 0; i < N_OF_LANGUAGES; i++) {
+      cbOtherLang.add((HTMLInputElement) document.getElementById("cbOther" + i));
+      livOtherLang.add((HTMLSelectElement) document.getElementById("livOther" + i));
+      livOtherLang.get(i).required = false;
     }
-    return null;
-  }
-
-  /**
-   * Activates the Select element (and sets it to required) if the relative checkbox is checked.
-   * @param m [Represents the MouseEvent that triggers the function]
-   */
-  public static Object activateSelectEN(MouseEvent m) {
-    HTMLInputElement cbEnglishOther = (HTMLInputElement) document.getElementById("cbEnglishOther");
-    HTMLSelectElement livEN = (HTMLSelectElement) document.getElementById("livEN");
-    livEN.required = false;
-
-    if (cbEnglishOther.checked) {
-      livEN.disabled = false;
-      livEN.required = true;
-    } else {
-      livEN.disabled = true;
-      livEN.required = false;
+    for (int i = 0; i < N_OF_LANGUAGES; i++) {
+      HTMLSelectElement liv = livOtherLang.get(i);
+      if (cbOtherLang.get(i).checked) {
+        liv.disabled = false;
+        liv.required = true;
+      }
+      else {
+        liv.disabled = true;
+        liv.required = false;
+      }
     }
     return null;
   }
