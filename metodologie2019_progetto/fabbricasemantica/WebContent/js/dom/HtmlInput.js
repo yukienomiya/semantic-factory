@@ -8,12 +8,16 @@ var it;
             var dom;
             (function (dom) {
                 /**
-                 * TODO(yukienomiya): Add JavaDoc
+                 * Represents a HTML Input element.
                  * @class
                  */
                 class HtmlInput {
                     constructor() {
                     }
+                    /**
+                     * Returns an object of type Builder.
+                     * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder}
+                     */
                     static newBuilder() {
                         return new HtmlInput.Builder();
                     }
@@ -22,7 +26,7 @@ var it;
                 HtmlInput["__class"] = "it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput";
                 (function (HtmlInput) {
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Represents a Builder of HTMLInputElement.
                      * @extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder
                      * @class
                      */
@@ -32,58 +36,111 @@ var it;
                             this.element = document.createElement("input");
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the class of the Input element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {string} classe
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder}
                          */
                         setClass(classe) {
                             this.element.className = classe;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the value of the Input element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {string} value
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder}
                          */
                         setValue(value) {
                             this.element.value = value;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the text content of the Input element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {string} textContent
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder}
                          */
                         setContent(textContent) {
                             this.element.textContent = textContent;
                             return this;
                         }
+                        /**
+                         * Set the placeholder of the Input element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
+                         * @param {string} ph
+                         */
                         setPlaceholder(ph) {
                             this.element.placeholder = ph;
                             return this;
                         }
+                        /**
+                         * Set the required attribute of the Input element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
+                         * @param {boolean} b
+                         */
                         setRequired(b) {
                             this.element.required = b;
                             return this;
                         }
+                        /**
+                         * Set the hidden attribute of the Input element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
+                         * @param {boolean} b
+                         */
                         setHidden(b) {
                             this.element.hidden = b;
                             return this;
                         }
+                        /**
+                         * Set the id of the Input element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
+                         * @param {string} id
+                         */
                         setId(id) {
                             this.element.id = id;
                             return this;
                         }
+                        /**
+                         * Set the onclick of the Input element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
+                         * @param {*} f
+                         */
                         setOnClick(f) {
                             this.element.onclick = (f);
                             return this;
                         }
+                        /**
+                         * Set the oninput of the Input element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
+                         * @param {*} f
+                         */
                         setOninput(f) {
                             this.element.oninput = (f);
                             return this;
                         }
+                        /**
+                         * Set the onkeyup of the Input element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
+                         * @param {*} f
+                         */
                         setOnkeyup(f) {
                             this.element.onkeyup = (f);
+                            return this;
+                        }
+                        /**
+                         * Set the name of the Input element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
+                         * @param {string} name
+                         */
+                        setName(name) {
+                            this.element.name = name;
+                            return this;
+                        }
+                        /**
+                         * Set the type of the Input element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
+                         * @param {string} type
+                         */
+                        setType(type) {
+                            this.element.type = type;
                             return this;
                         }
                         append$def_dom_HTMLElement(child) {
@@ -91,9 +148,9 @@ var it;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Appends another HTMLElement to the element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder} [the Builder object]
                          * @param {HTMLElement} child
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder}
                          */
                         append(child) {
                             if (((child != null && child instanceof HTMLElement) || child === null)) {
@@ -107,24 +164,6 @@ var it;
                         }
                         append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(childBuilder) {
                             this.element.appendChild(childBuilder.build());
-                            return this;
-                        }
-                        /**
-                         * TODO(yukienomiya): Add JavaDoc
-                         * @param {string} name
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder}
-                         */
-                        setName(name) {
-                            this.element.name = name;
-                            return this;
-                        }
-                        /**
-                         * TODO(yukienomiya): Add JavaDoc
-                         * @param {string} type
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput.Builder}
-                         */
-                        setType(type) {
-                            this.element.type = type;
                             return this;
                         }
                     }

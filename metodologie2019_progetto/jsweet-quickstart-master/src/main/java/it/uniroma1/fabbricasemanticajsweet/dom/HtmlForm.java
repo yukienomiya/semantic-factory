@@ -6,28 +6,33 @@ import def.dom.HTMLFormElement;
 import jsweet.util.StringTypes;
 
 /**
- * TODO(yukienomiya): Add JavaDoc
+ * Represents a HTML Form element.
  */
 public class HtmlForm {
   private HtmlForm() {}
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Returns an object of type Builder.
    */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Represents a Builder of HTMLFormElement.
    */
   public static class Builder extends BasicBuilder<HTMLFormElement> {
+
+    /**
+     * Assigns an object of type HTMLFormElement to the variable element.
+     */
     protected Builder() {
       element = Globals.document.createElement(StringTypes.form);
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the class of the Form element.
+     * @return [the Builder object]
      */
     public Builder setClass(String classe) {
       element.className = classe;
@@ -35,7 +40,8 @@ public class HtmlForm {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the text content of the Form element.
+     * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
       element.textContent = textContent;
@@ -43,23 +49,8 @@ public class HtmlForm {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
-     */
-    final public Builder append(HTMLElement child) {
-      element.appendChild(child);
-      return this;
-    }
-
-    /**
-     * TODO(yukienomiya): Add JavaDoc
-     */
-    final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
-      element.appendChild(childBuilder.build());
-      return this;
-    }
-
-    /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the method of the Form element.
+     * @return [the Builder object]
      */
     public Builder setMethod(String method) {
       element.method = method;
@@ -67,10 +58,29 @@ public class HtmlForm {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the action of the Form element.
+     * @return [the Builder object]
      */
     public Builder setAction(String action) {
       element.action = action;
+      return this;
+    }
+
+    /**
+     * Appends another HTMLElement to the element.
+     * @return [the Builder object]
+     */
+    final public Builder append(HTMLElement child) {
+      element.appendChild(child);
+      return this;
+    }
+
+    /**
+     * Appends another element Builder to the Builder.
+     * @return [the Builder object]
+     */
+    final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
+      element.appendChild(childBuilder.build());
       return this;
     }
   }

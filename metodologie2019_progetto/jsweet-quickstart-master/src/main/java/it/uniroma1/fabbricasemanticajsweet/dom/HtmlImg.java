@@ -6,28 +6,33 @@ import def.dom.HTMLImageElement;
 import jsweet.util.StringTypes;
 
 /**
- * TODO(yukienomiya): Add JavaDoc
+ * Represents a HTML Image element.
  */
 public class HtmlImg {
   private HtmlImg() {}
 
+  /**
+   * Returns an object of type Builder.
+   */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Represents a Builder of HTMLImageElement.
    */
   public static class Builder extends BasicBuilder<HTMLImageElement> {
-    HTMLImageElement element;
-    Boolean built = false;
 
+    /**
+     * Assigns an object of type HTMLImageElement to the variable element.
+     */
     private Builder() {
       element = Globals.document.createElement(StringTypes.img);
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the class of the Image element.
+     * @return [the Builder object]
      */
     public Builder setClass(String classe) {
         element.className = classe;
@@ -35,7 +40,8 @@ public class HtmlImg {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the src of the Image element.
+     * @return [the Builder object]
      */
     public Builder setSrc(String src) {
       element.src = src;
@@ -43,7 +49,8 @@ public class HtmlImg {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another HTMLElement to the element.
+     * @return [the Builder object]
      */
     final public Builder append(HTMLElement child) {
       element.appendChild(child);
@@ -51,7 +58,8 @@ public class HtmlImg {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another element Builder to the Builder.
+     * @return [the Builder object]
      */
     final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
       element.appendChild(childBuilder.build());

@@ -8,14 +8,14 @@ var it;
             var dom;
             (function (dom) {
                 /**
-                 * TODO(yukienomiya): Add JavaDoc
+                 * Represents a HTML Span element.
                  * @class
                  */
                 class HtmlSpan {
                     constructor() {
                     }
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Returns an object of type Builder.
                      * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.Builder}
                      */
                     static newBuilder() {
@@ -26,7 +26,7 @@ var it;
                 HtmlSpan["__class"] = "it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan";
                 (function (HtmlSpan) {
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Represents a Builder of HTMLSpanElement.
                      * @extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder
                      * @class
                      */
@@ -36,27 +36,27 @@ var it;
                             this.element = document.createElement("span");
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the id of the Span element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.Builder} [the Builder object]
                          * @param {string} id
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.Builder}
                          */
                         setId(id) {
                             this.element.id = id;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the class of the Span element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.Builder} [the Builder object]
                          * @param {string} classe
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.Builder}
                          */
                         setClass(classe) {
                             this.element.className = classe;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the text content of the Span element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.Builder} [the Builder object]
                          * @param {string} textContent
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.Builder}
                          */
                         setContent(textContent) {
                             this.element.textContent = textContent;
@@ -67,9 +67,9 @@ var it;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Appends another HTMLElement to the element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.Builder} [the Builder object]
                          * @param {HTMLElement} child
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan.Builder}
                          */
                         append(child) {
                             if (((child != null && child instanceof HTMLElement) || child === null)) {

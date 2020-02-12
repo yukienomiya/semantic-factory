@@ -16,11 +16,26 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlP;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlTextArea;
 
+/**
+ * Represents the DefinitionAnnotation task HTML page.
+ */
 public class DefinitionAnnotation {
+
+  /**
+   * Represents the url of the NewExampleServiceServlet.
+   */
   public static final String REST_URL = "nextExample.jsp";
+
+  /**
+   * Represents the url of the AuthenticationServiceServlet.
+   */
   public static final String LOGIN_CHECK = "isLoggedIn.jsp";
 
-
+  /**
+   * Constructs the HTML page.
+   * @param word     [Represents the word of the task]
+   * @param hypernym [Represents the hypernym of the task]
+   */
   public static HTMLElement page(String word, String  hypernym) {
     return HtmlDiv.newBuilder()
       .append(

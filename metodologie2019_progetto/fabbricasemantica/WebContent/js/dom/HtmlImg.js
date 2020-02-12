@@ -8,12 +8,16 @@ var it;
             var dom;
             (function (dom) {
                 /**
-                 * TODO(yukienomiya): Add JavaDoc
+                 * Represents a HTML Image element.
                  * @class
                  */
                 class HtmlImg {
                     constructor() {
                     }
+                    /**
+                     * Returns an object of type Builder.
+                     * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlImg.Builder}
+                     */
                     static newBuilder() {
                         return new HtmlImg.Builder();
                     }
@@ -22,31 +26,28 @@ var it;
                 HtmlImg["__class"] = "it.uniroma1.fabbricasemanticajsweet.dom.HtmlImg";
                 (function (HtmlImg) {
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Represents a Builder of HTMLImageElement.
                      * @extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder
                      * @class
                      */
                     class Builder extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder {
                         constructor() {
                             super();
-                            this.__it_uniroma1_fabbricasemanticajsweet_dom_HtmlImg_Builder_built = false;
-                            if (this.element === undefined)
-                                this.element = null;
                             this.element = document.createElement("img");
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the class of the Image element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlImg.Builder} [the Builder object]
                          * @param {string} classe
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlImg.Builder}
                          */
                         setClass(classe) {
                             this.element.className = classe;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the src of the Image element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlImg.Builder} [the Builder object]
                          * @param {string} src
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlImg.Builder}
                          */
                         setSrc(src) {
                             this.element.src = src;
@@ -57,9 +58,9 @@ var it;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Appends another HTMLElement to the element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlImg.Builder} [the Builder object]
                          * @param {HTMLElement} child
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlImg.Builder}
                          */
                         append(child) {
                             if (((child != null && child instanceof HTMLElement) || child === null)) {

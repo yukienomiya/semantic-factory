@@ -8,12 +8,16 @@ var it;
             var dom;
             (function (dom) {
                 /**
-                 * TODO(yukienomiya): Add JavaDoc
+                 * Represents a HTML Option element.
                  * @class
                  */
                 class HtmlOption {
                     constructor() {
                     }
+                    /**
+                     * Returns an object of type Builder.
+                     * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder}
+                     */
                     static newBuilder() {
                         return new HtmlOption.Builder();
                     }
@@ -22,58 +26,55 @@ var it;
                 HtmlOption["__class"] = "it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption";
                 (function (HtmlOption) {
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Represents a Builder of HTMLOptionElement.
                      * @extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder
                      * @class
                      */
                     class Builder extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder {
                         constructor() {
                             super();
-                            this.__it_uniroma1_fabbricasemanticajsweet_dom_HtmlOption_Builder_built = false;
-                            if (this.element === undefined)
-                                this.element = null;
                             this.element = document.createElement("option");
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the class of the Option element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder} [the Builder object]
                          * @param {string} classe
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder}
                          */
                         setClass(classe) {
                             this.element.className = classe;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the text content of the Option element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder} [the Builder object]
                          * @param {string} textContent
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder}
                          */
                         setContent(textContent) {
                             this.element.textContent = textContent;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the selected attribute of the Option element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder} [the Builder object]
                          * @param {boolean} sel
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder}
                          */
                         setSelected(sel) {
                             this.element.selected = sel;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the disabled attribute of the Option element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder} [the Builder object]
                          * @param {boolean} dis
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder}
                          */
                         setDisabled(dis) {
                             this.element.disabled = dis;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the value of the Option element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder} [the Builder object]
                          * @param {string} value
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder}
                          */
                         setValue(value) {
                             this.element.value = value;
@@ -84,9 +85,9 @@ var it;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Appends another HTMLElement to the element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder} [the Builder object]
                          * @param {HTMLElement} child
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlOption.Builder}
                          */
                         append(child) {
                             if (((child != null && child instanceof HTMLElement) || child === null)) {

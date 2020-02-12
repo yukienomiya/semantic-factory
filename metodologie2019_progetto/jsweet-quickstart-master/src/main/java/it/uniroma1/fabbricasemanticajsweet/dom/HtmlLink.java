@@ -6,28 +6,33 @@ import def.dom.HTMLLinkElement;
 import jsweet.util.StringTypes;
 
 /**
- * TODO(yukienomiya): Add JavaDoc
+ * Represents a HTML Link element.
  */
 public class HtmlLink {
   private HtmlLink() {}
 
+  /**
+   * Returns an object of type Builder.
+   */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Represents a Builder of HTMLLinkElement.
    */
   public static class Builder extends BasicBuilder<HTMLLinkElement> {
-    HTMLLinkElement element;
-    Boolean built = false;
 
+    /**
+     * Assigns an object of type HTMLLinkElement to the variable element.
+     */
     private Builder() {
       element = Globals.document.createElement(StringTypes.link);
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the class of the Link element.
+     * @return [the Builder object]
      */
     public Builder setClass(String classe) {
       element.className = classe;
@@ -35,7 +40,8 @@ public class HtmlLink {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the text content of the Link element.
+     * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
       element.textContent = textContent;
@@ -43,7 +49,8 @@ public class HtmlLink {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the id of the Link element.
+     * @return [the Builder object]
      */
     public Builder setId(String id) {
       element.id = id;
@@ -51,7 +58,8 @@ public class HtmlLink {
     }
     
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the href of the Link element.
+     * @return [the Builder object]
      */
     public Builder setHref(String href) {
       element.href = href;
@@ -59,7 +67,8 @@ public class HtmlLink {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another HTMLElement to the element.
+     * @return [the Builder object]
      */
     final public Builder append(HTMLElement child) {
       element.appendChild(child);
@@ -67,7 +76,8 @@ public class HtmlLink {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another element Builder to the Builder.
+     * @return [the Builder object]
      */
     final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
       element.appendChild(childBuilder.build());

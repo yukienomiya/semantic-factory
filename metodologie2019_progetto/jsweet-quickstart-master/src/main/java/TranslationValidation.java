@@ -21,11 +21,27 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlP;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan;
 
+/**
+ * Represents the TranslationValidation task HTML page.
+ */
 public class TranslationValidation {
+
+  /**
+   * Represents the url of the NewExampleServiceServlet.
+   */
   public static final String REST_URL = "nextExample.jsp";
+
+  /**
+   * Represents the url of the AuthenticationServiceServlet.
+   */
   public static final String LOGIN_CHECK = "isLoggedIn.jsp";
 
-
+  /**
+   * Constructs the HTML page.
+   * @param word        [Represents the word of the task]
+   * @param description [Represents the description of the task]
+   * @param translations [Represents the translations of the task]
+   */
   public static HTMLElement page(String word, String  description, String[] translations) {
     return HtmlDiv.newBuilder()
       .append(
@@ -216,6 +232,10 @@ public class TranslationValidation {
       ).build();
   }
 
+  /**
+   * Checks that the user selected at least one checkbox.
+   * @param m [Represents the MouseEvents that triggers the function]
+   */
   public static Object fieldsCheck(MouseEvent m) {
     ArrayList<HTMLInputElement> cbTranslations = new ArrayList<>();
     for (int i = 0; i < 4; i++) {

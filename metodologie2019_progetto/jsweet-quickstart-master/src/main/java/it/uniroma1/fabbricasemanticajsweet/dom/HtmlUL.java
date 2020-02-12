@@ -6,28 +6,33 @@ import def.dom.HTMLUListElement;
 import jsweet.util.StringTypes;
 
 /**
- * TODO(yukienomiya): Add JavaDoc
+ * Represents a HTML UL element.
  */
 public class HtmlUL {
   private HtmlUL() {}
 
+  /**
+   * Returns an object of type Builder.
+   */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Represents a Builder of HTMLUListElement.
    */
   public static class Builder extends BasicBuilder<HTMLUListElement> {
-    HTMLUListElement element;
-    Boolean built = false;
 
-    private Builder() {
+    /**
+     * Assigns an object of type HTMLUListElement to the variable element.
+     */
+    protected Builder() {
       element = Globals.document.createElement(StringTypes.ul);
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the class of the UL element.
+     * @return [the Builder object]
      */
     public Builder setClass(String classe) {
       element.className = classe;
@@ -35,7 +40,8 @@ public class HtmlUL {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the id of the UL element.
+     * @return [the Builder object]
      */
     public Builder setId(String id) {
       element.id = id;
@@ -43,7 +49,8 @@ public class HtmlUL {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another HTMLElement to the element.
+     * @return [the Builder object]
      */
     final public Builder append(HTMLElement child) {
       element.appendChild(child);
@@ -51,7 +58,8 @@ public class HtmlUL {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another element Builder to the Builder.
+     * @return [the Builder object]
      */
     final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
       element.appendChild(childBuilder.build());

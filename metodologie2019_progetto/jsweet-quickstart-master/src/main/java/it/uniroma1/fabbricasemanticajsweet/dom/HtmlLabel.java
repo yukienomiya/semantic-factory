@@ -6,28 +6,33 @@ import def.dom.HTMLLabelElement;
 import jsweet.util.StringTypes;
 
 /**
- * TODO(yukienomiya): Add JavaDoc
+ * Represents a HTML Label element.
  */
 public class HtmlLabel {
   private HtmlLabel() {}
 
+  /**
+   * Returns an object of type Builder.
+   */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Represents a Builder of HTMLLabelElement.
    */
   public static class Builder extends BasicBuilder<HTMLLabelElement> {
-    HTMLLabelElement element;
-    Boolean built = false;
 
+    /**
+     * Assigns an object of type HTMLLabelElement to the variable element.
+     */
     private Builder() {
       element = Globals.document.createElement(StringTypes.label);
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the class of the Label element.
+     * @return [the Builder object]
      */
     public Builder setClass(String classe) {
       element.className = classe;
@@ -35,7 +40,8 @@ public class HtmlLabel {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the text content of the Label element.
+     * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
       element.textContent = textContent;
@@ -43,7 +49,8 @@ public class HtmlLabel {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the id of the Label element.
+     * @return [the Builder object]
      */
     public Builder setId(String id) {
       element.id = id;
@@ -51,7 +58,17 @@ public class HtmlLabel {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the htmlFor of the Label element.
+     * @return [the Builder object]
+     */
+    public Builder setFor(String elementsName) {
+      element.htmlFor = elementsName;
+      return this;
+    }
+
+    /**
+     * Appends another HTMLElement to the element.
+     * @return [the Builder object]
      */
     final public Builder append(HTMLElement child) {
       element.appendChild(child);
@@ -59,18 +76,11 @@ public class HtmlLabel {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another element Builder to the Builder.
+     * @return [the Builder object]
      */
     final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
       element.appendChild(childBuilder.build());
-      return this;
-    }
-
-    /**
-     * TODO(yukienomiya): Add JavaDoc
-     */
-    public Builder setFor(String elementsName) {
-      element.htmlFor = elementsName;
       return this;
     }
   }

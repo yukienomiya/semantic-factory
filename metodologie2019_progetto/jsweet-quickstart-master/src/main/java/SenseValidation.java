@@ -14,11 +14,27 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlP;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan;
 
+/**
+ * Represents the SenseValidation task HTML page.
+ */
 public class SenseValidation {
+
+  /**
+   * Represents the url of the NewExampleServiceServlet.
+   */
   public static final String REST_URL = "nextExample.jsp";
+
+  /**
+   * Represents the url of the AuthenticationServiceServlet.
+   */
   public static final String LOGIN_CHECK = "isLoggedIn.jsp";
 
-
+  /**
+   * Constructs the HTML page.
+   * @param word    [Represents the word of the task]
+   * @param example [Represents the example of the task]
+   * @param sense [Represents the sense of the task]
+   */
   public static HTMLElement page(String word, String  example, String sense) {
     return HtmlDiv.newBuilder()
       .append(

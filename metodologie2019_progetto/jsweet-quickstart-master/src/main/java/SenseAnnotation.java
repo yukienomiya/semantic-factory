@@ -20,11 +20,27 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlP;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan;
 
+/**
+ * Represents the SenseAnnotation task HTML page.
+ */
 public class SenseAnnotation {
+
+  /**
+   * Represents the url of the NewExampleServiceServlet.
+   */
   public static final String REST_URL = "nextExample.jsp";
+
+  /**
+   * Represents the url of the AuthenticationServiceServlet.
+   */
   public static final String LOGIN_CHECK = "isLoggedIn.jsp";
 
-
+  /**
+   * Constructs the HTML page.
+   * @param word        [Represents the word of the task]
+   * @param description [Represents the description of the task]
+   * @param senses [Represents the senses of the task]
+   */
   public static HTMLElement page(String word, String  description, String[] senses) {
     return HtmlDiv.newBuilder()
       .append(
@@ -215,6 +231,10 @@ public class SenseAnnotation {
       ).build();
   }
 
+  /**
+   * Checks that the user selected at least one checkbox.
+   * @param m [Represents the MouseEvents that triggers the function]
+   */
   public static Object fieldsCheck(MouseEvent m) {
     ArrayList<HTMLInputElement> cbSenses = new ArrayList<>();
     for (int i = 0; i < 4; i ++) {

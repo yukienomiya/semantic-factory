@@ -1,4 +1,7 @@
 import static def.jquery.Globals.$;
+
+import java.util.ArrayList;
+
 import static def.dom.Globals.window;
 import static def.dom.Globals.document;
 
@@ -17,11 +20,28 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlP;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan;
 
+/**
+ * Represents the MyAnnotation task HTML page.
+ */
 public class MyAnnotation {
+
+  /**
+   * Represents the url of the NewExampleServiceServlet.
+   */
   public static final String REST_URL = "nextExample.jsp";
+
+  /**
+   * Represents the url of the AuthenticationServiceServlet.
+   */
   public static final String LOGIN_CHECK = "isLoggedIn.jsp";
 
-
+  /**
+   * Constructs the HTML page.
+   * 
+   * @param word    [Represents the word of the task]
+   * @param example [Represents the example of the task]
+   * @param words [Represents the senses of the task]
+   */
   public static HTMLElement page(String word, String example, String[] words) {
     return HtmlDiv.newBuilder()
       .append(
@@ -212,23 +232,25 @@ public class MyAnnotation {
       ).build();
   }
 
-  // TODO da migliorare
+  /**
+   * Checks that the user selected at least one checkbox.
+   * 
+   * @param m [Represents the MouseEvents that triggers the function]
+   */
   public static Object fieldsCheck(MouseEvent m) {
-    HTMLInputElement cbWord0 = (HTMLInputElement) document.getElementById("word0");
-    HTMLInputElement cbWord1 = (HTMLInputElement) document.getElementById("word1");
-    HTMLInputElement cbWord2 = (HTMLInputElement) document.getElementById("word2");
-    HTMLInputElement cbWord3 = (HTMLInputElement) document.getElementById("word3");
-
-    cbWord0.required = false;
-    cbWord1.required = false;
-    cbWord2.required = false;
-    cbWord3.required = false;
-
-    if (!cbWord0.checked && !cbWord1.checked && !cbWord2.checked && !cbWord3.checked) {
-      cbWord0.required = true;
-      cbWord1.required = true;
-      cbWord2.required = true;
-      cbWord3.required = true;
+    ArrayList<HTMLInputElement> cbWords = new ArrayList<>();
+    for (int i = 0; i < 4; i++) {
+      cbWords.add((HTMLInputElement) document.getElementById("word" + i));
+      cbWords.get(i).required = true;
+    }
+    for (HTMLInputElement cbWord : cbWords) {
+      if (!cbWord.checked) {
+        continue;
+      }
+      for (HTMLInputElement cbW : cbWords) {
+        cbW.required = false;
+      }
+      break;
     }
     return null;
   }

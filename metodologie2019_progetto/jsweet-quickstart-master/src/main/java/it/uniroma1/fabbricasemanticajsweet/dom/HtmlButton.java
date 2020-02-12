@@ -9,28 +9,30 @@ import def.dom.MouseEvent;
 import jsweet.util.StringTypes;
 
 /**
- * TODO(yukienomiya): Add JavaDoc
+ * Represents a HTML Button element.
  */
 public class HtmlButton {
   private HtmlButton() {}
 
+  /**
+   * Returns an object of type Builder.
+   */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Represents a Builder of HTMLButtonElement.
    */
   public static class Builder extends BasicBuilder<HTMLButtonElement> {
-    HTMLButtonElement element;
-    Boolean built = false;
 
     private Builder() {
       element = Globals.document.createElement(StringTypes.button);
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the class of the Button element.
+     * @return [the Builder object]
      */
     public Builder setClass(String classe) {
       element.className = classe;
@@ -38,20 +40,35 @@ public class HtmlButton {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the text content of the Button element.
+     * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
       element.textContent = textContent;
       return this;
     }
 
+    /**
+     * Set the onclick of the Button element.
+     * @return [the Builder object]
+     */
     public Builder setOnClick(Function<MouseEvent, Object> f) {
       element.onclick = f;
       return this;
     }
+
+    /**
+     * Set the type of the Button element.
+     * @return [the Builder object]
+     */
+    public Builder setType(String type) {
+      element.type = type;
+      return this;
+    }
     
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another HTMLElement to the element.
+     * @return [the Builder object]
      */
     final public Builder append(HTMLElement child) {
       element.appendChild(child);
@@ -59,15 +76,11 @@ public class HtmlButton {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another element Builder to the Builder.
+     * @return [the Builder object]
      */
     final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
       element.appendChild(childBuilder.build());
-      return this;
-    }
-
-    public Builder setType(String type) {
-      element.type = type;
       return this;
     }
   }

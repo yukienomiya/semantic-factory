@@ -8,12 +8,16 @@ var it;
             var dom;
             (function (dom) {
                 /**
-                 * TODO(yukienomiya): Add JavaDoc
+                 * Represents a HTML Select element.
                  * @class
                  */
                 class HtmlSelect {
                     constructor() {
                     }
+                    /**
+                     * Returns an object of type Builder.
+                     * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect.Builder}
+                     */
                     static newBuilder() {
                         return new HtmlSelect.Builder();
                     }
@@ -22,35 +26,47 @@ var it;
                 HtmlSelect["__class"] = "it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect";
                 (function (HtmlSelect) {
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Represents a Builder of HTMLSelectElement.
                      * @extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder
                      * @class
                      */
                     class Builder extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder {
                         constructor() {
                             super();
-                            this.__it_uniroma1_fabbricasemanticajsweet_dom_HtmlSelect_Builder_built = false;
-                            if (this.element === undefined)
-                                this.element = null;
                             this.element = document.createElement("select");
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the class of the Select element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect.Builder} [the Builder object]
                          * @param {string} classe
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect.Builder}
                          */
                         setClass(classe) {
                             this.element.className = classe;
                             return this;
                         }
+                        /**
+                         * Set the name of the Select element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect.Builder} [the Builder object]
+                         * @param {string} name
+                         */
                         setName(name) {
                             this.element.name = name;
                             return this;
                         }
+                        /**
+                         * Set the id of the Select element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect.Builder} [the Builder object]
+                         * @param {string} id
+                         */
                         setId(id) {
                             this.element.id = id;
                             return this;
                         }
+                        /**
+                         * Set the disabled attribute of the Select element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect.Builder} [the Builder object]
+                         * @param {boolean} b
+                         */
                         setDisabled(b) {
                             this.element.disabled = b;
                             return this;
@@ -60,9 +76,9 @@ var it;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Appends another HTMLElement to the element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect.Builder} [the Builder object]
                          * @param {HTMLElement} child
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect.Builder}
                          */
                         append(child) {
                             if (((child != null && child instanceof HTMLElement) || child === null)) {

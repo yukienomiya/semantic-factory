@@ -8,12 +8,16 @@ var it;
             var dom;
             (function (dom) {
                 /**
-                 * TODO(yukienomiya): Add JavaDoc
+                 * Represents a HTML H1 element.
                  * @class
                  */
                 class HtmlH1 {
                     constructor() {
                     }
+                    /**
+                     * Returns an object of type Builder.
+                     * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlH1.Builder}
+                     */
                     static newBuilder() {
                         return new HtmlH1.Builder();
                     }
@@ -22,7 +26,7 @@ var it;
                 HtmlH1["__class"] = "it.uniroma1.fabbricasemanticajsweet.dom.HtmlH1";
                 (function (HtmlH1) {
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Represents a Builder of HTMLHeadingElement.
                      * @extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder
                      * @class
                      */
@@ -32,18 +36,18 @@ var it;
                             this.element = document.createElement("h1");
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the class of the H1 element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlH1.Builder} [the Builder object]
                          * @param {string} classe
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlH1.Builder}
                          */
                         setClass(classe) {
                             this.element.className = classe;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the text content of the H1 element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlH1.Builder} [the Builder object]
                          * @param {string} textContent
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlH1.Builder}
                          */
                         setContent(textContent) {
                             this.element.textContent = textContent;
@@ -54,9 +58,9 @@ var it;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Appends another HTMLElement to the element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlH1.Builder} [the Builder object]
                          * @param {HTMLElement} child
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlH1.Builder}
                          */
                         append(child) {
                             if (((child != null && child instanceof HTMLElement) || child === null)) {

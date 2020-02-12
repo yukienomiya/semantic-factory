@@ -8,12 +8,16 @@ var it;
             var dom;
             (function (dom) {
                 /**
-                 * TODO(yukienomiya): Add JavaDoc
+                 * Represents a HTML Button element.
                  * @class
                  */
                 class HtmlButton {
                     constructor() {
                     }
+                    /**
+                     * Returns an object of type Builder.
+                     * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton.Builder}
+                     */
                     static newBuilder() {
                         return new HtmlButton.Builder();
                     }
@@ -22,38 +26,49 @@ var it;
                 HtmlButton["__class"] = "it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton";
                 (function (HtmlButton) {
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Represents a Builder of HTMLButtonElement.
                      * @extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder
                      * @class
                      */
                     class Builder extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder {
                         constructor() {
                             super();
-                            this.__it_uniroma1_fabbricasemanticajsweet_dom_HtmlButton_Builder_built = false;
-                            if (this.element === undefined)
-                                this.element = null;
                             this.element = document.createElement("button");
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the class of the Button element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton.Builder} [the Builder object]
                          * @param {string} classe
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton.Builder}
                          */
                         setClass(classe) {
                             this.element.className = classe;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the text content of the Button element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton.Builder} [the Builder object]
                          * @param {string} textContent
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton.Builder}
                          */
                         setContent(textContent) {
                             this.element.textContent = textContent;
                             return this;
                         }
+                        /**
+                         * Set the onclick of the Button element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton.Builder} [the Builder object]
+                         * @param {*} f
+                         */
                         setOnClick(f) {
                             this.element.onclick = (f);
+                            return this;
+                        }
+                        /**
+                         * Set the type of the Button element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton.Builder} [the Builder object]
+                         * @param {string} type
+                         */
+                        setType(type) {
+                            this.element.type = type;
                             return this;
                         }
                         append$def_dom_HTMLElement(child) {
@@ -61,9 +76,9 @@ var it;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Appends another HTMLElement to the element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton.Builder} [the Builder object]
                          * @param {HTMLElement} child
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlButton.Builder}
                          */
                         append(child) {
                             if (((child != null && child instanceof HTMLElement) || child === null)) {
@@ -77,10 +92,6 @@ var it;
                         }
                         append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(childBuilder) {
                             this.element.appendChild(childBuilder.build());
-                            return this;
-                        }
-                        setType(type) {
-                            this.element.type = type;
                             return this;
                         }
                     }

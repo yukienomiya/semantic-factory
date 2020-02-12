@@ -6,51 +6,69 @@ import def.dom.HTMLSelectElement;
 import jsweet.util.StringTypes;
 
 /**
- * TODO(yukienomiya): Add JavaDoc
+ * Represents a HTML Select element.
  */
 public class HtmlSelect {
   private HtmlSelect() {}
 
+  /**
+   * Returns an object of type Builder.
+   */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Represents a Builder of HTMLSelectElement.
    */
   public static class Builder extends BasicBuilder<HTMLSelectElement> {
-    HTMLSelectElement element;
-    Boolean built = false;
 
-    private Builder() {
+    /**
+     * Assigns an object of type HTMLSelectElement to the variable element.
+     */
+    protected Builder() {
       element = Globals.document.createElement(StringTypes.select);
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the class of the Select element.
+     * @return [the Builder object]
      */
     public Builder setClass(String classe) {
       element.className = classe;
       return this;
     }
 
+    /**
+     * Set the name of the Select element.
+     * @return [the Builder object]
+     */
     public Builder setName(String name) {
       element.name = name;
       return this;
     }
 
+    /**
+     * Set the id of the Select element.
+     * @return [the Builder object]
+     */
     public Builder setId(String id) {
       element.id = id;
       return this;
     }
 
+    /**
+     * Set the disabled attribute of the Select element.
+     * @return [the Builder object]
+     */
     public Builder setDisabled(Boolean b) {
       element.disabled = b;
       return this;
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another HTMLElement to the element.
+     * @return [the Builder object]
      */
     final public Builder append(HTMLElement child) {
       element.appendChild(child);
@@ -58,7 +76,8 @@ public class HtmlSelect {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another element Builder to the Builder.
+     * @return [the Builder object]
      */
     final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
       element.appendChild(childBuilder.build());

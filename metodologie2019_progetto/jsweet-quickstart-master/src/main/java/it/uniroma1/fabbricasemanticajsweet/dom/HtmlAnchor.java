@@ -6,28 +6,33 @@ import def.dom.HTMLElement;
 import jsweet.util.StringTypes;
 
 /**
- * TODO(yukienomiya): Add JavaDoc
+ * Represents a HTML Anchor element.
  */
 public class HtmlAnchor {
   private HtmlAnchor() {}
 
+  /**
+   * Returns an object of type Builder.
+   */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Represents a Builder of HTMLAnchorElement.
    */
   public static class Builder extends BasicBuilder<HTMLAnchorElement> {
-    HTMLAnchorElement element;
-    Boolean built = false;
 
+    /**
+     * Assigns an object of type HTMLAnchorElement to the variable element.
+     */
     private Builder() {
       element = Globals.document.createElement(StringTypes.a);
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the class of the Anchor element.
+     * @return [the Builder object]
      */
     public Builder setClass(String classe) {
       element.className = classe;
@@ -35,20 +40,26 @@ public class HtmlAnchor {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the text content of the Anchor element.
+     * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
       element.textContent = textContent;
       return this;
     }
 
+    /**
+     * Set the href of the Anchor element.
+     * @return [the Builder object]
+     */
     public Builder setHref(String href) {
       element.href = href;
       return this;
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another HTMLElement to the element.
+     * @return [the Builder object]
      */
     final public Builder append(HTMLElement child) {
       element.appendChild(child);
@@ -56,7 +67,8 @@ public class HtmlAnchor {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another element Builder to the Builder.
+     * @return [the Builder object]
      */
     final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
       element.appendChild(childBuilder.build());

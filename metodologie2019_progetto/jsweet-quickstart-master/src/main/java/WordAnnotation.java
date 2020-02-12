@@ -14,10 +14,25 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlP;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlTextArea;
 
+/**
+ * Represents the WordAnnotation task HTML page.
+ */
 public class WordAnnotation {
+
+  /**
+   * Represents the url of the NewExampleServiceServlet.
+   */
   public static final String REST_URL = "nextExample.jsp";
+
+  /**
+   * Represents the url of the AuthenticationServiceServlet.
+   */
   public static final String LOGIN_CHECK = "isLoggedIn.jsp";
 
+  /**
+   * Constructs the HTML page.
+   * @param description     [Represents the description of the task]
+   */
   public static HTMLElement page(String  description) {
     return HtmlDiv.newBuilder()
       .append(

@@ -9,12 +9,29 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlImg;
 
+/**
+ * Represents the Home HTML page.
+ */
 public class Home {
-  //public static final String SERVLET_URL = "login.jsp"; serve la servlet per la home?
+
+  /**
+   * Represents the url of the LogoutServlet.
+   */
   public static final String LOGOUT_URL = "logout.jsp";
+
+  /**
+   * Represents the url of the HomeServlet.
+   */
   public static final String TASK_URL = "home.jsp";
+
+  /**
+   * Represents the url of the AuthenticationServiceServlet.
+   */
   public static final String LOGIN_CHECK = "isLoggedIn.jsp";  
 
+  /**
+   * Constructs the HTML page.
+   */
   public static HTMLElement page() {
     return HtmlDiv.newBuilder()
       .append(

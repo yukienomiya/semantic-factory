@@ -6,25 +6,32 @@ import def.dom.HTMLHeadingElement;
 import jsweet.util.StringTypes;
 
 /**
- * TODO(yukienomiya): Add JavaDoc
+ * Represents a HTML H3 element.
  */
 public class HtmlH3 {
   private HtmlH3() {}
 
+  /**
+   * Returns an object of type Builder.
+   */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Represents a Builder of HTMLHeadingElement.
    */
   public static class Builder extends BasicBuilder<HTMLHeadingElement> {
+    /**
+     * Assigns an object of type HTMLHeadingElement to the variable element.
+     */
     protected Builder() {
       element = Globals.document.createElement(StringTypes.h3);
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the class of the H3 element.
+     * @return [the Builder object]
      */
     public Builder setClass(String classe) {
       element.className = classe;
@@ -32,7 +39,8 @@ public class HtmlH3 {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the text content of the H3 element.
+     * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
       element.textContent = textContent;
@@ -40,7 +48,8 @@ public class HtmlH3 {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another HTMLElement to the element.
+     * @return [the Builder object]
      */
     final public Builder append(HTMLElement child) {
       element.appendChild(child);
@@ -48,7 +57,8 @@ public class HtmlH3 {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another element Builder to the Builder.
+     * @return [the Builder object]
      */
     final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
       element.appendChild(childBuilder.build());

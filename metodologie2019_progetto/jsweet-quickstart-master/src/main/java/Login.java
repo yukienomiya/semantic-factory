@@ -10,11 +10,24 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlI;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlImg;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput;
 
+/**
+ * Represents the Login HTML page.
+ */
 public class Login {
+
+  /**
+   * Represents the url of the LoginServlet.
+   */
   public static final String SERVLET_URL = "login.jsp";
+
+  /**
+   * Represents the url of the Signup page.
+   */
   public static final String SIGNUP_URL = "signup.html";
 
-  // Metodo che costruisce la pagina, usando i builder sembra più simile ad HTML
+  /**
+   * Constructs the HTML page.
+   */
   public static HTMLElement page() {
     return HtmlDiv.newBuilder()
       .append(

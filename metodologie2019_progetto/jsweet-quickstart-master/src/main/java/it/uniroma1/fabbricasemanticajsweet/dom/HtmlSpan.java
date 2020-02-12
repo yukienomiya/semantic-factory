@@ -6,28 +6,33 @@ import def.dom.HTMLSpanElement;
 import jsweet.util.StringTypes;
 
 /**
- * TODO(yukienomiya): Add JavaDoc
+ * Represents a HTML Span element.
  */
 public class HtmlSpan {
   private HtmlSpan() {}
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Returns an object of type Builder.
    */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Represents a Builder of HTMLSpanElement.
    */
   public static class Builder extends BasicBuilder<HTMLSpanElement> {
+
+    /**
+     * Assigns an object of type HTMLSpanElement to the variable element.
+     */
     protected Builder() {
       element = Globals.document.createElement(StringTypes.span);
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the id of the Span element.
+     * @return [the Builder object]
      */
     public Builder setId(String id) {
       element.id = id;
@@ -35,7 +40,8 @@ public class HtmlSpan {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the class of the Span element.
+     * @return [the Builder object]
      */
     public Builder setClass(String classe) {
       element.className = classe;
@@ -43,7 +49,8 @@ public class HtmlSpan {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the text content of the Span element.
+     * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
       element.textContent = textContent;
@@ -51,7 +58,8 @@ public class HtmlSpan {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another HTMLElement to the element.
+     * @return [the Builder object]
      */
     final public Builder append(HTMLElement child) {
       element.appendChild(child);
@@ -59,7 +67,8 @@ public class HtmlSpan {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another element Builder to the Builder.
+     * @return [the Builder object]
      */
     final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
       element.appendChild(childBuilder.build());

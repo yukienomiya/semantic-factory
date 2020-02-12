@@ -6,28 +6,33 @@ import def.dom.HTMLElement;
 import jsweet.util.StringTypes;
 
 /**
- * TODO(yukienomiya): Add JavaDoc
+ * Represents a HTML Div element.
  */
 public class HtmlDiv {
   private HtmlDiv() {}
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Returns an object of type Builder.
    */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Represents a Builder of HTMLDivElement.
    */
   public static class Builder extends BasicBuilder<HTMLDivElement> {
+
+    /**
+     * Assigns an object of type HTMLDivElement to the variable element.
+     */
     protected Builder() {
       element = Globals.document.createElement(StringTypes.div);
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the class of the Div element.
+     * @return [the Builder object]
      */
     public Builder setClass(String classe) {
       element.className = classe;
@@ -35,7 +40,8 @@ public class HtmlDiv {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the text content of the Div element. 
+     * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
       element.textContent = textContent;
@@ -43,7 +49,8 @@ public class HtmlDiv {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another HTMLElement to the element.
+     * @return [the Builder object]
      */
     final public Builder append(HTMLElement child) {
       element.appendChild(child);
@@ -51,7 +58,8 @@ public class HtmlDiv {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another element Builder to the Builder.
+     * @return [the Builder object]
      */
     final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
       element.appendChild(childBuilder.build());

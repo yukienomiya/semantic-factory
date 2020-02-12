@@ -6,28 +6,33 @@ import jsweet.util.StringTypes;
 import def.dom.HTMLParagraphElement;
 
 /**
- * TODO(yukienomiya): Add JavaDoc
+ * Represents a HTML P element.
  */
 public class HtmlP {
   private HtmlP() {}
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Returns an object of type Builder.
    */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Represents a Builder of HTMLParagraphElement.
    */
   public static class Builder extends BasicBuilder<HTMLParagraphElement> {
+
+    /**
+     * Assigns an object of type HTMLParagraphElement to the variable element.
+     */
     protected Builder() {
       element = Globals.document.createElement(StringTypes.p);
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the class of the P element.
+     * @return [the Builder object]
      */
     public Builder setClass(String classe) {
       element.className = classe;
@@ -35,7 +40,8 @@ public class HtmlP {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the id of the P element.
+     * @return [the Builder object]
      */
     public Builder setId(String id) {
       element.id = id;
@@ -43,7 +49,8 @@ public class HtmlP {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the text content of the P element.
+     * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
       element.textContent = textContent;
@@ -51,7 +58,8 @@ public class HtmlP {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another HTMLElement to the element.
+     * @return [the Builder object]
      */
     final public Builder append(HTMLElement child) {
       element.appendChild(child);
@@ -59,7 +67,8 @@ public class HtmlP {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another element Builder to the Builder.
+     * @return [the Builder object]
      */
     final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
       element.appendChild(childBuilder.build());

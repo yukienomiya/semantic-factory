@@ -8,14 +8,14 @@ var it;
             var dom;
             (function (dom) {
                 /**
-                 * TODO(yukienomiya): Add JavaDoc
+                 * Represents a HTML Div element.
                  * @class
                  */
                 class HtmlDiv {
                     constructor() {
                     }
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Returns an object of type Builder.
                      * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.Builder}
                      */
                     static newBuilder() {
@@ -26,7 +26,7 @@ var it;
                 HtmlDiv["__class"] = "it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv";
                 (function (HtmlDiv) {
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Represents a Builder of HTMLDivElement.
                      * @extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder
                      * @class
                      */
@@ -36,18 +36,18 @@ var it;
                             this.element = document.createElement("div");
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the class of the Div element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.Builder} [the Builder object]
                          * @param {string} classe
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.Builder}
                          */
                         setClass(classe) {
                             this.element.className = classe;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the text content of the Div element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.Builder} [the Builder object]
                          * @param {string} textContent
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.Builder}
                          */
                         setContent(textContent) {
                             this.element.textContent = textContent;
@@ -58,9 +58,9 @@ var it;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Appends another HTMLElement to the element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.Builder} [the Builder object]
                          * @param {HTMLElement} child
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlDiv.Builder}
                          */
                         append(child) {
                             if (((child != null && child instanceof HTMLElement) || child === null)) {

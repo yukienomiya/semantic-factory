@@ -1,5 +1,7 @@
 import static def.jquery.Globals.$;
 
+import java.util.ArrayList;
+
 import static def.dom.Globals.document;
 
 import def.dom.Event;
@@ -21,10 +23,24 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlP;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlSelect;
 import it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan;
 
+/**
+ * Represents the Signup HTML page.
+ */
 public class Signup {
+
+  /**
+   * Represents the url of the SignupServlet.
+   */
   public static final String SERVLET_URL = "signup.jsp";
+
+  /**
+   * Represents the url of the Login page.
+   */
   public static final String LOGIN_URL = "login.html";
 
+  /**
+   * Constructs the HTML page.
+   */
   public static HTMLElement page() {
     return HtmlDiv.newBuilder()
       .append(
@@ -128,7 +144,7 @@ public class Signup {
                                         HtmlLabel.newBuilder()
                                           .append(
                                             HtmlInput.newBuilder()
-                                              .setId("cbItalianNat")
+                                              .setId("cbNat0")
                                               .setName("cbNat")
                                               .setValue("Italiano")
                                               .setType("checkbox")
@@ -153,7 +169,7 @@ public class Signup {
                                         HtmlLabel.newBuilder()
                                           .append(
                                             HtmlInput.newBuilder()
-                                              .setId("cbEnglishNat")
+                                              .setId("cbNat1")
                                               .setName("cbNat")
                                               .setValue("English")
                                               .setType("checkbox")
@@ -350,20 +366,32 @@ public class Signup {
       ).build();
   }
 
+  /**
+   * Checks that the user selected at least one checkbox.
+   * @param m     [Represents the MouseEvents that triggers the function]
+   */
   public static Object fieldsCheck(MouseEvent m) {
-    HTMLInputElement cbItalianNat = (HTMLInputElement) document.getElementById("cbItalianNat");
-    HTMLInputElement cbEnglishNat = (HTMLInputElement) document.getElementById("cbEnglishNat");
-
-    cbItalianNat.required = false;
-    cbEnglishNat.required = false;
-
-    if (!cbItalianNat.checked && !cbEnglishNat.checked) {
-      cbItalianNat.required = true;
-      cbEnglishNat.required = true;
+    ArrayList<HTMLInputElement> cbNativeLang = new ArrayList<>();
+    for (int i = 0; i < 2; i++) {
+      cbNativeLang.add((HTMLInputElement) document.getElementById("cbNat" + i));
+      cbNativeLang.get(i).required = true;
+    }
+    for (HTMLInputElement cbNat : cbNativeLang) {
+      if (!cbNat.checked) {
+        continue;
+      }
+      for (HTMLInputElement cbN : cbNativeLang) {
+        cbN.required = false;
+      }
+      break;
     }
     return null;
   }
 
+  /**
+   * Activates the Select element (and sets it to required) if the relative checkbox is checked.
+   * @param m [Represents the MouseEvent that triggers the function]
+   */
   public static Object activateSelectIT(MouseEvent m) {
     HTMLInputElement cbItalianOther = (HTMLInputElement) document.getElementById("cbItalianOther");
     HTMLSelectElement livIT = (HTMLSelectElement) document.getElementById("livIT");
@@ -380,6 +408,10 @@ public class Signup {
     return null;
   }
 
+  /**
+   * Activates the Select element (and sets it to required) if the relative checkbox is checked.
+   * @param m [Represents the MouseEvent that triggers the function]
+   */
   public static Object activateSelectEN(MouseEvent m) {
     HTMLInputElement cbEnglishOther = (HTMLInputElement) document.getElementById("cbEnglishOther");
     HTMLSelectElement livEN = (HTMLSelectElement) document.getElementById("livEN");
@@ -395,6 +427,10 @@ public class Signup {
     return null;
   }
 
+  /**
+   * Checkes if the password and its confirmation are equals.
+   * @param e [Represents the Event that triggers the function]
+   */
   public static Object pswValidity(Event e) {
     Object pswValue = $("#password").val();
     Object psw2Value = $("#password2").val();

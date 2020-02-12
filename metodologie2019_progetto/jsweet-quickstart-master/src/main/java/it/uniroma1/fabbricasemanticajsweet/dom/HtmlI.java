@@ -5,28 +5,33 @@ import def.dom.HTMLElement;
 import jsweet.util.StringTypes;
 
 /**
- * TODO(yukienomiya): Add JavaDoc
+ * Represents a HTML I element.
  */
 public class HtmlI {
   private HtmlI() {}
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Returns an object of type Builder.
    */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Represents a Builder of HTMLElement.
    */
   public static class Builder extends BasicBuilder<HTMLElement> {
+
+    /**
+     * Assigns an object of type HTMLElement to the variable element.
+     */
     private Builder() {
       element = Globals.document.createElement(StringTypes.i);
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the class of the I element.
+     * @return [the Builder object]
      */
     public Builder setClass(String classe) {
       element.className = classe;
@@ -34,7 +39,8 @@ public class HtmlI {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the text content of the I element.
+     * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
       element.textContent = textContent;
@@ -42,7 +48,8 @@ public class HtmlI {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another HTMLElement to the element.
+     * @return [the Builder object]
      */
     final public Builder append(HTMLElement child) {
       element.appendChild(child);
@@ -50,7 +57,8 @@ public class HtmlI {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another element Builder to the Builder.
+     * @return [the Builder object]
      */
     final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
       element.appendChild(childBuilder.build());

@@ -8,12 +8,16 @@ var it;
             var dom;
             (function (dom) {
                 /**
-                 * TODO(yukienomiya): Add JavaDoc
+                 * Represents a HTML Label element.
                  * @class
                  */
                 class HtmlLabel {
                     constructor() {
                     }
+                    /**
+                     * Returns an object of type Builder.
+                     * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder}
+                     */
                     static newBuilder() {
                         return new HtmlLabel.Builder();
                     }
@@ -22,43 +26,49 @@ var it;
                 HtmlLabel["__class"] = "it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel";
                 (function (HtmlLabel) {
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Represents a Builder of HTMLLabelElement.
                      * @extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder
                      * @class
                      */
                     class Builder extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder {
                         constructor() {
                             super();
-                            this.__it_uniroma1_fabbricasemanticajsweet_dom_HtmlLabel_Builder_built = false;
-                            if (this.element === undefined)
-                                this.element = null;
                             this.element = document.createElement("label");
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the class of the Label element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder} [the Builder object]
                          * @param {string} classe
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder}
                          */
                         setClass(classe) {
                             this.element.className = classe;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the text content of the Label element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder} [the Builder object]
                          * @param {string} textContent
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder}
                          */
                         setContent(textContent) {
                             this.element.textContent = textContent;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the id of the Label element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder} [the Builder object]
                          * @param {string} id
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder}
                          */
                         setId(id) {
                             this.element.id = id;
+                            return this;
+                        }
+                        /**
+                         * Set the htmlFor of the Label element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder} [the Builder object]
+                         * @param {string} elementsName
+                         */
+                        setFor(elementsName) {
+                            this.element.htmlFor = elementsName;
                             return this;
                         }
                         append$def_dom_HTMLElement(child) {
@@ -66,9 +76,9 @@ var it;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Appends another HTMLElement to the element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder} [the Builder object]
                          * @param {HTMLElement} child
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder}
                          */
                         append(child) {
                             if (((child != null && child instanceof HTMLElement) || child === null)) {
@@ -82,15 +92,6 @@ var it;
                         }
                         append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(childBuilder) {
                             this.element.appendChild(childBuilder.build());
-                            return this;
-                        }
-                        /**
-                         * TODO(yukienomiya): Add JavaDoc
-                         * @param {string} elementsName
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLabel.Builder}
-                         */
-                        setFor(elementsName) {
-                            this.element.htmlFor = elementsName;
                             return this;
                         }
                     }

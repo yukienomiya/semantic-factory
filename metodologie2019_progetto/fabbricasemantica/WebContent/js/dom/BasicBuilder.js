@@ -8,22 +8,25 @@ var it;
             var dom;
             (function (dom) {
                 /**
-                 * TODO(yukienomiya): Add JavaDoc
+                 * Represents the generic Builder.
                  * @class
                  */
                 class BasicBuilder {
                     constructor() {
+                        /**
+                         * Indicates whether the element has already been built or not.
+                         */
                         /*private*/ this.built = false;
                         if (this.element === undefined)
                             this.element = null;
                     }
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Returns the element only once.
                      * @return {HTMLElement}
                      */
                     build() {
                         if (this.built) {
-                            throw Object.defineProperty(new Error("Build method should be called only once"), '__classes', { configurable: true, value: ['java.lang.Throwable', 'java.lang.Error', 'java.lang.Object'] });
+                            throw Object.defineProperty(new Error("Build method should only be called once"), '__classes', { configurable: true, value: ['java.lang.Throwable', 'java.lang.Error', 'java.lang.Object'] });
                         }
                         this.built = true;
                         return this.element;

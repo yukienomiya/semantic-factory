@@ -8,14 +8,14 @@ var it;
             var dom;
             (function (dom) {
                 /**
-                 * TODO(yukienomiya): Add JavaDoc
+                 * Represents a HTML Form element.
                  * @class
                  */
                 class HtmlForm {
                     constructor() {
                     }
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Returns an object of type Builder.
                      * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm.Builder}
                      */
                     static newBuilder() {
@@ -26,7 +26,7 @@ var it;
                 HtmlForm["__class"] = "it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm";
                 (function (HtmlForm) {
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Represents a Builder of HTMLFormElement.
                      * @extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder
                      * @class
                      */
@@ -36,21 +36,39 @@ var it;
                             this.element = document.createElement("form");
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the class of the Form element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm.Builder} [the Builder object]
                          * @param {string} classe
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm.Builder}
                          */
                         setClass(classe) {
                             this.element.className = classe;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the text content of the Form element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm.Builder} [the Builder object]
                          * @param {string} textContent
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm.Builder}
                          */
                         setContent(textContent) {
                             this.element.textContent = textContent;
+                            return this;
+                        }
+                        /**
+                         * Set the method of the Form element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm.Builder} [the Builder object]
+                         * @param {string} method
+                         */
+                        setMethod(method) {
+                            this.element.method = method;
+                            return this;
+                        }
+                        /**
+                         * Set the action of the Form element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm.Builder} [the Builder object]
+                         * @param {string} action
+                         */
+                        setAction(action) {
+                            this.element.action = action;
                             return this;
                         }
                         append$def_dom_HTMLElement(child) {
@@ -58,9 +76,9 @@ var it;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Appends another HTMLElement to the element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm.Builder} [the Builder object]
                          * @param {HTMLElement} child
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm.Builder}
                          */
                         append(child) {
                             if (((child != null && child instanceof HTMLElement) || child === null)) {
@@ -74,24 +92,6 @@ var it;
                         }
                         append$it_uniroma1_fabbricasemanticajsweet_dom_BasicBuilder(childBuilder) {
                             this.element.appendChild(childBuilder.build());
-                            return this;
-                        }
-                        /**
-                         * TODO(yukienomiya): Add JavaDoc
-                         * @param {string} method
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm.Builder}
-                         */
-                        setMethod(method) {
-                            this.element.method = method;
-                            return this;
-                        }
-                        /**
-                         * TODO(yukienomiya): Add JavaDoc
-                         * @param {string} action
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlForm.Builder}
-                         */
-                        setAction(action) {
-                            this.element.action = action;
                             return this;
                         }
                     }

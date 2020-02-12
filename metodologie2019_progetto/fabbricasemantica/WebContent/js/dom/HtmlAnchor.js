@@ -8,12 +8,16 @@ var it;
             var dom;
             (function (dom) {
                 /**
-                 * TODO(yukienomiya): Add JavaDoc
+                 * Represents a HTML Anchor element.
                  * @class
                  */
                 class HtmlAnchor {
                     constructor() {
                     }
+                    /**
+                     * Returns an object of type Builder.
+                     * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor.Builder}
+                     */
                     static newBuilder() {
                         return new HtmlAnchor.Builder();
                     }
@@ -22,36 +26,38 @@ var it;
                 HtmlAnchor["__class"] = "it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor";
                 (function (HtmlAnchor) {
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Represents a Builder of HTMLAnchorElement.
                      * @extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder
                      * @class
                      */
                     class Builder extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder {
                         constructor() {
                             super();
-                            this.__it_uniroma1_fabbricasemanticajsweet_dom_HtmlAnchor_Builder_built = false;
-                            if (this.element === undefined)
-                                this.element = null;
                             this.element = document.createElement("a");
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the class of the Anchor element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor.Builder} [the Builder object]
                          * @param {string} classe
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor.Builder}
                          */
                         setClass(classe) {
                             this.element.className = classe;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the text content of the Anchor element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor.Builder} [the Builder object]
                          * @param {string} textContent
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor.Builder}
                          */
                         setContent(textContent) {
                             this.element.textContent = textContent;
                             return this;
                         }
+                        /**
+                         * Set the href of the Anchor element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor.Builder} [the Builder object]
+                         * @param {string} href
+                         */
                         setHref(href) {
                             this.element.href = href;
                             return this;
@@ -61,9 +67,9 @@ var it;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Appends another HTMLElement to the element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor.Builder} [the Builder object]
                          * @param {HTMLElement} child
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlAnchor.Builder}
                          */
                         append(child) {
                             if (((child != null && child instanceof HTMLElement) || child === null)) {

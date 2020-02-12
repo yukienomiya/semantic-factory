@@ -8,12 +8,16 @@ var it;
             var dom;
             (function (dom) {
                 /**
-                 * TODO(yukienomiya): Add JavaDoc
+                 * Represents a HTML Link element.
                  * @class
                  */
                 class HtmlLink {
                     constructor() {
                     }
+                    /**
+                     * Returns an object of type Builder.
+                     * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink.Builder}
+                     */
                     static newBuilder() {
                         return new HtmlLink.Builder();
                     }
@@ -22,49 +26,46 @@ var it;
                 HtmlLink["__class"] = "it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink";
                 (function (HtmlLink) {
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Represents a Builder of HTMLLinkElement.
                      * @extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder
                      * @class
                      */
                     class Builder extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder {
                         constructor() {
                             super();
-                            this.__it_uniroma1_fabbricasemanticajsweet_dom_HtmlLink_Builder_built = false;
-                            if (this.element === undefined)
-                                this.element = null;
                             this.element = document.createElement("link");
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the class of the Link element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink.Builder} [the Builder object]
                          * @param {string} classe
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink.Builder}
                          */
                         setClass(classe) {
                             this.element.className = classe;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the text content of the Link element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink.Builder} [the Builder object]
                          * @param {string} textContent
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink.Builder}
                          */
                         setContent(textContent) {
                             this.element.textContent = textContent;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the id of the Link element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink.Builder} [the Builder object]
                          * @param {string} id
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink.Builder}
                          */
                         setId(id) {
                             this.element.id = id;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the href of the Link element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink.Builder} [the Builder object]
                          * @param {string} href
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink.Builder}
                          */
                         setHref(href) {
                             this.element.href = href;
@@ -75,9 +76,9 @@ var it;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Appends another HTMLElement to the element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink.Builder} [the Builder object]
                          * @param {HTMLElement} child
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlLink.Builder}
                          */
                         append(child) {
                             if (((child != null && child instanceof HTMLElement) || child === null)) {

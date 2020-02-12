@@ -6,28 +6,33 @@ import def.dom.HTMLTextAreaElement;
 import jsweet.util.StringTypes;
 
 /**
- * TODO(yukienomiya): Add JavaDoc
+ * Represents a HTML TextArea element.
  */
 public class HtmlTextArea {
   private HtmlTextArea() {}
 
+  /**
+   * Returns an object of type Builder.
+   */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   /**
-   * TODO(yukienomiya): Add JavaDoc
+   * Represents a Builder of HTMLTextAreaElement.
    */
   public static class Builder extends BasicBuilder<HTMLTextAreaElement> {
-    HTMLTextAreaElement element;
-    Boolean built = false;
 
-    private Builder() {
+    /**
+     * Assigns an object of type HTMLTextAreaElement to the variable element.
+     */
+    protected Builder() {
       element = Globals.document.createElement(StringTypes.textarea);
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the class of the Text Area element.
+     * @return [the Builder object]
      */
     public Builder setClass(String classe) {
       element.className = classe;
@@ -35,7 +40,8 @@ public class HtmlTextArea {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the text content of the Text Area element.
+     * @return [the Builder object]
      */
     public Builder setContent(String textContent) {
       element.textContent = textContent;
@@ -43,7 +49,8 @@ public class HtmlTextArea {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the required attribute of the Text Area element.
+     * @return [the Builder object]
      */
     public Builder setRequired(Boolean b) {
       element.required = b;
@@ -51,7 +58,8 @@ public class HtmlTextArea {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the id of the Text Area element.
+     * @return [the Builder object]
      */
     public Builder setId(String id) {
       element.id = id;
@@ -59,7 +67,8 @@ public class HtmlTextArea {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Set the name of the Text Area element.
+     * @return [the Builder object]
      */
     public Builder setName(String name) {
       element.name = name;
@@ -67,7 +76,8 @@ public class HtmlTextArea {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another HTMLElement to the element.
+     * @return [the Builder object]
      */
     final public Builder append(HTMLElement child) {
       element.appendChild(child);
@@ -75,7 +85,8 @@ public class HtmlTextArea {
     }
 
     /**
-     * TODO(yukienomiya): Add JavaDoc
+     * Appends another element Builder to the Builder.
+     * @return [the Builder object]
      */
     final public Builder append(BasicBuilder<? extends HTMLElement> childBuilder) {
       element.appendChild(childBuilder.build());

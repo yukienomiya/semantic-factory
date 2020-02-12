@@ -8,12 +8,16 @@ var it;
             var dom;
             (function (dom) {
                 /**
-                 * TODO(yukienomiya): Add JavaDoc
+                 * Represents a HTML UL element.
                  * @class
                  */
                 class HtmlUL {
                     constructor() {
                     }
+                    /**
+                     * Returns an object of type Builder.
+                     * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlUL.Builder}
+                     */
                     static newBuilder() {
                         return new HtmlUL.Builder();
                     }
@@ -22,31 +26,28 @@ var it;
                 HtmlUL["__class"] = "it.uniroma1.fabbricasemanticajsweet.dom.HtmlUL";
                 (function (HtmlUL) {
                     /**
-                     * TODO(yukienomiya): Add JavaDoc
+                     * Represents a Builder of HTMLUListElement.
                      * @extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder
                      * @class
                      */
                     class Builder extends it.uniroma1.fabbricasemanticajsweet.dom.BasicBuilder {
                         constructor() {
                             super();
-                            this.__it_uniroma1_fabbricasemanticajsweet_dom_HtmlUL_Builder_built = false;
-                            if (this.element === undefined)
-                                this.element = null;
                             this.element = document.createElement("ul");
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the class of the UL element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlUL.Builder} [the Builder object]
                          * @param {string} classe
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlUL.Builder}
                          */
                         setClass(classe) {
                             this.element.className = classe;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Set the id of the UL element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlUL.Builder} [the Builder object]
                          * @param {string} id
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlUL.Builder}
                          */
                         setId(id) {
                             this.element.id = id;
@@ -57,9 +58,9 @@ var it;
                             return this;
                         }
                         /**
-                         * TODO(yukienomiya): Add JavaDoc
+                         * Appends another HTMLElement to the element.
+                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlUL.Builder} [the Builder object]
                          * @param {HTMLElement} child
-                         * @return {it.uniroma1.fabbricasemanticajsweet.dom.HtmlUL.Builder}
                          */
                         append(child) {
                             if (((child != null && child instanceof HTMLElement) || child === null)) {
