@@ -16,10 +16,26 @@ import it.uniroma1.fabbricasemantica.servlet.BaseServlet;
 @WebServlet(name="SignupServlet", urlPatterns="/signup.jsp")
 public class SignupServlet extends BaseServlet {
   private static final long serialVersionUID = 8484501789787L;
+
+  /*
+   * Path of the user db file.
+   */
   private static final String filePath = "/WEB-INF/db/users/";
+
+  /*
+   * Url of the Home page.
+   */
   private static final String homeUrl = "home.html";
+
+  /*
+   * Url of the Signup page.
+   */
   private static final String signupUrl = "signup.html";
 
+  /* 
+   * If the user is not already signed up and if the data entered is valid, creates the user file, logs the user in and redirects it to the Home page.
+   * Otherwise, redirects it to the SignUp page.
+  */
   @Override
   protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -32,12 +48,11 @@ public class SignupServlet extends BaseServlet {
     String livIt = request.getParameter("livIT");
     String livEn = request.getParameter("livEN");
 
-    // TODO valida input
-
     File usersFile = new File(request.getServletContext().getRealPath(filePath + username + ".json"));
 
-    // se lo username non è gia registrato e la password e conferma password sono uguali, inizia a costruire lo User
+    // if the username is not already signed up and if the password is equal to the password confirmation, begin to construct the User object
     if ((!usersFile.exists()) && (password.equals(password2))) {
+      // the native languages
       List<Language> nat = new ArrayList<>();
       for (String s : cbNativeLang) {
         if (s != null) {
@@ -45,18 +60,16 @@ public class SignupServlet extends BaseServlet {
         }
       }
 
-      // Le lingue aggiuntive.
-      // Non sapevo come farle meglio, quindi ho fatto i due casi separati (per ora devo solo fare queste due lingue)
+      // the other languages
       List<Pair<Language, Level>> other = new ArrayList<>();
       if (cbItOther != null) {
         Level levelIT = Level.getLevel(livIt);
-        Pair<Language, Level> p1 = new Pair<>(Language.IT, levelIT);
+        Pair<Language, Level> p1 = new Pair<>(Language.ITALIANO, levelIT);
         other.add(p1);
       }
-
       if (cbEnOther != null) {
         Level levelEn = Level.getLevel(livEn);
-        Pair<Language, Level> p2 = new Pair<>(Language.EN, levelEn);
+        Pair<Language, Level> p2 = new Pair<>(Language.ENGLISH, levelEn);
         other.add(p2);
       }
 

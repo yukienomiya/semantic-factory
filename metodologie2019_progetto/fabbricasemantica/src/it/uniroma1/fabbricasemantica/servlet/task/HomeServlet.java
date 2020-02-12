@@ -13,8 +13,16 @@ import it.uniroma1.fabbricasemantica.servlet.BaseServlet;
 @WebServlet(name = "HomeServlet", urlPatterns = "/home.jsp")
 public class HomeServlet extends BaseServlet {
 private static final long serialVersionUID = 1L;
-private static final String loginUrl = "login.html";
 
+  /*
+   * Url of the Login page.
+   */
+  private static final String loginUrl = "login.html";
+
+  /*
+   * If the user is logged in, it redirects to a random task page.
+   * Redirects to the Login page otherwise.
+   */
   @Override
   protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     HttpSession session = request.getSession();

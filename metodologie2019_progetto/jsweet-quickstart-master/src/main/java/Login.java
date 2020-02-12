@@ -16,6 +16,11 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlInput;
 public class Login {
 
   /**
+   * Represents the path of the logo.
+   */
+  public static final String LOGO = "images/FSp.svg";
+
+  /**
    * Represents the url of the LoginServlet.
    */
   public static final String SERVLET_URL = "login.jsp";
@@ -36,7 +41,7 @@ public class Login {
           .append(
             HtmlImg.newBuilder()
               .setClass("imgS")
-              .setSrc("images/FSp.svg")
+              .setSrc(LOGO)
           )
       )
       .append(
@@ -130,7 +135,6 @@ public class Login {
   public static void main(String[] args) {
     $.ajax("/FabbricaSemantica/logout.jsp");
     HTMLElement page = Login.page();
-    // TODO(yukienomiya): Use vanilla js instead of jquery.
     $("body").append(page);
   }
 }

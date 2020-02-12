@@ -14,10 +14,20 @@ import it.uniroma1.fabbricasemantica.servlet.BaseServlet;
 @WebServlet(name = "TaskTranslationValidationServlet", urlPatterns = "/translationValidation.jsp")
 public class TaskTranslationValidationServlet extends BaseServlet {
   private static final long serialVersionUID = 1L;
+
+  /*
+   * Path of the task db file.
+   */
   private static final String filePath = "/WEB-INF/db/tasks/";
+
   private static final String task = StandardTask.TRANSLATION_VALIDATION.toString();
   private static final String taskName = StandardTask.TRANSLATION_VALIDATION.getName();
 
+  /*
+   * Retrieves the data entered by the user. 
+   * Saves the new data in the db file.
+   * Redirects to a random task page.
+   */
   @Override
   protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     String[] word = { request.getParameter("word") };

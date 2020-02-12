@@ -28,6 +28,11 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan;
  */
 public class Signup {
 
+    /**
+   * Represents the path of the logo.
+   */
+  public static final String LOGO = "images/FSp.svg";
+
   /**
    * Represents the url of the SignupServlet.
    */
@@ -54,7 +59,7 @@ public class Signup {
           .append(
             HtmlImg.newBuilder()
               .setClass("imgS")
-              .setSrc("images/FSp.svg")
+              .setSrc(LOGO)
           )
       )
       .append(
@@ -151,7 +156,7 @@ public class Signup {
                                             HtmlInput.newBuilder()
                                               .setId("cbNat0")
                                               .setName("cbNat")
-                                              .setValue("Italiano")
+                                              .setValue("ITALIANO")
                                               .setType("checkbox")
                                           )
                                           .append(
@@ -176,7 +181,7 @@ public class Signup {
                                             HtmlInput.newBuilder()
                                               .setId("cbNat1")
                                               .setName("cbNat")
-                                              .setValue("English")
+                                              .setValue("ENGLISH")
                                               .setType("checkbox")
                                           )
                                           .append(

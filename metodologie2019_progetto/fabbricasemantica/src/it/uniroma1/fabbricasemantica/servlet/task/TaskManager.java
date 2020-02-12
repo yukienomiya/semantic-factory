@@ -20,8 +20,16 @@ import it.uniroma1.fabbricasemantica.data.StandardTask;
 
 public class TaskManager {
 
+  /*
+   * List that contains the names of all the tasks in StandardTask.
+   */
   private static final ArrayList<StandardTask> tasks = new ArrayList<>(Arrays.asList(StandardTask.values()));
 
+  /*
+   * Gets a random task from the ones in StandardTask and makes sure it won't be equal to the one in input.
+   * @param currentTask [Name of the task to avoid when choosing a random one.]
+   * @return [The name of a random task]
+   */
   public static String randomTask(String currentTask) {
     while(true) {
       Random r = new Random();
@@ -32,13 +40,21 @@ public class TaskManager {
     }
   }
 
+  /*
+   * Gets a random task from the ones in StandardTask.
+   * @return [The name of a random task]
+   */
   public static String randomTask() {
     Random r = new Random();
     return tasks.get(r.nextInt(tasks.size())).getName() + ".html";
   }
 
-
-
+  /*
+   * Access the task db file and updates it with data in input.
+   * @param taskName [The name of the task]
+   * @param taskFile [The task db file]
+   * @param data [The data to add to the db]
+   */
   public static void saveTask(String taskName, File taskFile, String[][] data) throws FileNotFoundException {
     InputStream is = new FileInputStream(taskFile);
     JSONTokener tokener = new JSONTokener(is);
@@ -78,7 +94,12 @@ public class TaskManager {
   }
 
 
-
+  /*
+   * Integrates the new task data with the old one (from the taskJSON).
+   * @param taskJSON [The JSONObject representing the content of the db file before the update]
+   * @param data [The data to add to the taskJSON]
+   * @return [The updated JSONObject]
+   */
   public static JSONObject translationAnnotationJSON(JSONObject taskJSON, String[][] data) {
     String word = data[0][0];
     String description = data[1][0];
@@ -118,6 +139,13 @@ public class TaskManager {
 
 
 
+  /*
+   * Integrates the new task data with the old one (taskJSON).
+   * @param taskJSON [The JSONObject representing the content of the db file
+   * before the update]
+   * @param data [The data to add to the taskJSON]
+   * @return [The updated JSONObject]
+   */
   public static JSONObject wordAnnotationJSON(JSONObject taskJSON, String[][] data) {
     String description = data[0][0];
     String word = data[1][0];
@@ -138,6 +166,13 @@ public class TaskManager {
 
 
 
+  /*
+   * Integrates the new task data with the old one (taskJSON).
+   * @param taskJSON [The JSONObject representing the content of the db file
+   * before the update]
+   * @param data [The data to add to the taskJSON]
+   * @return [The updated JSONObject]
+   */
   public static JSONObject definitionAnnotationJSON(JSONObject taskJSON, String[][] data) {
     String word = data[0][0];
     String hypernym = data[1][0];
@@ -168,6 +203,13 @@ public class TaskManager {
 
 
 
+  /*
+   * Integrates the new task data with the old one (taskJSON).
+   * @param taskJSON [The JSONObject representing the content of the db file
+   * before the update]
+   * @param data [The data to add to the taskJSON]
+   * @return [The updated JSONObject]
+   */
   public static JSONObject senseAnnotationJSON(JSONObject taskJSON, String[][] data) {
     String word = data[0][0];
     String description = data[1][0];
@@ -197,6 +239,13 @@ public class TaskManager {
 
 
 
+  /*
+   * Integrates the new task data with the old one (taskJSON).
+   * @param taskJSON [The JSONObject representing the content of the db file
+   * before the update]
+   * @param data [The data to add to the taskJSON]
+   * @return [The updated JSONObject]
+   */
   public static JSONObject translationValidationJSON(JSONObject taskJSON, String[][] data) {
     String word = data[0][0];
     String description = data[1][0];
@@ -233,6 +282,13 @@ public class TaskManager {
 
 
 
+  /*
+   * Integrates the new task data with the old one (taskJSON).
+   * @param taskJSON [The JSONObject representing the content of the db file
+   * before the update]
+   * @param data [The data to add to the taskJSON]
+   * @return [The updated JSONObject]
+   */
   public static JSONObject senseValidationJSON(JSONObject taskJSON, String[][] data) {
     String word = data[0][0];
     String example = data[1][0];
@@ -266,6 +322,13 @@ public class TaskManager {
 
 
 
+  /*
+   * Integrates the new task data with the old one (taskJSON).
+   * @param taskJSON [The JSONObject representing the content of the db file
+   * before the update]
+   * @param data [The data to add to the taskJSON]
+   * @return [The updated JSONObject]
+   */
   public static JSONObject myAnnotationJSON(JSONObject taskJSON, String[][] data) {
     String word = data[0][0];
     String[] words = data[2];

@@ -27,14 +27,44 @@ import it.uniroma1.fabbricasemanticajsweet.dom.HtmlSpan;
 public class TranslationValidation {
 
   /**
+   * Represents the url of the Home page.
+   */
+  public static final String HOME_URL = "home.html";
+
+  /**
+   * Represents the url of the LogoutServlet.
+   */
+  public static final String LOGOUT_URL = "logout.jsp";
+
+  /**
+   * Represents the path of the logo.
+   */
+  public static final String LOGO = "images/FS.svg";
+
+  /**
    * Represents the url of the NewExampleServiceServlet.
    */
   public static final String REST_URL = "nextExample.jsp";
 
   /**
+   * Represents the url of the TranslationValidationServlet.
+   */
+  public static final String TASK_URL = "translationValidation.jsp";
+
+  /**
    * Represents the url of the AuthenticationServiceServlet.
    */
   public static final String LOGIN_CHECK = "isLoggedIn.jsp";
+
+  /**
+   * Represents the url of the NextTaskServlet.
+   */
+  public static final String NEXT_TASK = "nextTask.jsp";
+
+  /**
+   * Represents the url of the Login page.
+   */
+  public static final String LOGIN_URL = "login.html";
 
   /**
    * Constructs the HTML page.
@@ -53,7 +83,7 @@ public class TranslationValidation {
               .append(
                 HtmlImg.newBuilder()
                   .setClass("imgS")
-                  .setSrc("images/FS.svg")
+                  .setSrc(LOGO)
               )
           )
           .append(
@@ -62,13 +92,13 @@ public class TranslationValidation {
               .append(
                 HtmlAnchor.newBuilder()
                   .setClass("waves-effect btn-flat brownie")
-                  .setHref("home.html")
+                  .setHref(HOME_URL)
                   .setContent("HOME")
               )
               .append(
                 HtmlAnchor.newBuilder()
                   .setClass("waves-effect btn-flat brownie")
-                  .setHref("logout.jsp")
+                  .setHref(LOGOUT_URL)
                   .setContent("logout")
               )
           )
@@ -118,7 +148,7 @@ public class TranslationValidation {
                             HtmlForm.newBuilder()
                               .setClass("col s12 marginT left-align")
                               .setMethod("POST")
-                              .setAction("translationValidation.jsp")
+                              .setAction(TASK_URL)
                               .append(
                                 HtmlP.newBuilder()
                                   .append(
@@ -208,7 +238,7 @@ public class TranslationValidation {
                                         HtmlAnchor.newBuilder()
                                           .setClass("waves-effect waves-light btn white brownie skipPAD")
                                           .setContent("SALTA")
-                                          .setHref("nextTask.jsp")
+                                          .setHref(NEXT_TASK)
                                       )
                                   )
                               )
@@ -258,7 +288,7 @@ public class TranslationValidation {
     $.get(LOGIN_CHECK, (Object result, String a, JQueryXHR ctx) -> {
       String isLoggedIn = result.toString();
       if (isLoggedIn.equals("false")) {
-        window.location.replace("login.html");
+        window.location.replace(LOGIN_URL);
       }
       return null;
     });

@@ -20,14 +20,24 @@ public class Home {
   public static final String LOGOUT_URL = "logout.jsp";
 
   /**
+   * Represents the path of the logo.
+   */
+  public static final String LOGO = "images/FS.svg";
+
+  /**
    * Represents the url of the HomeServlet.
    */
-  public static final String TASK_URL = "home.jsp";
+  public static final String SERVLET_URL = "home.jsp";
 
   /**
    * Represents the url of the AuthenticationServiceServlet.
    */
   public static final String LOGIN_CHECK = "isLoggedIn.jsp";  
+
+  /**
+   * Represents the url of the Login page.
+   */
+  public static final String LOGIN_URL = "login.html";
 
   /**
    * Constructs the HTML page.
@@ -43,7 +53,7 @@ public class Home {
               .append(
                 HtmlImg.newBuilder()
                   .setClass("imgS")
-                  .setSrc("images/FS.svg")
+                  .setSrc(LOGO)
               )
           )
           .append(
@@ -52,7 +62,7 @@ public class Home {
               .append(
                 HtmlAnchor.newBuilder()
                   .setClass("waves-effect btn-flat brownie")
-                  .setHref("logout.jsp")
+                  .setHref(LOGOUT_URL)
                   .setContent("logout")
               )
           )
@@ -70,7 +80,7 @@ public class Home {
                     HtmlForm.newBuilder()
                       .setClass("center-align")
                       .setMethod("POST")
-                      .setAction(TASK_URL)
+                      .setAction(SERVLET_URL)
                       .append(
                         HtmlButton.newBuilder()
                           .setClass("btn greenie waves-effect waves-light btn-large startbtn-font")
@@ -91,7 +101,7 @@ public class Home {
         HTMLElement page = Home.page();
         $("body").append(page);
       } else {
-        window.location.replace("login.html");
+        window.location.replace(LOGIN_URL);
       }
       return null;
     });

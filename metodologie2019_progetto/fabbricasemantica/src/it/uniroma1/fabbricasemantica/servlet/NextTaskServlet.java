@@ -12,10 +12,13 @@ import it.uniroma1.fabbricasemantica.servlet.task.TaskManager;
 
 @WebServlet(name = "NextTaskServlet", urlPatterns = "/nextTask.jsp")
 public class NextTaskServlet extends BaseServlet {
-	private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-	@Override
-	protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect(TaskManager.randomTask());
-	}
+  /* 
+   * Redirects the user to a random task page.
+  */
+  @Override
+  protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    response.sendRedirect(TaskManager.randomTask());
+  }
 }

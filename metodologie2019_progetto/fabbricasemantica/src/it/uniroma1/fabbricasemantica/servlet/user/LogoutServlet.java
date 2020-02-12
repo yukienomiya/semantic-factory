@@ -11,13 +11,17 @@ import it.uniroma1.fabbricasemantica.servlet.BaseServlet;
 
 @WebServlet(name="LogoutServlet", urlPatterns="/logout.jsp")
 public class LogoutServlet extends BaseServlet {
-	private static final long serialVersionUID = 8484501789787L;
+  private static final long serialVersionUID = 8484501789787L;
 
-	@Override
-	protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		session.setAttribute("username", null);
-		response.sendRedirect("login.html");
-	}
+  /* 
+   * Logs out the user (deletes the value to the attibute "username" of the current session).
+   * Then redirects to the Login page.
+  */
+  @Override
+  protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    HttpSession session = request.getSession();
+    session.setAttribute("username", null);
+    response.sendRedirect("login.html");
+  }
 
 }

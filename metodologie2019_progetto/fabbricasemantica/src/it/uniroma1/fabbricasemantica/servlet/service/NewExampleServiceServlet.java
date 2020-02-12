@@ -23,18 +23,11 @@
   private Map<String, Task> tasks;
   private DataProvider<String> dataProvider;
 
-  /* N.B. Il metodo init() e' da considerarsi il costruttore della classe.
-    * Ogni volta che si devono inizializzare dei valori, estendere sempre il metodo init()
-    * e mai il costruttore!
-    * */
   @Override
   public void init() throws ServletException {
     super.init();
-    //TODO se implementata, instanziare la propria classe DataProvider
     dataProvider = new StandardDataProvider();
     tasks = Arrays.stream(StandardTask.values()).collect(Collectors.toMap(Task::getTaskID, s -> s));
-    //TODO tasks.put(myTask.getTaskID(), myTask);
-    
   }
 
   @Override

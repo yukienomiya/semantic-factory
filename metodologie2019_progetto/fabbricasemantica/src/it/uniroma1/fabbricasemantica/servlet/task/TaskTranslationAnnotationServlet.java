@@ -2,7 +2,6 @@ package it.uniroma1.fabbricasemantica.servlet.task;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,10 +14,20 @@ import it.uniroma1.fabbricasemantica.servlet.BaseServlet;
 @WebServlet(name = "TaskTranslationAnnotationServlet", urlPatterns = "/translationAnnotation.jsp")
 public class TaskTranslationAnnotationServlet extends BaseServlet {
   private static final long serialVersionUID = 1L;
+
+  /*
+   * Path of the task db file.
+   */
   private static final String filePath = "/WEB-INF/db/tasks/";
+
   private static final String task = StandardTask.TRANSLATION_ANNOTATION.toString();
   private static final String taskName = StandardTask.TRANSLATION_ANNOTATION.getName();
 
+  /*
+   * Retrieves the data entered by the user. 
+   * Saves the new data in the db file.
+   * Redirects to a random task page.
+   */
   @Override
   protected void doSomething(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     String[] word = { request.getParameter("word") };
