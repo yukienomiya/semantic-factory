@@ -8,10 +8,10 @@
 ✍🏻 A cute but useless translation/annotation web app.
 
 <h3>Synopsis</h3>
-This was an assignment for my university OOP course (Java based).
+<p>This was an assignment for my university OOP course (Java based).
 The professor asked for a simple app with specific features that asked users to write translations of English words in
 their native language (only Italian is supported), annotate their definitions and validate other translations or
-meanings.
+meanings.</p>
 <p>Is it useful? nope.</p>
 <p>Is it a fun and engaging game? probably not.</p>
 <p>But I think it turned out pretty cute. 🎀</p>
@@ -25,7 +25,7 @@ meanings.
   <img src="gallery/myAnn.PNG" alt="Example task #2" height="250">
 </p>
 
-<h2>Authors</h2>
+<h3>Authors</h3>
 <ul>
   <li>
     <strong>Yukie Nomiya</strong>
@@ -36,7 +36,7 @@ meanings.
     ")"
   </li>
 </ul>
-<h2>License</h2>
+<h3>License</h3>
 <p>
   "This project is licensed under the MIT License - see the "
   <a href="https://github.com/yukienomiya/translation-annotation-platform/tree/master/license">license</a>
