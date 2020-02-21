@@ -12,6 +12,9 @@ meanings.
 
 <p>
   <img src="gallery/login.PNG" alt="Login Page" height="250">
-  <img src="gallery/myAnn.PNG" alt="Example task #1" height="250">
-  <img src="gallery/translAnn.PNG" alt="Example task #2" height="250">
+  <img src="gallery/translAnn.PNG" alt="Example task #1" height="250">
+  <img src="gallery/senseVal.PNG" alt="Example task #2" height="250">
+  <img src="gallery/defAnn.PNG" alt="Example task #2" height="250">
+  <img src="gallery/senseAnn.PNG" alt="Example task #2" height="250">
+  <img src="gallery/myAnn.PNG" alt="Example task #2" height="250">
 </p>
