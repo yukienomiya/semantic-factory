@@ -29,11 +29,11 @@ meanings.</p>
 <ul>
   <li>
     <strong>Yukie Nomiya</strong>
-    " - "
+     - 
     <em>Github</em>
-    " ("
+     (
     <a href="https://github.com/yukienomiya">@yukienomiya</a>
-    ")"
+    )
   </li>
 </ul>
 <h3>License</h3>
