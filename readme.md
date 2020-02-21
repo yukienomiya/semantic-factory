@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/yukienomiya/translation-annotation-platform">
-    <img src="https://github.com/yukienomiya/translation-annotation-platform/gallery/FS.png" alt="FabbricaSemantica" width="300"/>
+    <img src="https://github.com/yukienomiya/translation-annotation-platform/raw/master/gallery/FS.png" alt="FabbricaSemantica" width="300"/>
   </a>
 </p>
 
