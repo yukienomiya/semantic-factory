@@ -11,7 +11,7 @@ meanings.
 <p>But I think it turned out pretty cute. 🎀</p>
 
 <p>
-  <img src="gallery/login.PNG" alt="Login Page">
-  <img src="gallery/myAnn.PNG" alt="Example task #1">
-  <img src="gallery/translAnn.PNG" alt="Example task #2">
+  <img src="gallery/login.PNG" alt="Login Page" height="250">
+  <img src="gallery/myAnn.PNG" alt="Example task #1" height="250">
+  <img src="gallery/translAnn.PNG" alt="Example task #2" height="250">
 </p>
