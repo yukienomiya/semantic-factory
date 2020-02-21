@@ -25,10 +25,20 @@ meanings.
   <img src="gallery/myAnn.PNG" alt="Example task #2" height="250">
 </p>
 
-
-
 <h2>Authors</h2>
-- **Yukie Nomiya** - *Github* ([@yukienomiya][github:yukienomiya])
-
+<ul>
+  <li>
+    <strong>Yukie Nomiya</strong>
+    " - "
+    <em>Github</em>
+    " ("
+    <a href="https://github.com/yukienomiya">@yukienomiya</a>
+    ")"
+  </li>
+</ul>
 <h2>License</h2>
-This project is licensed under the MIT License - see the [license][license] file for details.
+<p>
+  "This project is licensed under the MIT License - see the "
+  <a href="https://github.com/yukienomiya/translation-annotation-platform/tree/master/license">license</a>
+  " file for details."
+</p>
