@@ -24,3 +24,11 @@ meanings.
   <img src="gallery/senseAnn.PNG" alt="Example task #2" height="250">
   <img src="gallery/myAnn.PNG" alt="Example task #2" height="250">
 </p>
+
+
+
+<h2>Authors</h2>
+- **Yukie Nomiya** - *Github* ([@yukienomiya][github:yukienomiya])
+
+<h2>License</h2>
+This project is licensed under the MIT License - see the [license][license] file for details.
