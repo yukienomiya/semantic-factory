@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://github.com/yukienomiya/translation-annotation-platform">
+    <img src="https://github.com/yukienomiya/translation-annotation-platform/gallery/FS.svg" alt="FabbricaSemantica" width="300"/>
+  </a>
+</p>
+
 <h1>Translation Annotation Platform</h1>
 ✍🏻 A cute but useless translation/annotation web app.
 
