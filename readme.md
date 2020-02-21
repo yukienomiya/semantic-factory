@@ -10,7 +10,7 @@ meanings.
 <p>Is it a fun and engaging game? probably not.</p>
 <p>But I think it turned out pretty cute. 🎀</p>
 
-<p>
+<p align="center">
   <img src="gallery/login.PNG" alt="Login Page" height="250">
   <img src="gallery/translAnn.PNG" alt="Example task #1" height="250">
   <img src="gallery/senseVal.PNG" alt="Example task #2" height="250">
