@@ -38,7 +38,7 @@ meanings.</p>
 </ul>
 <h3>License</h3>
 <p>
-  "This project is licensed under the MIT License - see the "
+  This project is licensed under the MIT License - see the 
   <a href="https://github.com/yukienomiya/translation-annotation-platform/tree/master/license">license</a>
-  " file for details."
+   file for details.
 </p>
