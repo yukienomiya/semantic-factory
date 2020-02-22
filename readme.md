@@ -8,7 +8,7 @@
 ✍🏻 A cute but useless translation/annotation web app.
 
 <h3>Synopsis</h3>
-<p>This was an assignment for my university OOP course (Java programming).
+<p>This was an assignment for my university OOP course (Java programming) and basically my first attempt at web development.
 The professor asked for a simple app with specific features where users would write translations of English words in
 their native language (only Italian is supported), annotate their definitions and validate other translations or
 meanings.</p>
