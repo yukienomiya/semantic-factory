@@ -4,8 +4,8 @@
   </a>
 </p>
 
-<h1>Translation Annotation Platform</h1>
-✍🏻 A cute but useless translation/annotation web app.
+<h1>Annotation Validation Platform</h1>
+✍🏻 A cute but useless annotation/validation web app.
 
 <h3>Synopsis</h3>
 <p>This was an assignment for my university OOP course (Java programming) and basically my first attempt at web development.
