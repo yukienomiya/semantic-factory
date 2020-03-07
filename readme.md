@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1>Annotation Validation Platform</h1>
+<h1>Semantic Factory</h1>
 ✍🏻 A cute but useless annotation/validation web app.
 
 <h3>Synopsis</h3>
